@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
@@ -245,7 +246,7 @@ export default function Contact() {
       <HeroSection>
         <HeroContent>
           <Breadcrumb>
-            <a href="/">Home</a> / <span>Contact</span>
+            <Link href="/">Home</Link> / <span>Contact</span>
           </Breadcrumb>
           <HeroTitle
             initial={{ opacity: 0, y: 20 }}
@@ -259,7 +260,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Let's discuss your project or just say hello
+            Let&apos;s discuss your project or just say hello
           </motion.p>
         </HeroContent>
       </HeroSection>
@@ -382,7 +383,7 @@ export default function Contact() {
                     backgroundColor: 'rgba(0, 255, 0, 0.1)'
                   }}
                 >
-                  Your message has been sent successfully! We'll get back to you soon.
+                  Your message has been sent successfully! We&apos;ll get back to you soon.
                 </motion.p>
               )}
             </ContactForm>

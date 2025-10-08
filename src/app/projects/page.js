@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { projects } from '@/app/utils/data';
@@ -119,7 +120,7 @@ export default function Projects() {
       <HeroSection>
         <HeroContent>
           <Breadcrumb>
-            <a href="/">Home</a> / <span>Projects</span>
+            <Link href="/">Home</Link> / <span>Projects</span>
           </Breadcrumb>
           <HeroTitle
             initial={{ opacity: 0, y: 20 }}

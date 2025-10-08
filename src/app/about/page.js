@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import MyImage from '../components/MyImage';
 import { FiBriefcase, FiCode, FiDatabase, FiGlobe, FiServer, FiSmartphone } from 'react-icons/fi';
 import Section from '@/app/components/common/Section';
@@ -282,7 +283,7 @@ export default function About() {
       <HeroSection>
         <HeroContent>
           <Breadcrumb>
-            <a href="/">Home</a> / <span>About Me</span>
+            <Link href="/">Home</Link> / <span>About Me</span>
           </Breadcrumb>
           <HeroTitle
             initial={{ opacity: 0, y: 20 }}
@@ -324,19 +325,19 @@ export default function About() {
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
           >
-            <h2>I'm Your Name, a Full-Stack Developer</h2>
+            <h2>I&apos;m Your Name, a Full-Stack Developer</h2>
             <p style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
-              I'm a passionate full-stack developer with over 5 years of experience in building web applications.
+              I&apos;m a passionate full-stack developer with over 5 years of experience in building web applications.
               I specialize in creating responsive, user-friendly websites and applications using modern technologies.
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
               My journey in web development began during college where I built my first website for a local business.
-              Since then, I've worked with startups, agencies, and established companies to create digital solutions
+              Since then, I&apos;ve worked with startups, agencies, and established companies to create digital solutions
               that solve real-world problems.
             </p>
             <p>
-              When I'm not coding, you can find me hiking, reading tech blogs, or experimenting with new frameworks
-              and libraries. I'm always eager to learn and stay updated with the latest industry trends.
+              When I&apos;m not coding, you can find me hiking, reading tech blogs, or experimenting with new frameworks
+              and libraries. I&apos;m always eager to learn and stay updated with the latest industry trends.
             </p>
             
             <BioDetails>

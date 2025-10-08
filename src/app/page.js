@@ -240,7 +240,7 @@ export default function Home() {
         >
           <HeroContent>
             <HeroTitle variants={fadeIn("up", 0.3)}>
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span style={{ color: "var(--primary)" }}>{contacts.name}</span>
             </HeroTitle>
             <HeroSubtitle variants={fadeIn("up", 0.4)}>
@@ -319,7 +319,7 @@ export default function Home() {
             >
               <h2>Crafting Digital Experiences</h2>
               <p style={{ marginBottom: "1.5rem" }}>
-                I'm a passionate full-stack developer with experience in
+                I&apos;m a passionate full-stack developer with experience in
                 building high-performance web applications with modern
                 technologies like React, Next.js, Node.js, and more.
               </p>
@@ -419,11 +419,11 @@ export default function Home() {
               viewport={{ once: true, amount: 0.25 }}
             >
               <h3 style={{ marginBottom: "1.5rem" }}>
-                Let's discuss your project
+                Let&apos;s discuss your project
               </h3>
               <p>
                 Whether you have a question about a project, a job opportunity,
-                or just want to say hi, feel free to reach out. I'm always open
+                or just want to say hi, feel free to reach out. I&apos;m always open
                 to discussing new projects, creative ideas or opportunities to
                 be part of your vision.
               </p>

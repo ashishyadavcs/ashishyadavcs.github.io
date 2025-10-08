@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
@@ -85,6 +85,14 @@ const Modal = ({
 }) => {
   const [isClosing, setIsClosing] = useState(false);
   
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      onClose();
+    }, 200);
+  }, [onClose]);
+  
   // Close modal on ESC key press
   useEffect(() => {
     const handleEsc = (event) => {
@@ -98,7 +106,7 @@ const Modal = ({
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-  }, []);
+  }, [handleClose]);
   
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -112,14 +120,6 @@ const Modal = ({
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
-  
-  const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsClosing(false);
-      onClose();
-    }, 200);
-  };
   
   const overlayVariants = {
     hidden: { opacity: 0 },

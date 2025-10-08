@@ -237,7 +237,7 @@ export default function ProjectPage({ params }) {
       <HeroSection>
         <HeroContent>
           <Breadcrumb>
-            <a href="/">Home</a> / <a href="/projects">Projects</a> / <span>{project.title}</span>
+            <Link href="/">Home</Link> / <Link href="/projects">Projects</Link> / <span>{project.title}</span>
           </Breadcrumb>
           <HeroTitle
             initial={{ opacity: 0, y: 20 }}
