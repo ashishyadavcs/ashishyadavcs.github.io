@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format:check": "prettier --check '**/*.{js,jsx}'",
+    "format:fix": "prettier --write '**/*.{js,jsx}'",
+    "prepare": "husky"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
@@ -20,6 +23,12 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4"
+    "eslint-config-next": "15.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": "prettier --write"
   }
 }
