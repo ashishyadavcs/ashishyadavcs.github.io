@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -54,10 +54,6 @@ export const GlobalStyles = createGlobalStyle`
     color: var(--primary);
     text-decoration: none;
     transition: color 0.3s ease;
-    
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   h1, h2, h3, h4, h5, h6 {
