@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useFetch = (url, options) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(url, options);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const response = await fetch(url, options);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                setData(result);
+                setError(null);
+            } catch (err) {
+                setError(err.message || "An error occurred while fetching data.");
+                setData(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (url) {
+            fetchData();
         }
-        
-        const result = await response.json();
-        setData(result);
-        setError(null);
-      } catch (err) {
-        setError(err.message || 'An error occurred while fetching data.');
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
+    }, [url, options]);
 
-    if (url) {
-      fetchData();
-    }
-  }, [url, options]);
-
-  return { data, loading, error };
+    return { data, loading, error };
 };
