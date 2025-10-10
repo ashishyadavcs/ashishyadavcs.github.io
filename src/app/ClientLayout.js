@@ -18,7 +18,7 @@ export default function ClientLayout({ children }) {
     return (
         <ThemeProvider>
             <GlobalStyles />
-            <Navbar />
+            <Header />
             <main style={{ minHeight: "100vh", paddingTop: "80px" }}>{mounted && children}</main>
             <Footer />
         </ThemeProvider>
