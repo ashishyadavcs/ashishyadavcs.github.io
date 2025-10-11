@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+  html,
   :root {
     /* Light theme colors - Modern vibrant palette */
     --background: #fafafa;
@@ -34,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     --radius-xl: 16px;
   }
 
+  html[data-theme='dark'],
   [data-theme='dark'] {
     --background: #0f0f23;
     --text: #f1f5f9;
@@ -61,12 +63,20 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  html[data-theme] {
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
   body {
     font-family: var(--font-geist-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--background);
     color: var(--text);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     line-height: 1.7;
     overflow-x: hidden;
     font-size: 16px;

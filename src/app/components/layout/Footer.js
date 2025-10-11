@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
-import { contacts, footerLinks } from "public/data/aboutme";
+import { NAVIGATION, SITE_METADATA, PERSONAL_INFO } from "@/app/constants";
+import { hoverVariants } from "@/app/utils/animation-variants";
+import { getContactInfo, getSocialLinks } from "@/app/utils/personal-info";
 import {
     StyledFooter,
     FooterContent,
@@ -14,61 +16,80 @@ import {
     Copyright,
 } from "../../styles/layout/Footer.styles";
 
+/**
+ * Footer component with social links, quick navigation, and contact information
+ * @returns {JSX.Element} Footer component
+ */
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+
+    // Social media icons mapping
+    const socialIcons = {
+        github: FiGithub,
+        linkedin: FiLinkedin,
+        twitter: FiTwitter,
+        email: FiMail,
+    };
+
+    // Get personal information using utilities
+    const contactInfo = getContactInfo();
+    const socialLinks = getSocialLinks();
+
+    // Social media data
+    const socialMedia = [
+        {
+            name: "github",
+            url: socialLinks.github,
+            label: "GitHub",
+        },
+        {
+            name: "linkedin",
+            url: socialLinks.linkedin,
+            label: "LinkedIn",
+        },
+        {
+            name: "twitter",
+            url: socialLinks.twitter,
+            label: "Twitter",
+        },
+        {
+            name: "email",
+            url: socialLinks.email,
+            label: "Email",
+        },
+    ];
 
     return (
         <StyledFooter>
             <FooterContent>
                 <FooterSection>
                     <FooterTitle>Portfolio</FooterTitle>
-                    <div dangerouslySetInnerHTML={{ __html: contacts.description }} />
+                    <p>{contactInfo.bio}</p>
                     <SocialLinks>
-                        <SocialIcon
-                            href={contacts.socialMedia.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <FiGithub />
-                        </SocialIcon>
-                        <SocialIcon
-                            href={contacts.socialMedia.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <FiLinkedin />
-                        </SocialIcon>
-                        <SocialIcon
-                            href={contacts.socialMedia.twitter}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Twitter"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <FiTwitter />
-                        </SocialIcon>
-                        <SocialIcon
-                            href={`mailto:${contacts.email}`}
-                            aria-label="Email"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <FiMail />
-                        </SocialIcon>
+                        {socialMedia.map(social => {
+                            const IconComponent = socialIcons[social.name];
+                            const isExternal = social.name !== "email";
+
+                            return (
+                                <SocialIcon
+                                    key={social.name}
+                                    href={social.url}
+                                    target={isExternal ? "_blank" : undefined}
+                                    rel={isExternal ? "noopener noreferrer" : undefined}
+                                    aria-label={social.label}
+                                    {...hoverVariants.scale}
+                                >
+                                    <IconComponent />
+                                </SocialIcon>
+                            );
+                        })}
                     </SocialLinks>
                 </FooterSection>
 
                 <FooterSection>
                     <FooterTitle>Quick Links</FooterTitle>
-                    {footerLinks.map(link => (
-                        <Link key={link.label} href={link.href}>
+                    {NAVIGATION.LINKS.map(link => (
+                        <Link key={link.href} href={link.href}>
                             <FooterLink>{link.label}</FooterLink>
                         </Link>
                     ))}
@@ -76,13 +97,15 @@ const Footer = () => {
 
                 <FooterSection>
                     <FooterTitle>Contact</FooterTitle>
-                    <p>{contacts.email}</p>
-                    <p>{contacts.phone}</p>
-                    <p>{contacts.address}</p>
+                    <p>{contactInfo.email}</p>
+                    <p>{contactInfo.phone}</p>
+                    <p>{contactInfo.location}</p>
                 </FooterSection>
             </FooterContent>
 
-            <Copyright>&copy; {currentYear} Portfolio. All rights reserved.</Copyright>
+            <Copyright>
+                &copy; {currentYear} {SITE_METADATA.TITLE}. All rights reserved.
+            </Copyright>
         </StyledFooter>
     );
 };

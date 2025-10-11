@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { AnimatePresence } from "framer-motion";
 import { useTheme } from "@/app/hooks/useTheme";
+import { ANIMATIONS, NAVIGATION, THEME } from "@/app/constants";
+import { slideVariants } from "@/app/utils/animation-variants";
 import {
     StyledHeader,
     NavContainer,
@@ -18,6 +20,10 @@ import {
     MobileNavLink,
 } from "../../styles/layout/Header.styles";
 
+/**
+ * Header component with navigation, theme toggle, and responsive mobile menu
+ * @returns {JSX.Element} Header component
+ */
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,73 +31,103 @@ const Header = () => {
     const { theme, toggleTheme } = useTheme();
     const pathname = usePathname();
 
+    // Scroll threshold constant
+    const SCROLL_THRESHOLD = 50;
+
+    /**
+     * Handle scroll event to update header appearance
+     */
+    const handleScroll = useCallback(() => {
+        setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
+    }, []);
+
+    /**
+     * Toggle mobile menu visibility
+     */
+    const toggleMobileMenu = useCallback(() => {
+        setMobileMenuOpen(prev => !prev);
+    }, []);
+
+    /**
+     * Close mobile menu
+     */
+    const closeMobileMenu = useCallback(() => {
+        setMobileMenuOpen(false);
+    }, []);
+
+    // Set mounted state on client-side
     useEffect(() => {
         setMounted(true);
     }, []);
 
+    // Add scroll event listener
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
         window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const menuVariants = {
-        closed: {
-            x: "100%",
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 30,
+    // Memoized animation variants for mobile menu
+    const menuVariants = useMemo(
+        () => ({
+            closed: {
+                x: "100%",
+                transition: {
+                    type: "spring",
+                    stiffness: ANIMATIONS.SPRING.STIFFNESS,
+                    damping: ANIMATIONS.SPRING.DAMPING,
+                },
             },
-        },
-        open: {
-            x: 0,
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 30,
-            },
-        },
-    };
-
-    const linkVariants = {
-        closed: { opacity: 0, y: 20 },
-        open: i => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: i * 0.1,
+            open: {
+                x: 0,
+                transition: {
+                    type: "spring",
+                    stiffness: ANIMATIONS.SPRING.STIFFNESS,
+                    damping: ANIMATIONS.SPRING.DAMPING,
+                },
             },
         }),
-    };
+        []
+    );
 
-    const links = [
-        { href: "/", label: "Home" },
-        { href: "/about", label: "About" },
-        { href: "/projects", label: "Projects" },
-        { href: "/contact", label: "Contact" },
-    ];
+    // Memoized animation variants for mobile menu links
+    const linkVariants = useMemo(
+        () => ({
+            closed: { opacity: 0, y: 20 },
+            open: i => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                    delay: i * ANIMATIONS.STAGGER.DELAY,
+                },
+            }),
+        }),
+        []
+    );
+
+    // Get theme icon based on current theme
+    const getThemeIcon = useCallback(() => {
+        if (!mounted) return <FiMoon />;
+        return theme === THEME.LIGHT ? <FiMoon /> : <FiSun />;
+    }, [mounted, theme]);
+
+    // Memoized header styles based on scroll state
+    const headerStyles = useMemo(
+        () => ({
+            boxShadow: isScrolled ? "0 2px 10px var(--shadow)" : "none",
+            background: "var(--navbar-bg)",
+        }),
+        [isScrolled]
+    );
 
     return (
-        <StyledHeader
-            style={{
-                boxShadow: isScrolled ? "0 2px 10px var(--shadow)" : "none",
-                background: isScrolled ? "var(--navbar-bg)" : "var(--navbar-bg)",
-            }}
-        >
+        <StyledHeader style={headerStyles}>
             <NavContainer>
                 <Logo>
-                    <Link href="/">Ashish Yadav</Link>
+                    <Link href="/">{NAVIGATION.BRAND_NAME}</Link>
                 </Logo>
 
                 <NavLinks>
-                    {links.map(link => (
+                    {NAVIGATION.LINKS.map(link => (
                         <Link key={link.href} href={link.href}>
                             <NavLink className={pathname === link.href ? "active" : ""}>
                                 {link.label}
@@ -102,11 +138,11 @@ const Header = () => {
 
                 <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
                     <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
-                        {mounted ? theme === "light" ? <FiMoon /> : <FiSun /> : <FiMoon />}
+                        {getThemeIcon()}
                     </ThemeToggle>
 
                     <MobileMenuButton
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        onClick={toggleMobileMenu}
                         aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                     >
                         {mobileMenuOpen ? <FiX /> : <FiMenu />}
@@ -121,12 +157,12 @@ const Header = () => {
                             exit="closed"
                             variants={menuVariants}
                         >
-                            {links.map((link, i) => (
+                            {NAVIGATION.LINKS.map((link, i) => (
                                 <Link key={link.href} href={link.href}>
                                     <MobileNavLink
                                         custom={i}
                                         variants={linkVariants}
-                                        onClick={() => setMobileMenuOpen(false)}
+                                        onClick={closeMobileMenu}
                                     >
                                         {link.label}
                                     </MobileNavLink>

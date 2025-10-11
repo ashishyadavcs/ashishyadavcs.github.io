@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import MyImage from "../components/MyImage";
 import {
     FiBriefcase,
@@ -11,11 +12,14 @@ import {
     FiServer,
     FiSmartphone,
     FiCpu,
+    FiBookOpen,
 } from "react-icons/fi";
 import Section from "@/app/components/common/Section";
 import { fadeIn } from "@/app/utils/motion";
+import { fadeInVariants } from "@/app/utils/animation-variants";
 import Button from "@/app/components/common/Button";
-import { contacts, data } from "public/data/aboutme";
+import { contacts, data, education } from "public/data/aboutme";
+import { SITE_METADATA, NAVIGATION } from "@/app/constants";
 import {
     AboutContainer,
     HeroSection,
@@ -41,74 +45,99 @@ import {
     TimelineDescription,
 } from "@/app/styles/About.styles";
 
+/**
+ * About page component - Detailed information about skills, experience, and background
+ * @returns {JSX.Element} About page component
+ */
 export default function About() {
-    const skills = [
-        {
-            title: "Frontend Development",
-            icon: <FiCode />,
-            items: ["React", "Next.js", "TypeScript", "HTML/CSS/JS", "Redux", "Styled Components"],
-        },
-        {
-            title: "Backend Development",
-            icon: <FiServer />,
-            items: ["Node.js", "Express", "RESTful APIs"],
-        },
-        {
-            title: "Database",
-            icon: <FiDatabase />,
-            items: ["MongoDB"],
-        },
-        {
-            title: "Mobile Development",
-            icon: <FiSmartphone />,
-            items: ["React Native", "Responsive Design", "Progressive Web Apps"],
-        },
-        {
-            title: "DevOps & Tools",
-            icon: <FiBriefcase />,
-            items: [
-                "Git",
-                //  "Docker","AWS",
-                "CI/CD",
-                "Vercel",
-                "Testing",
-            ],
-        },
-        {
-            title: "AI Tools",
-            icon: <FiCpu />,
-            items: ["Github Copilot", "OpenAI APIs"],
-        },
-        {
-            title: "Other Skills",
-            icon: <FiGlobe />,
-            items: ["UI/UX Design", "Agile Methodology", "Team Leadership", "Technical Writing"],
-        },
-    ];
+    // Skills data organized by category
+    const skills = useMemo(
+        () => [
+            {
+                title: "Frontend Development",
+                icon: <FiCode />,
+                items: [
+                    "React",
+                    "Next.js",
+                    "TypeScript",
+                    "HTML/CSS/JS",
+                    "Redux",
+                    "Styled Components",
+                ],
+            },
+            {
+                title: "Backend Development",
+                icon: <FiServer />,
+                items: ["Node.js", "Express", "RESTful APIs"],
+            },
+            {
+                title: "Database",
+                icon: <FiDatabase />,
+                items: ["MongoDB"],
+            },
+            {
+                title: "Mobile Development",
+                icon: <FiSmartphone />,
+                items: ["React Native", "Responsive Design", "Progressive Web Apps"],
+            },
+            {
+                title: "DevOps & Tools",
+                icon: <FiBriefcase />,
+                items: [
+                    "Git",
+                    //  "Docker","AWS",
+                    "CI/CD",
+                    "Vercel",
+                    "Testing",
+                ],
+            },
+            {
+                title: "AI Tools",
+                icon: <FiCpu />,
+                items: ["Github Copilot", "OpenAI APIs"],
+            },
+            {
+                title: "Other Skills",
+                icon: <FiGlobe />,
+                items: [
+                    "UI/UX Design",
+                    "Agile Methodology",
+                    "Team Leadership",
+                    "Technical Writing",
+                ],
+            },
+        ],
+        []
+    );
 
-    const experiences = [
-        {
-            date: "2022 - Present",
-            title: "Software Engineer",
-            company: "BOLD Technology systems",
-            description:
-                "Lead the frontend development team in building scalable web applications using React and Next.js. Improved site performance by 40% and implemented CI/CD pipelines.",
-        },
-        {
-            date: "2021 - 2022",
-            title: "Frontend Developer",
-            company: "Tutorbin",
-            description:
-                "Developed full-stack web applications using the MERN stack. Created RESTful APIs and worked on database design and optimization.",
-        },
-    ];
+    // Professional experience timeline
+    const experiences = useMemo(
+        () => [
+            {
+                date: "2022 - Present",
+                title: "Software Engineer",
+                company: "BOLD Technology systems",
+                description:
+                    "Lead the frontend development team in building scalable web applications using React and Next.js. Improved site performance by 40% and implemented CI/CD pipelines.",
+            },
+            {
+                date: "2021 - 2022",
+                title: "Frontend Developer",
+                company: "Tutorbin",
+                description:
+                    "Developed full-stack web applications using the MERN stack. Created RESTful APIs and worked on database design and optimization.",
+            },
+        ],
+        []
+    );
 
     return (
         <AboutContainer>
             <HeroSection>
                 <HeroContent>
                     <Breadcrumb>
-                        <Link href="/">Home</Link> / <span>About Me</span>
+                        <Link href={NAVIGATION.LINKS[0].href}>{NAVIGATION.LINKS[0].label}</Link> /
+                        <span>{NAVIGATION.LINKS[1].label}</span>
                     </Breadcrumb>
                     <HeroTitle
                         initial={{ opacity: 0, y: 20 }}
@@ -153,7 +182,7 @@ export default function About() {
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}
                     >
-                        <h2>I&apos;m Your Name, a Full-Stack Developer</h2>
+                        <h2>I&apos;m {contacts.name}, a Full-Stack Developer</h2>
                         <p style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}>
                             I&apos;m a passionate full-stack developer with over{" "}
                             <strong style={{ color: "var(--primary)" }}>5 years</strong> of
@@ -200,7 +229,9 @@ export default function About() {
                             </div>
                         </BioDetails>
 
-                        <Button style={{ marginTop: "2rem" }}>Download Resume</Button>
+                        <Button href={data.resume} style={{ marginTop: "2rem" }}>
+                            Download Resume
+                        </Button>
                     </BioContent>
                 </BioSection>
             </Section>
@@ -248,6 +279,32 @@ export default function About() {
                                 <TimelineTitle>{exp.title}</TimelineTitle>
                                 <TimelineCompany>{exp.company}</TimelineCompany>
                                 <TimelineDescription>{exp.description}</TimelineDescription>
+                            </TimelineItem>
+                        ))}
+                    </TimelineContainer>
+                </ExperienceContainer>
+            </Section>
+
+            <Section id="education" title="Education" subtitle="My academic background">
+                <ExperienceContainer>
+                    <TimelineContainer>
+                        {education.map((edu, index) => (
+                            <TimelineItem
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.2 }}
+                                viewport={{ once: true, amount: 0.1 }}
+                            >
+                                <TimelineDot />
+                                <TimelineDate>{edu.date}</TimelineDate>
+                                <TimelineTitle>{edu.degree}</TimelineTitle>
+                                <TimelineCompany>{edu.institution}</TimelineCompany>
+                                <TimelineDescription>
+                                    <strong>{edu.field}</strong>
+                                    <br />
+                                    {edu.description}
+                                </TimelineDescription>
                             </TimelineItem>
                         ))}
                     </TimelineContainer>

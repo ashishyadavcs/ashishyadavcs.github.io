@@ -37,9 +37,15 @@ export const CardContent = styled.div`
 `;
 
 export const CardTitle = styled.h3`
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 0.5rem;
     color: var(--text);
-    font-size: 1.25rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 `;
 
 export const CardDescription = styled.p`

@@ -6,7 +6,7 @@ export const contacts = {
     socialMedia: {
         linkedin: "https://www.linkedin.com/in/ashishyadavcs",
         github: "https://github.com/ashishyadavcs",
-        twitter: "https://twitter.com/ashishyadav",
+        twitter: "https://x.com/ashishyadav_cs",
     },
 };
 
@@ -28,7 +28,19 @@ export const footerLinks = [
         href: "/contact",
     },
 ];
+export const education = [
+    {
+        date: "2016 - 2020",
+        degree: "Bachelor of Technology",
+        institution: "Feroze Gandhi Institute of Engineering and Technology, Raebareli",
+        field: "Computer Science & Engineering",
+        description: "Specialized in software development, web technologies.",
+    },
+];
+
 export const data = {
     contacts,
     image: "/images/me/ashish.png",
+    resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
+    education,
 };

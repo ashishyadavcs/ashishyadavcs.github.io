@@ -31,11 +31,17 @@ export const SectionHeader = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: 1rem;
     color: var(--text);
     word-wrap: break-word;
     overflow-wrap: break-word;
+
+    @media (max-width: 1024px) {
+        font-size: 2.5rem;
+    }
 
     ${media.sm} {
         font-size: 2rem;
@@ -43,6 +49,10 @@ export const SectionTitle = styled.h2`
 
     ${media.xs} {
         font-size: 1.75rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.625rem;
     }
 `;
 

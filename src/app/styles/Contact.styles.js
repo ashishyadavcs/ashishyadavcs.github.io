@@ -24,10 +24,24 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroTitle = styled(motion.h1)`
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1024px) {
+        font-size: 3.5rem;
+    }
 
     @media (max-width: 768px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
         font-size: 2.5rem;
     }
 `;
@@ -97,8 +111,15 @@ export const IconContainer = styled.div`
 export const ContactDetails = styled.div``;
 
 export const ContactTitle = styled.h3`
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 0.5rem;
+    color: var(--text);
+
+    @media (max-width: 768px) {
+        font-size: 1.125rem;
+    }
 `;
 
 export const ContactText = styled.p`
@@ -118,8 +139,15 @@ export const ContactForm = styled(motion.form)`
 `;
 
 export const FormTitle = styled.h2`
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 1.5rem;
+    color: var(--text);
+
+    @media (max-width: 768px) {
+        font-size: 1.75rem;
+    }
 `;
 
 export const FormRow = styled.div`

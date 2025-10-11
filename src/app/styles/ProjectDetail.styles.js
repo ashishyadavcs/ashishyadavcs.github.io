@@ -24,11 +24,25 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroTitle = styled(motion.h1)`
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1024px) {
+        font-size: 3rem;
+    }
 
     @media (max-width: 768px) {
         font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
     }
 `;
 
@@ -82,10 +96,21 @@ export const ProjectHeader = styled.div`
 `;
 
 export const ProjectTitle = styled(motion.h1)`
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: 1rem;
+    color: var(--text);
+
+    @media (max-width: 1024px) {
+        font-size: 2.5rem;
+    }
 
     @media (max-width: 768px) {
+        font-size: 2.25rem;
+    }
+
+    @media (max-width: 480px) {
         font-size: 2rem;
     }
 `;
@@ -142,15 +167,82 @@ export const ProjectImageContainer = styled(motion.div)`
 `;
 
 export const ProjectContent = styled.div`
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 1.75rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 1.3;
         margin-top: 2rem;
         margin-bottom: 1rem;
         color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 1.125rem;
+        }
+    }
+
+    h6 {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
     }
 
     p {

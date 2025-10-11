@@ -5,11 +5,16 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
 import Link from "next/link";
 import { fadeIn, slideIn, staggerContainer } from "@/app/utils/motion";
+import {
+    fadeInVariants,
+    staggerContainer as staggerVariants,
+} from "@/app/utils/animation-variants";
 import Section from "@/app/components/common/Section";
 import Button from "@/app/components/common/Button";
 import ProjectCard from "@/app/components/common/ProjectCard";
 import { projects } from "@/app/utils/data";
 import { contacts, data } from "public/data/aboutme";
+import { SITE_METADATA, ANIMATIONS } from "@/app/constants";
 import {
     HeroSection,
     HeroContent,
@@ -34,6 +39,10 @@ import {
     TextArea,
 } from "./styles/Home.styles";
 
+/**
+ * Home page component - Portfolio landing page with hero, about preview, projects, and contact sections
+ * @returns {JSX.Element} Home page component
+ */
 export default function Home() {
     return (
         <>
@@ -62,7 +71,7 @@ export default function Home() {
                             <Button href="/projects">
                                 View My Work <FiArrowRight style={{ marginLeft: "0.5rem" }} />
                             </Button>
-                            <Button secondary>
+                            <Button secondary href={data.resume}>
                                 Download CV <FiDownload style={{ marginLeft: "0.5rem" }} />
                             </Button>
                         </ButtonGroup>

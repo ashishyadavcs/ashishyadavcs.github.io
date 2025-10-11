@@ -2,28 +2,32 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "@/app/styles/registry";
 import ClientLayout from "@/app/ClientLayout";
+import { SITE_METADATA } from "@/app/constants";
 
+// Configure fonts
 const geistSans = Geist({
-    variable: "--font-geist-sans",
     subsets: ["latin"],
+    variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
     subsets: ["latin"],
+    variable: "--font-geist-mono",
 });
 
-export const metadata = {
-    title: "Ashish Yadav - Portfolio",
-    description: "A portfolio showcasing my projects and skills",
-    keywords: "portfolio, developer, web design, frontend, backend, full-stack",
-};
+// Export metadata for SEO
+export const metadata = SITE_METADATA;
 
+/**
+ * Root layout component for the application
+ * Handles font configuration, theme initialization, and global providers
+ */
 export default function RootLayout({ children }) {
-    // After mounting, we have access to the window
+    const fontClasses = `${geistSans.variable} ${geistMono.variable}`;
+
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <body className={fontClasses}>
                 <StyledComponentsRegistry>
                     <ClientLayout>{children}</ClientLayout>
                 </StyledComponentsRegistry>

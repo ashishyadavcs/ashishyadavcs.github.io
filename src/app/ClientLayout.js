@@ -5,12 +5,24 @@ import GlobalStyles from "@/app/styles/GlobalStyles";
 import { ThemeProvider } from "@/app/hooks/useTheme";
 import Header from "@/app/components/layout/Header";
 import Footer from "@/app/components/layout/Footer";
+import { LAYOUT } from "@/app/constants";
 
+/**
+ * Main layout styles using constants
+ */
+const mainStyles = {
+    minHeight: LAYOUT.MIN_HEIGHT,
+    paddingTop: LAYOUT.HEADER_HEIGHT,
+};
+
+/**
+ * Client-side layout component that provides theme context and global styling
+ * Handles hydration mismatch by showing content only after mounting
+ */
 export default function ClientLayout({ children }) {
-    // Client-side state
     const [mounted, setMounted] = useState(false);
 
-    // After mounting, we have access to the window
+    // Ensure client-side hydration is complete before rendering children
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -19,7 +31,7 @@ export default function ClientLayout({ children }) {
         <ThemeProvider>
             <GlobalStyles />
             <Header />
-            <main style={{ minHeight: "100vh", paddingTop: "80px" }}>{mounted && children}</main>
+            <main style={mainStyles}>{mounted ? children : null}</main>
             <Footer />
         </ThemeProvider>
     );

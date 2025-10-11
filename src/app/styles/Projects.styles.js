@@ -24,10 +24,24 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroTitle = styled(motion.h1)`
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1024px) {
+        font-size: 3.5rem;
+    }
 
     @media (max-width: 768px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
         font-size: 2.5rem;
     }
 `;

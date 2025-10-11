@@ -27,10 +27,24 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroTitle = styled(motion.h1)`
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1024px) {
+        font-size: 3.5rem;
+    }
 
     ${media.sm} {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
         font-size: 2.5rem;
     }
 `;
@@ -190,7 +204,15 @@ export const SkillIcon = styled.div`
 `;
 
 export const SkillTitle = styled.h3`
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 1rem;
+    color: var(--text);
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 `;
 
 export const SkillList = styled.ul`
@@ -270,7 +292,15 @@ export const TimelineDate = styled.div`
 `;
 
 export const TimelineTitle = styled.h3`
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
     margin-bottom: 0.5rem;
+    color: var(--text);
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 `;
 
 export const TimelineCompany = styled.div`
