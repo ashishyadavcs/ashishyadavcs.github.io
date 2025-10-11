@@ -1,0 +1,33 @@
+import styled from "styled-components";
+import { motion } from "framer-motion";
+
+export const StyledButton = styled(motion.button)`
+    background-color: ${props => (props.$secondary ? "transparent" : "var(--primary)")};
+    color: ${props => (props.$secondary ? "var(--primary)" : "white")};
+    border: 2px solid var(--primary);
+    padding: ${props => (props.$small ? "0.5rem 1rem" : "0.75rem 1.5rem")};
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: ${props => (props.$small ? "0.9rem" : "1rem")};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background-color: ${props => (props.$secondary ? "var(--primary)" : "var(--button-hover)")};
+        color: white;
+        border-color: ${props => (props.$secondary ? "var(--primary)" : "var(--button-hover)")};
+        transform: translateY(-2px);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+`;

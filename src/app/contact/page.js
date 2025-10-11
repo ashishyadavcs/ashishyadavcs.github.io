@@ -2,191 +2,34 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
 import Button from "@/app/components/common/Button";
 import { fadeIn } from "@/app/utils/motion";
 import { contacts } from "public/data/aboutme";
-
-const ContactContainer = styled.div`
-    padding-top: 2rem;
-`;
-
-const HeroSection = styled.section`
-    position: relative;
-    padding: 6rem 2rem;
-    background: linear-gradient(180deg, var(--background) 0%, var(--accent) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    @media (max-width: 768px) {
-        padding: 4rem 1rem;
-    }
-`;
-
-const HeroContent = styled.div`
-    max-width: 800px;
-`;
-
-const HeroTitle = styled(motion.h1)`
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-
-    @media (max-width: 768px) {
-        font-size: 2.5rem;
-    }
-`;
-
-const Breadcrumb = styled.div`
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-
-    a {
-        color: var(--secondary);
-
-        &:hover {
-            color: var(--primary);
-        }
-    }
-
-    span {
-        color: var(--primary);
-    }
-`;
-
-const ContactSection = styled.section`
-    padding: 5rem 2rem;
-
-    @media (max-width: 768px) {
-        padding: 3rem 1rem;
-    }
-`;
-
-const Container = styled.div`
-    max-width: 1200px;
-    margin: 0 auto;
-`;
-
-const ContactGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-
-    @media (max-width: 992px) {
-        grid-template-columns: 1fr;
-    }
-`;
-
-const ContactInfo = styled(motion.div)``;
-
-const ContactItem = styled.div`
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-`;
-
-const IconContainer = styled.div`
-    background-color: var(--accent);
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: var(--primary);
-    flex-shrink: 0;
-`;
-
-const ContactDetails = styled.div``;
-
-const ContactTitle = styled.h3`
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-`;
-
-const ContactText = styled.p`
-    color: var(--secondary);
-    line-height: 1.6;
-`;
-
-const ContactForm = styled(motion.form)`
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px var(--shadow);
-    padding: 2.5rem;
-
-    @media (max-width: 768px) {
-        padding: 1.5rem;
-    }
-`;
-
-const FormTitle = styled.h2`
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-`;
-
-const FormRow = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-    }
-`;
-
-const FormGroup = styled.div`
-    margin-bottom: 1.5rem;
-`;
-
-const Label = styled.label`
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--text);
-`;
-
-const Input = styled.input`
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--card-border);
-    background-color: var(--background);
-    color: var(--text);
-    font-family: inherit;
-    transition: all 0.3s ease;
-
-    &:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
-    }
-`;
-
-const TextArea = styled.textarea`
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--card-border);
-    background-color: var(--background);
-    color: var(--text);
-    font-family: inherit;
-    resize: vertical;
-    min-height: 150px;
-    transition: all 0.3s ease;
-
-    &:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
-    }
-`;
+import {
+    ContactContainer,
+    HeroSection,
+    HeroContent,
+    HeroTitle,
+    Breadcrumb,
+    ContactSection,
+    Container,
+    ContactGrid,
+    ContactInfo,
+    ContactItem,
+    IconContainer,
+    ContactDetails,
+    ContactTitle,
+    ContactText,
+    ContactForm,
+    FormTitle,
+    FormRow,
+    FormGroup,
+    Label,
+    Input,
+    TextArea,
+} from "@/app/styles/Contact.styles";
 
 export default function Contact() {
     const [formState, setFormState] = useState({
