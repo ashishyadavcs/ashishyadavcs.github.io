@@ -2,18 +2,31 @@
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { media } from "@/app/config/media";
 
 const SectionContainer = styled(motion.section)`
     padding: 5rem 2rem;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         padding: 4rem 1rem;
+    }
+
+    ${media.xs} {
+        padding: 3rem 0.75rem;
+    }
+
+    @media (max-width: 320px) {
+        padding: 2rem 0.5rem;
     }
 `;
 
 const SectionInner = styled.div`
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 `;
 
 const SectionHeader = styled.div`
@@ -26,8 +39,12 @@ const SectionTitle = styled.h2`
     margin-bottom: 1rem;
     color: var(--text);
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         font-size: 2rem;
+    }
+
+    ${media.xs} {
+        font-size: 1.75rem;
     }
 `;
 

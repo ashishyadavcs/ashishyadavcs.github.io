@@ -188,20 +188,6 @@ const TextArea = styled.textarea`
     }
 `;
 
-const MapContainer = styled(motion.div)`
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px var(--shadow);
-    margin-top: 4rem;
-    background-color: var(--card-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-`;
-
 export default function Contact() {
     const [formState, setFormState] = useState({
         name: "",
@@ -390,16 +376,6 @@ export default function Contact() {
                             )}
                         </ContactForm>
                     </ContactGrid>
-
-                    <MapContainer
-                        variants={fadeIn("up", 0.5)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.1 }}
-                    >
-                        {/* In a real project, you would embed a map here */}
-                        <p>Map would be embedded here in a real project.</p>
-                    </MapContainer>
                 </Container>
             </ContactSection>
         </ContactContainer>

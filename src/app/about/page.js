@@ -4,14 +4,26 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import MyImage from "../components/MyImage";
-import { FiBriefcase, FiCode, FiDatabase, FiGlobe, FiServer, FiSmartphone } from "react-icons/fi";
+import {
+    FiBriefcase,
+    FiCode,
+    FiDatabase,
+    FiGlobe,
+    FiServer,
+    FiSmartphone,
+    FiCpu,
+} from "react-icons/fi";
 import Section from "@/app/components/common/Section";
 import { fadeIn } from "@/app/utils/motion";
 import Button from "@/app/components/common/Button";
 import { contacts, data } from "public/data/aboutme";
+import { media } from "@/app/config/media";
 
 const AboutContainer = styled.div`
     padding-top: 2rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    width: 100%;
+    min-width: 0;
 `;
 
 const HeroSection = styled.section`
@@ -23,7 +35,7 @@ const HeroSection = styled.section`
     justify-content: center;
     text-align: center;
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         padding: 4rem 1rem;
     }
 `;
@@ -36,7 +48,7 @@ const HeroTitle = styled(motion.h1)`
     font-size: 3rem;
     margin-bottom: 1.5rem;
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         font-size: 2.5rem;
     }
 `;
@@ -63,9 +75,17 @@ const BioSection = styled.div`
     grid-template-columns: 2fr 3fr;
     gap: 3rem;
     align-items: center;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
 
-    @media (max-width: 992px) {
+    ${media.sm} {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        gap: 1rem;
     }
 `;
 
@@ -76,28 +96,81 @@ const BioImage = styled(motion.div)`
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow);
 
-    @media (max-width: 768px) {
-        height: 350px;
+    ${media.sm} {
+        height: 400px;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    ${media.xs} {
+        height: 300px;
+        max-width: 300px;
     }
 `;
 
-const BioContent = styled(motion.div)``;
+const BioContent = styled(motion.div)`
+    min-width: 0; /* Prevents flex items from overflowing */
+    overflow-wrap: break-word;
+
+    h2 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+`;
 
 const BioDetails = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 1.5rem;
+    width: 100%;
+    overflow-x: hidden;
+
+    ${media.sm} {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
 
     div {
+        min-width: 0;
+        width: 100%;
+        overflow-x: hidden;
+
         p:first-child {
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text);
+            font-size: 0.9rem;
+
+            @media (max-width: 480px) {
+                font-size: 0.85rem;
+            }
         }
 
         p:last-child {
             color: var(--secondary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            hyphens: auto;
+            font-size: 0.9rem;
+            line-height: 1.4;
+
+            @media (max-width: 480px) {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
         }
     }
 `;
@@ -107,11 +180,11 @@ const SkillsContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @media (max-width: 992px) {
+    ${media.sm} {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 768px) {
+    ${media.xs} {
         grid-template-columns: 1fr;
     }
 `;
@@ -174,7 +247,7 @@ const TimelineContainer = styled.div`
         width: 2px;
         background-color: var(--card-border);
 
-        @media (max-width: 768px) {
+        ${media.sm} {
             left: 8px;
         }
     }
@@ -189,7 +262,7 @@ const TimelineItem = styled(motion.div)`
         padding-bottom: 0;
     }
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         padding-left: 2rem;
     }
 `;
@@ -203,7 +276,7 @@ const TimelineDot = styled.div`
     border-radius: 50%;
     background-color: var(--primary);
 
-    @media (max-width: 768px) {
+    ${media.sm} {
         left: 2px;
     }
 `;
@@ -236,7 +309,7 @@ export default function About() {
         {
             title: "Frontend Development",
             icon: <FiCode />,
-            items: ["React", "Next.js", "TypeScript", "HTML/CSS", "Redux", "Styled Components"],
+            items: ["React", "Next.js", "TypeScript", "HTML/CSS/JS", "Redux", "Styled Components"],
         },
         {
             title: "Backend Development",
@@ -256,7 +329,18 @@ export default function About() {
         {
             title: "DevOps & Tools",
             icon: <FiBriefcase />,
-            items: ["Git", "Docker", "CI/CD", "AWS", "Vercel", "Testing"],
+            items: [
+                "Git",
+                //  "Docker","AWS",
+                "CI/CD",
+                "Vercel",
+                "Testing",
+            ],
+        },
+        {
+            title: "AI Tools",
+            icon: <FiCpu />,
+            items: ["Github Copilot", "OpenAI APIs"],
         },
         {
             title: "Other Skills",
@@ -318,7 +402,10 @@ export default function About() {
                             src={data.image}
                             alt="Professional headshot"
                             fill
-                            style={{ objectFit: "cover" }}
+                            style={{
+                                objectFit: "cover",
+                                objectPosition: "center top",
+                            }}
                             priority
                         />
                     </BioImage>
@@ -331,7 +418,8 @@ export default function About() {
                     >
                         <h2>I&apos;m Your Name, a Full-Stack Developer</h2>
                         <p style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}>
-                            I&apos;m a passionate full-stack developer with over 5 years of
+                            I&apos;m a passionate full-stack developer with over{" "}
+                            <strong style={{ color: "var(--primary)" }}>5 years</strong> of
                             experience in building web applications. I specialize in creating
                             responsive, user-friendly websites and applications using modern
                             technologies.

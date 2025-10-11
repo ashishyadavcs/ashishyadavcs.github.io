@@ -3,50 +3,58 @@ import { data } from "public/data/aboutme";
 export const projects = [
     {
         id: 1,
-        title: "Ebook Store",
+        title: "📚 Ebook Store Frontend",
         description:
-            "A full-stack e-commerce platform with product listings, shopping cart, user authentication, and payment processing.",
+            "A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.",
         image: "/projects/project1.jpg",
-        tags: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe", "Razorpay"],
+        tags: ["Next.js", "React", "Redux Toolkit", "Styled Components", "React Icons", "Vercel"],
         demoUrl: "https://ebook-store-navy.vercel.app",
-        codeUrl: `${data.contacts.github}/Ebook-Store`,
+        codeUrl: "https://github.com/ashishyadavcs/ebook-store-frontend",
         slug: "ebook-store",
         content: `
-      <h1>Ebook Store</h1>
+      <h1>📚 Ebook Store Frontend</h1>
 
-      <p>A comprehensive e-commerce solution built with modern technologies.</p>
+      <p>A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.</p>
       
-      <h2>Features</h2>
+      <p><strong>🔗 Live Demo:</strong> <a href="https://ebook-store-navy.vercel.app" target="_blank">ebook-store-navy.vercel.app</a></p>
+      
+      <h2>🚀 Features</h2>
       
       <ul>
-        <li>User authentication and profiles</li>
-        <li>Product catalog with search and filtering</li>
-        <li>Shopping cart and wishlist functionality</li>
-        <li>Secure checkout with Stripe</li>
-        <li>Order tracking and history</li>
-        <li>Admin dashboard for product and order management</li>
+        <li>🔍 Search for books by title</li>
+        <li>📘 View detailed book pages</li>
+        <li>🎯 Responsive design for all screen sizes</li>
+        <li>⚡ Fast performance with Next.js static generation and routing</li>
+        <li>🔒 Protected routes for authenticated users</li>
+        <li>🎨 Clean, semantic HTML/CSS layout</li>
+        <li>🧠 SEO optimized for search engine visibility</li>
       </ul>
       
-      <h2>Technology Stack</h2>
+      <h2>🛠️ Technology Stack</h2>
       
       <ul>
-        <li><strong>Frontend</strong>: React, Redux, Styled Components</li>
-        <li><strong>Backend</strong>: Node.js, Express</li>
-        <li><strong>Database</strong>: MongoDB</li>
-        <li><strong>Authentication</strong>: JWT</li>
-      - **Payments**: Stripe API
-      - **Deployment**: AWS
+        <li><strong>Framework:</strong> Next.js</li>
+        <li><strong>Library:</strong> React</li>
+        <li><strong>Routing & SSR:</strong> Next.js App Router</li>
+        <li><strong>State Management:</strong> Redux Toolkit</li>
+        <li><strong>Styling:</strong> Vanilla CSS, Styled Components</li>
+        <li><strong>Icons:</strong> React Icons</li>
+        <li><strong>Deployment:</strong> Vercel</li>
+      </ul>
+      
+      <h2>📂 Project Structure</h2>
+      
+      <p>The project follows a clean and organized structure with reusable components, utility functions, and proper separation of concerns for maintainable code.</p>
     `,
     },
     {
         id: 2,
-        title: "Task Management App",
+        title: "Wedding Photography website",
         description:
             "A collaborative task management application with real-time updates, task assignments, and progress tracking.",
-        image: "/projects/project2.jpg",
-        tags: ["Vue.js", "Firebase", "Tailwind CSS"],
-        demoUrl: "https://example.com/project2",
-        codeUrl: "https://github.com/username/project2",
+        image: "/projects/birdlens.png",
+        tags: ["Next.js", "Prismic", "CMS", "React"],
+        demoUrl: "https://www.birdlenscreation.com/",
         slug: "task-management-app",
         content: `
       <h1>Task Management App</h1>
@@ -77,52 +85,14 @@ export const projects = [
     `,
     },
     {
-        id: 3,
-        title: "Fitness Tracking Platform",
-        description:
-            "A fitness tracking platform allowing users to monitor workouts, set goals, and track progress over time.",
-        image: "/projects/project3.jpg",
-        tags: ["React Native", "GraphQL", "AWS", "TypeScript"],
-        demoUrl: "https://example.com/project3",
-        codeUrl: "https://github.com/username/project3",
-        slug: "fitness-tracking-platform",
-        content: `
-      <h1>Fitness Tracking Platform</h1>
-
-      <p>A comprehensive fitness tracking solution for health enthusiasts.</p>
-      
-      <h2>Features</h2>
-      
-      <ul>
-        <li>Workout planning and tracking</li>
-        <li>Goal setting and progress visualization</li>
-        <li>Nutrition tracking and meal plans</li>
-        <li>Integration with fitness wearables</li>
-        <li>Social sharing and community features</li>
-        <li>Personalized recommendations</li>
-      </ul>
-      
-      <h2>Technology Stack</h2>
-      
-      <ul>
-        <li><strong>Mobile App</strong>: React Native, TypeScript</li>
-        <li><strong>Backend</strong>: Node.js, GraphQL</li>
-        <li><strong>Database</strong>: PostgreSQL</li>
-        <li><strong>Cloud Services</strong>: AWS</li>
-        <li><strong>Authentication</strong>: Auth0</li>
-        <li><strong>Analytics</strong>: Custom dashboards with D3.js</li>
-      </ul>
-    `,
-    },
-    {
         id: 4,
         title: "Portfolio Website",
         description:
             "A responsive portfolio website showcasing projects and skills with modern design and animations.",
-        image: "/projects/project4.jpg",
-        tags: ["Next.js", "Styled Components", "Framer Motion"],
-        demoUrl: "https://example.com/project4",
-        codeUrl: "https://github.com/username/project4",
+        image: "/projects/portfolio.png",
+        tags: ["Next.js", "Styled Components", "Framer Motion", "React"],
+        demoUrl: "https://ashishyadavcs.vercel.app",
+        codeUrl: "https://github.com/ashishyadavcs/ebook-store-frontend",
         slug: "portfolio-website",
         content: `
       <h1>Portfolio Website</h1>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styled from "styled-components";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
@@ -153,7 +154,7 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const { theme, toggleTheme } = useTheme();
-    const [activePath, setActivePath] = useState("/");
+    const pathname = usePathname();
 
     useEffect(() => {
         setMounted(true);
@@ -164,21 +165,10 @@ const Header = () => {
             setIsScrolled(window.scrollY > 50);
         };
 
-        const handlePathChange = () => {
-            setActivePath(window.location.pathname);
-        };
-
         window.addEventListener("scroll", handleScroll);
-
-        // Set initial path
-        setActivePath(window.location.pathname);
-
-        // Listen for path changes
-        window.addEventListener("popstate", handlePathChange);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("popstate", handlePathChange);
         };
     }, []);
 
@@ -234,7 +224,7 @@ const Header = () => {
                 <NavLinks>
                     {links.map(link => (
                         <Link key={link.href} href={link.href}>
-                            <NavLink className={activePath === link.href ? "active" : ""}>
+                            <NavLink className={pathname === link.href ? "active" : ""}>
                                 {link.label}
                             </NavLink>
                         </Link>

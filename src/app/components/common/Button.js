@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const StyledButton = styled(motion.button)`
     background-color: ${props => (props.$secondary ? "transparent" : "var(--primary)")};
@@ -33,6 +34,31 @@ const StyledButton = styled(motion.button)`
     }
 `;
 
+const StyledLink = styled(Link)`
+    background-color: ${props => (props.$secondary ? "transparent" : "var(--primary)")};
+    color: ${props => (props.$secondary ? "var(--primary)" : "white")};
+    border: 2px solid var(--primary);
+    padding: ${props => (props.$small ? "0.5rem 1rem" : "0.75rem 1.5rem")};
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: ${props => (props.$small ? "0.9rem" : "1rem")};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background-color: ${props => (props.$secondary ? "var(--primary)" : "var(--button-hover)")};
+        color: white;
+        border-color: ${props => (props.$secondary ? "var(--primary)" : "var(--button-hover)")};
+        transform: translateY(-2px);
+    }
+`;
+
 const Button = ({
     children,
     secondary = false,
@@ -40,14 +66,20 @@ const Button = ({
     onClick,
     type = "button",
     disabled = false,
+    href,
     ...props
 }) => {
+    // Use the same StyledButton but change the underlying component
+    const Component = href ? Link : "button";
+
     return (
         <StyledButton
+            as={Component}
+            href={href}
             $secondary={secondary}
             $small={small}
             onClick={onClick}
-            type={type}
+            type={href ? undefined : type}
             disabled={disabled}
             whileHover={{ scale: disabled ? 1 : 1.02 }}
             whileTap={{ scale: disabled ? 1 : 0.98 }}

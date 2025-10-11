@@ -253,7 +253,7 @@ export default function Home() {
                         </HeroDescription>
 
                         <ButtonGroup variants={fadeIn("up", 0.6)}>
-                            <Button>
+                            <Button href="/projects">
                                 View My Work <FiArrowRight style={{ marginLeft: "0.5rem" }} />
                             </Button>
                             <Button secondary>
@@ -340,7 +340,7 @@ export default function Home() {
                                 transition={{ delay: 0.2 }}
                                 viewport={{ once: true }}
                             >
-                                <h3>3+</h3>
+                                <h3>4.6+</h3>
                                 <p>Years Experience</p>
                             </StatItem>
                             <StatItem
