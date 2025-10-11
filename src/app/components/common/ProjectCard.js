@@ -14,9 +14,10 @@ import {
     CardLinks,
     CardLink,
 } from "@/app/styles/components/ProjectCard.styles";
+import Link from "next/link";
 
 const ProjectCard = ({ project }) => {
-    const { title, description, image, tags, demoUrl, codeUrl } = project;
+    const { title, description, image, tags, demoUrl, codeUrl, slug } = project;
 
     return (
         <CardContainer
@@ -25,18 +26,21 @@ const ProjectCard = ({ project }) => {
                 boxShadow: "0 10px 20px var(--shadow)",
             }}
         >
-            <ImageContainer>
-                <MyImage
-                    src={image}
-                    alt={title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    priority
-                />
-            </ImageContainer>
-
+            <Link href={`/projects/${slug}`} passHref style={{ textDecoration: "none" }}>
+                <ImageContainer>
+                    <MyImage
+                        src={image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        priority
+                    />
+                </ImageContainer>
+            </Link>
             <CardContent>
-                <CardTitle>{title}</CardTitle>
+                <Link href={`/projects/${slug}`} passHref style={{ textDecoration: "none" }}>
+                    <CardTitle>{title}</CardTitle>
+                </Link>
 
                 <CardDescription>{description}</CardDescription>
 

@@ -51,16 +51,16 @@ export const projects = [
         id: 2,
         title: "Wedding Photography website",
         description:
-            "A collaborative task management application with real-time updates, task assignments, and progress tracking.",
+            "a beautifully designed wedding photography website that showcases elegant portfolios, client galleries, and photography packages. It emphasizes a luxurious and emotional user experience — helping couples explore, book, and connect with professional photographers seamlessly",
         image: "/projects/birdlens.png",
         tags: ["Next.js", "Prismic", "CMS", "React"],
         demoUrl: "https://www.birdlenscreation.com/",
-        slug: "task-management-app",
+        slug: "wedding-photography-website",
         content: `
-      <h1>Task Management App</h1>
+      <h1>Wedding Photography Website</h1>
 
-      <p>A modern task management solution for teams and individuals.</p>
-      
+      <p>A beautifully designed wedding photography website that showcases elegant portfolios, client galleries, and photography packages. It emphasizes a luxurious and emotional user experience — helping couples explore, book, and connect with professional photographers seamlessly.</p>
+
       <h2>Features</h2>
       
       <ul>
@@ -75,12 +75,9 @@ export const projects = [
       <h2>Technology Stack</h2>
       
       <ul>
-        <li><strong>Frontend</strong>: Vue.js, Vuex</li>
-        <li><strong>Backend</strong>: Firebase</li>
-        <li><strong>Styling</strong>: Tailwind CSS</li>
-        <li><strong>Real-time Database</strong>: Firestore</li>
-        <li><strong>Authentication</strong>: Firebase Auth</li>
-        <li><strong>Storage</strong>: Firebase Storage</li>
+        <li><strong>Frontend</strong>: Next.js, React</li>
+
+        <li><strong>Deployment</strong>: Vercel</li>
       </ul>
     `,
     },

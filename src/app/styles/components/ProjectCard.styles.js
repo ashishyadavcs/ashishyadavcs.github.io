@@ -19,6 +19,9 @@ export const ImageContainer = styled.div`
     width: 100%;
     height: 200px;
     overflow: hidden;
+    img {
+        object-fit: cover;
+    }
 `;
 
 export const CardImage = styled.div`
