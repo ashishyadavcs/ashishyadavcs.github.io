@@ -40,6 +40,10 @@ export default function RootLayout({ children }) {
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="canonical" href={SITE_METADATA.siteUrl} />
+                <meta
+                    name="google-site-verification"
+                    content="6g2dD6ZYcYfD3YBYpGU0O2cSRZlSrufZqXcL7D_shzk"
+                />
             </head>
             <body className={fontClasses}>
                 <StyledComponentsRegistry>
