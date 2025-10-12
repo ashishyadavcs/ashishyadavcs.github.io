@@ -27,6 +27,20 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#3b82f6" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+                <meta name="apple-mobile-web-app-title" content="Ashish Yadav Portfolio" />
+                <meta name="application-name" content="Ashish Yadav Portfolio" />
+                <meta name="msapplication-TileColor" content="#3b82f6" />
+                <meta name="format-detection" content="telephone=no" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                <link rel="manifest" href="/manifest.json" />
+                <link rel="canonical" href={SITE_METADATA.siteUrl} />
+            </head>
             <body className={fontClasses}>
                 <StyledComponentsRegistry>
                     <ClientLayout>{children}</ClientLayout>

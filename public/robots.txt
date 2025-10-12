@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ashishyadavcs.github.io/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow access to CSS and JS files
+Allow: /_next/static/
+Allow: /images/
+Allow: /icons/
+
+# Disallow admin or private paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
