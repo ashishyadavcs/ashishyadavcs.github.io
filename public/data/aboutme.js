@@ -1,4 +1,4 @@
-export const contacts = {
+const contacts = {
     name: "Ashish Yadav",
     email: "ashishyadav.works@gmail.com",
     phone: "+917068513356",
@@ -10,25 +10,7 @@ export const contacts = {
     },
 };
 
-export const footerLinks = [
-    {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "About",
-        href: "/about",
-    },
-    {
-        label: "Projects",
-        href: "/projects",
-    },
-    {
-        label: "Contact",
-        href: "/contact",
-    },
-];
-export const education = [
+const education = [
     {
         date: "2016 - 2020",
         degree: "Bachelor of Technology",
@@ -38,9 +20,10 @@ export const education = [
     },
 ];
 
-export const data = {
+const personal = {
     contacts,
     image: "/images/me/ashish.png",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
 };
+export default personal;

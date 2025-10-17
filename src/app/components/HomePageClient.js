@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
-import { projects } from "@/app/utils/data";
-import { contacts, data } from "public/data/aboutme";
+import { projects, personal } from "@/app/utils/data";
 import MyImage from "./MyImage";
 import StructuredData from "./StructuredData";
 import Section from "@/app/components/common/Section";
@@ -108,7 +107,9 @@ export default function HomePageClient() {
                     <HeroContent>
                         <HeroTitle variants={fadeIn("up", 0.3)}>
                             Hi, I&apos;m{" "}
-                            <span style={{ color: "var(--primary)" }}>{contacts.name}</span>
+                            <span style={{ color: "var(--primary)" }}>
+                                {personal.contacts.name}
+                            </span>
                         </HeroTitle>
                         <HeroSubtitle variants={fadeIn("up", 0.4)}>
                             Full-Stack Developer
@@ -123,14 +124,14 @@ export default function HomePageClient() {
                             <Button href="/projects">
                                 View My Work <FiArrowRight style={{ marginLeft: "0.5rem" }} />
                             </Button>
-                            <Button secondary href={data.resume}>
+                            <Button secondary href={personal.resume}>
                                 Download CV <FiDownload style={{ marginLeft: "0.5rem" }} />
                             </Button>
                         </ButtonGroup>
 
                         <SocialLinks variants={fadeIn("up", 0.7)}>
                             <SocialLink
-                                href={contacts.socialMedia.github}
+                                href={personal.contacts.socialMedia.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub"
@@ -140,7 +141,7 @@ export default function HomePageClient() {
                                 <FiGithub />
                             </SocialLink>
                             <SocialLink
-                                href={contacts.socialMedia.linkedin}
+                                href={personal.contacts.socialMedia.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn"
@@ -168,7 +169,7 @@ export default function HomePageClient() {
                     >
                         <AboutImage>
                             <MyImage
-                                src={data.image}
+                                src={personal.image}
                                 alt="Profile picture"
                                 fill
                                 style={{ objectFit: "cover" }}
@@ -293,11 +294,11 @@ export default function HomePageClient() {
                                 of your vision.
                             </p>
                             <p style={{ marginTop: "1.5rem" }}>
-                                <strong>Email:</strong> {contacts.email}
+                                <strong>Email:</strong> {personal.contacts.email}
                                 <br />
-                                <strong>Phone:</strong> {contacts.phone}
+                                <strong>Phone:</strong> {personal.contacts.phone}
                                 <br />
-                                <strong>Based in:</strong> {contacts.address}
+                                <strong>Based in:</strong> {personal.contacts.address}
                             </p>
                         </motion.div>
                     </ContactInfo>

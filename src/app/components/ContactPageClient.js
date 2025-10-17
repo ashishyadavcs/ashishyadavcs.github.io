@@ -7,7 +7,7 @@ import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
 import Button from "@/app/components/common/Button";
 import StructuredData from "./StructuredData";
 import { fadeIn } from "@/app/utils/motion";
-import { contacts } from "public/data/aboutme";
+import { personal } from "@/app/utils/data";
 import { SITE_METADATA } from "@/app/constants";
 import {
     generateBreadcrumbStructuredData,
@@ -153,8 +153,7 @@ export default function ContactPageClient() {
                                 </IconContainer>
                                 <ContactDetails>
                                     <ContactTitle>Email</ContactTitle>
-                                    <ContactText>{contacts.email}</ContactText>
-                                    <ContactText>{contacts.supportEmail}</ContactText>
+                                    <ContactText>{personal.contacts.email}</ContactText>
                                 </ContactDetails>
                             </ContactItem>
 
@@ -164,8 +163,7 @@ export default function ContactPageClient() {
                                 </IconContainer>
                                 <ContactDetails>
                                     <ContactTitle>Phone</ContactTitle>
-                                    <ContactText>{contacts.phone}</ContactText>
-                                    <ContactText>{contacts.secondaryPhone}</ContactText>
+                                    <ContactText>{personal.contacts.phone}</ContactText>
                                 </ContactDetails>
                             </ContactItem>
 
@@ -175,7 +173,7 @@ export default function ContactPageClient() {
                                 </IconContainer>
                                 <ContactDetails>
                                     <ContactTitle>Location</ContactTitle>
-                                    <ContactText>{contacts.address}</ContactText>
+                                    <ContactText>{personal.contacts.address}</ContactText>
                                 </ContactDetails>
                             </ContactItem>
                         </ContactInfo>

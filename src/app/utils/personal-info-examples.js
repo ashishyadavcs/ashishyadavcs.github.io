@@ -3,7 +3,8 @@
  * This file demonstrates how to use the centralized personal information
  */
 
-import { PERSONAL_INFO, SITE_METADATA } from "@/app/constants";
+import { SITE_METADATA } from "@/app/constants";
+import config from "../../../public/data/index.js";
 
 import {
     getContactInfo,
@@ -15,9 +16,9 @@ import {
 } from "@/app/utils/personal-info";
 
 // Example 1: Basic usage of constants
-console.log("Name:", PERSONAL_INFO.NAME);
-console.log("Email:", PERSONAL_INFO.EMAIL);
-console.log("LinkedIn:", PERSONAL_INFO.SOCIAL_MEDIA.LINKEDIN);
+console.log("Name:", config.personal.contacts.name);
+console.log("Email:", config.personal.contacts.email);
+console.log("LinkedIn:", config.personal.contacts.socialMedia.linkedin);
 
 // Example 2: Using utility functions
 const contactInfo = getContactInfo();
@@ -68,12 +69,13 @@ export const ContactCard = () => {
 // Example 4: SEO usage
 export const generatePersonSEO = () => {
     return {
-        title: `${PERSONAL_INFO.NAME} - ${PERSONAL_INFO.TITLE}`,
-        description: PERSONAL_INFO.BIO,
+        title: `${config.personal.contacts.name} - Software Engineer`,
+        description: "A passionate full-stack developer with expertise in modern web technologies",
         openGraph: {
-            title: `${PERSONAL_INFO.NAME} - Portfolio`,
-            description: PERSONAL_INFO.BIO,
-            images: [PERSONAL_INFO.IMAGE],
+            title: `${config.personal.contacts.name} - Portfolio`,
+            description:
+                "A passionate full-stack developer with expertise in modern web technologies",
+            images: [config.personal.image],
         },
         structuredData: getStructuredData(),
     };
@@ -81,9 +83,9 @@ export const generatePersonSEO = () => {
 
 // Example 5: Contact form default values
 export const getContactFormDefaults = () => ({
-    to: PERSONAL_INFO.EMAIL,
+    to: config.personal.contacts.email,
     subject: `Contact from ${SITE_METADATA.title}`,
-    responseTime: PERSONAL_INFO.CONTACT.RESPONSE_TIME,
+    responseTime: "Usually responds within 24 hours",
 });
 
 // Example 6: Download vCard functionality
@@ -93,7 +95,7 @@ export const downloadVCard = () => {
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `${PERSONAL_INFO.NAME.replace(" ", "_")}.vcf`;
+    link.download = `${config.personal.contacts.name.replace(" ", "_")}.vcf`;
     link.click();
     window.URL.revokeObjectURL(url);
 };

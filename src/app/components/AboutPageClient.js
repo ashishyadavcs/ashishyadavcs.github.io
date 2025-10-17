@@ -19,8 +19,9 @@ import Section from "@/app/components/common/Section";
 import { fadeIn } from "@/app/utils/motion";
 import { fadeInVariants } from "@/app/utils/animation-variants";
 import Button from "@/app/components/common/Button";
-import { contacts, data, education } from "public/data/aboutme";
-import { SITE_METADATA, NAVIGATION } from "@/app/constants";
+import { personal, experience } from "@/app/utils/data";
+import { SITE_METADATA } from "@/app/constants";
+import config from "../../../public/data/index.js";
 import {
     generatePersonStructuredData,
     generateBreadcrumbStructuredData,
@@ -180,8 +181,10 @@ export default function AboutPageClient() {
             <HeroSection>
                 <HeroContent>
                     <Breadcrumb>
-                        <Link href={NAVIGATION.LINKS[0].href}>{NAVIGATION.LINKS[0].label}</Link> /
-                        <span>{NAVIGATION.LINKS[1].label}</span>
+                        <Link href={config.navigation.footerLinks[0].href}>
+                            {config.navigation.footerLinks[0].label}
+                        </Link>{" "}
+                        /<span>{config.navigation.footerLinks[1].label}</span>
                     </Breadcrumb>
                     <HeroTitle
                         initial={{ opacity: 0, y: 20 }}
@@ -209,7 +212,7 @@ export default function AboutPageClient() {
                         viewport={{ once: true, amount: 0.25 }}
                     >
                         <MyImage
-                            src={data.image}
+                            src={personal.image}
                             alt="Professional headshot"
                             fill
                             style={{
@@ -226,7 +229,7 @@ export default function AboutPageClient() {
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}
                     >
-                        <h2>I&apos;m {contacts.name}, a Full-Stack Developer</h2>
+                        <h2>I&apos;m {personal.contacts.name}, a Full-Stack Developer</h2>
                         <p style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}>
                             I&apos;m a passionate full-stack developer with over{" "}
                             <strong style={{ color: "var(--primary)" }}>5 years</strong> of
@@ -249,19 +252,19 @@ export default function AboutPageClient() {
                         <BioDetails>
                             <div>
                                 <p>Name</p>
-                                <p>{contacts.name}</p>
+                                <p>{personal.contacts.name}</p>
                             </div>
                             <div>
                                 <p>Email</p>
-                                <p>{contacts.email}</p>
+                                <p>{personal.contacts.email}</p>
                             </div>
                             <div>
                                 <p>Phone</p>
-                                <p>{contacts.phone}</p>
+                                <p>{personal.contacts.phone}</p>
                             </div>
                             <div>
                                 <p>Location</p>
-                                <p>{contacts.address}</p>
+                                <p>{personal.contacts.address}</p>
                             </div>
                             <div>
                                 <p>Availability</p>
@@ -273,7 +276,7 @@ export default function AboutPageClient() {
                             </div>
                         </BioDetails>
 
-                        <Button href={data.resume} style={{ marginTop: "2rem" }}>
+                        <Button href={personal.resume} style={{ marginTop: "2rem" }}>
                             Download Resume
                         </Button>
                     </BioContent>
@@ -332,7 +335,7 @@ export default function AboutPageClient() {
             <Section id="education" title="Education" subtitle="My academic background">
                 <ExperienceContainer>
                     <TimelineContainer>
-                        {education.map((edu, index) => (
+                        {personal.education.map((edu, index) => (
                             <TimelineItem
                                 key={index}
                                 initial={{ opacity: 0, x: -20 }}

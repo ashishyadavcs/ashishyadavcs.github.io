@@ -268,35 +268,6 @@ export const SITE_METADATA = {
     },
 };
 
-/**
- * Personal information constants
- */
-export const PERSONAL_INFO = Object.freeze({
-    NAME: "Ashish Yadav",
-    EMAIL: "ashishyadav.works@gmail.com",
-    PHONE: "+917068513356",
-    LOCATION: "Noida, India",
-    IMAGE: "/images/me/ashish.png",
-
-    // Social media links
-    SOCIAL_MEDIA: Object.freeze({
-        LINKEDIN: "https://www.linkedin.com/in/ashishyadavcs",
-        GITHUB: "https://github.com/ashishyadavcs",
-        TWITTER: "https://twitter.com/ashishyadav",
-    }),
-
-    // Professional details
-    TITLE: "Software Engineer",
-    BIO: "A passionate full-stack developer with expertise in modern web technologies",
-
-    // Contact preferences
-    CONTACT: Object.freeze({
-        PREFERRED_METHOD: "email",
-        AVAILABILITY: "Available for freelance and full-time opportunities",
-        RESPONSE_TIME: "Usually responds within 24 hours",
-    }),
-});
-
 // Animation constants
 export const ANIMATIONS = Object.freeze({
     DURATION: Object.freeze({
@@ -316,19 +287,6 @@ export const ANIMATIONS = Object.freeze({
         DELAY: 0.1,
         CHILDREN_DELAY: 0.1,
     }),
-});
-
-/**
- * Navigation configuration
- */
-export const NAVIGATION = Object.freeze({
-    BRAND_NAME: "Ashish Yadav",
-    LINKS: Object.freeze([
-        { href: "/", label: "Home" },
-        { href: "/about", label: "About" },
-        { href: "/projects", label: "Projects" },
-        { href: "/contact", label: "Contact" },
-    ]),
 });
 
 // Layout constants

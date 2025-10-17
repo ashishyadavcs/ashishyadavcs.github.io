@@ -1,4 +1,5 @@
-import { PERSONAL_INFO, SITE_METADATA } from "@/app/constants";
+import { SITE_METADATA } from "@/app/constants";
+import config from "../../../public/data/index.js";
 
 /**
  * Generate comprehensive JSON-LD structured data for SEO
@@ -110,7 +111,7 @@ function generatePersonSchema(baseUrl) {
     return {
         "@type": "Person",
         "@id": `${baseUrl}/#person`,
-        name: PERSONAL_INFO.NAME,
+        name: config.personal.contacts.name,
         givenName: "Ashish",
         familyName: "Yadav",
         jobTitle: "Full Stack Developer",
@@ -119,15 +120,15 @@ function generatePersonSchema(baseUrl) {
         url: baseUrl,
         image: {
             "@type": "ImageObject",
-            url: `${baseUrl}${PERSONAL_INFO.IMAGE}`,
+            url: `${baseUrl}${config.personal.image}`,
             width: 400,
             height: 400,
             caption: "Ashish Yadav - Full Stack Developer",
         },
         sameAs: [
-            PERSONAL_INFO.SOCIAL_MEDIA.GITHUB,
-            PERSONAL_INFO.SOCIAL_MEDIA.LINKEDIN,
-            PERSONAL_INFO.SOCIAL_MEDIA.TWITTER,
+            config.personal.contacts.socialMedia.github,
+            config.personal.contacts.socialMedia.linkedin,
+            config.personal.contacts.socialMedia.twitter,
         ],
         address: {
             "@type": "PostalAddress",
@@ -135,8 +136,8 @@ function generatePersonSchema(baseUrl) {
             addressRegion: "Uttar Pradesh",
             addressCountry: "IN",
         },
-        email: PERSONAL_INFO.EMAIL,
-        telephone: PERSONAL_INFO.PHONE,
+        email: config.personal.contacts.email,
+        telephone: config.personal.contacts.phone,
         worksFor: {
             "@id": `${baseUrl}/#organization`,
         },
@@ -181,9 +182,9 @@ function generateOrganizationSchema(baseUrl) {
         },
         contactPoint: {
             "@type": "ContactPoint",
-            telephone: PERSONAL_INFO.PHONE,
+            telephone: config.personal.contacts.phone,
             contactType: "Customer Service",
-            email: PERSONAL_INFO.EMAIL,
+            email: config.personal.contacts.email,
         },
     };
 }

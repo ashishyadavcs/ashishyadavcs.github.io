@@ -3,20 +3,20 @@
  * Provides easy access to personal details and contact information
  */
 
-import { PERSONAL_INFO } from "@/app/constants";
+import config from "../../../public/data/index.js";
 
 /**
  * Get full contact information
  * @returns {Object} Complete contact details
  */
 export const getContactInfo = () => ({
-    name: PERSONAL_INFO.NAME,
-    email: PERSONAL_INFO.EMAIL,
-    phone: PERSONAL_INFO.PHONE,
-    location: PERSONAL_INFO.LOCATION,
-    image: PERSONAL_INFO.IMAGE,
-    title: PERSONAL_INFO.TITLE,
-    bio: PERSONAL_INFO.BIO,
+    name: config.personal.contacts.name,
+    email: config.personal.contacts.email,
+    phone: config.personal.contacts.phone,
+    location: config.personal.contacts.address,
+    image: config.personal.image,
+    title: "Software Engineer",
+    bio: "A passionate full-stack developer with expertise in modern web technologies",
 });
 
 /**
@@ -24,24 +24,28 @@ export const getContactInfo = () => ({
  * @returns {Object} Social media URLs
  */
 export const getSocialLinks = () => ({
-    linkedin: PERSONAL_INFO.SOCIAL_MEDIA.LINKEDIN,
-    github: PERSONAL_INFO.SOCIAL_MEDIA.GITHUB,
-    twitter: PERSONAL_INFO.SOCIAL_MEDIA.TWITTER,
-    email: `mailto:${PERSONAL_INFO.EMAIL}`,
+    linkedin: config.personal.contacts.socialMedia.linkedin,
+    github: config.personal.contacts.socialMedia.github,
+    twitter: config.personal.contacts.socialMedia.twitter,
+    email: `mailto:${config.personal.contacts.email}`,
 });
 
 /**
  * Get contact preferences
  * @returns {Object} Contact preferences and availability
  */
-export const getContactPreferences = () => PERSONAL_INFO.CONTACT;
+export const getContactPreferences = () => ({
+    PREFERRED_METHOD: "email",
+    AVAILABILITY: "Available for freelance and full-time opportunities",
+    RESPONSE_TIME: "Usually responds within 24 hours",
+});
 
 /**
  * Format phone number for display
  * @returns {string} Formatted phone number
  */
 export const getFormattedPhone = () => {
-    const phone = PERSONAL_INFO.PHONE;
+    const phone = config.personal.contacts.phone;
     // Format as +91 706 851 3356
     return phone.replace(/(\+91)(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4");
 };
@@ -50,14 +54,15 @@ export const getFormattedPhone = () => {
  * Get professional headline
  * @returns {string} Professional title and bio
  */
-export const getProfessionalHeadline = () => `${PERSONAL_INFO.TITLE} - ${PERSONAL_INFO.BIO}`;
+export const getProfessionalHeadline = () =>
+    `Software Engineer - A passionate full-stack developer with expertise in modern web technologies`;
 
 /**
  * Get contact CTA (Call to Action) text
  * @returns {string} Encouraging contact message
  */
 export const getContactCTA = () =>
-    `${PERSONAL_INFO.CONTACT.AVAILABILITY}. ${PERSONAL_INFO.CONTACT.RESPONSE_TIME}.`;
+    `Available for freelance and full-time opportunities. Usually responds within 24 hours.`;
 
 /**
  * Check if a social media link is available

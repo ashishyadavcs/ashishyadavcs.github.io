@@ -2,7 +2,8 @@
  * SEO utility functions for generating page-specific metadata
  */
 
-import { SITE_METADATA, PERSONAL_INFO } from "@/app/constants";
+import { SITE_METADATA } from "@/app/constants";
+import config from "../../../public/data/index.js";
 
 /**
  * Generate metadata for a specific page
@@ -28,7 +29,7 @@ export function generatePageMetadata(options = {}) {
     } = options;
 
     const pageUrl = `${SITE_METADATA.siteUrl}${path}`;
-    const pageTitle = title ? `${title} | ${PERSONAL_INFO.NAME}` : SITE_METADATA.title;
+    const pageTitle = title ? `${title} | ${config.personal.contacts.name}` : SITE_METADATA.title;
     const pageDescription = description || SITE_METADATA.description;
     const pageKeywords = keywords
         ? `${SITE_METADATA.keywords}, ${keywords}`
@@ -93,22 +94,22 @@ export function generatePersonStructuredData() {
     return {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: PERSONAL_INFO.NAME,
-        jobTitle: PERSONAL_INFO.TITLE,
-        description: PERSONAL_INFO.BIO,
-        email: PERSONAL_INFO.EMAIL,
-        telephone: PERSONAL_INFO.PHONE,
+        name: config.personal.contacts.name,
+        jobTitle: "Software Engineer",
+        description: "A passionate full-stack developer with expertise in modern web technologies",
+        email: config.personal.contacts.email,
+        telephone: config.personal.contacts.phone,
         address: {
             "@type": "PostalAddress",
-            addressLocality: PERSONAL_INFO.LOCATION.split(",")[0].trim(),
+            addressLocality: config.personal.contacts.address.split(",")[0].trim(),
             addressCountry: "India",
         },
         url: SITE_METADATA.siteUrl,
-        image: `${SITE_METADATA.siteUrl}${PERSONAL_INFO.IMAGE}`,
+        image: `${SITE_METADATA.siteUrl}${config.personal.image}`,
         sameAs: [
-            PERSONAL_INFO.SOCIAL_MEDIA.LINKEDIN,
-            PERSONAL_INFO.SOCIAL_MEDIA.GITHUB,
-            PERSONAL_INFO.SOCIAL_MEDIA.TWITTER,
+            config.personal.contacts.socialMedia.linkedin,
+            config.personal.contacts.socialMedia.github,
+            config.personal.contacts.socialMedia.twitter,
         ],
         knowsAbout: [
             "JavaScript",
@@ -145,12 +146,12 @@ export function generateWebsiteStructuredData() {
         url: SITE_METADATA.siteUrl,
         author: {
             "@type": "Person",
-            name: PERSONAL_INFO.NAME,
-            email: PERSONAL_INFO.EMAIL,
+            name: config.personal.contacts.name,
+            email: config.personal.contacts.email,
         },
         publisher: {
             "@type": "Person",
-            name: PERSONAL_INFO.NAME,
+            name: config.personal.contacts.name,
         },
         inLanguage: "en-US",
         copyrightYear: new Date().getFullYear(),
@@ -172,11 +173,11 @@ export function generateProjectStructuredData(project) {
         description: project.description,
         author: {
             "@type": "Person",
-            name: PERSONAL_INFO.NAME,
+            name: config.personal.contacts.name,
         },
         creator: {
             "@type": "Person",
-            name: PERSONAL_INFO.NAME,
+            name: config.personal.contacts.name,
         },
         dateCreated: project.date || new Date().toISOString(),
         url: `${SITE_METADATA.siteUrl}/projects/${project.slug}`,

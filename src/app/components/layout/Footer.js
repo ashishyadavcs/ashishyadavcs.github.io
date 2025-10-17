@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
-import { NAVIGATION, SITE_METADATA, PERSONAL_INFO } from "@/app/constants";
+import { SITE_METADATA } from "@/app/constants";
+import config from "../../../../public/data/index.js";
 import { hoverVariants } from "@/app/utils/animation-variants";
 import { getContactInfo, getSocialLinks } from "@/app/utils/personal-info";
 import {
@@ -88,7 +89,7 @@ const Footer = () => {
 
                 <FooterSection>
                     <FooterTitle>Quick Links</FooterTitle>
-                    {NAVIGATION.LINKS.map(link => (
+                    {config.navigation.footerLinks.map(link => (
                         <Link key={link.href} href={link.href}>
                             <FooterLink>{link.label}</FooterLink>
                         </Link>

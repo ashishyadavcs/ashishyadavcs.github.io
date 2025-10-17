@@ -6,7 +6,8 @@ import Link from "next/link";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { AnimatePresence } from "framer-motion";
 import { useTheme } from "@/app/hooks/useTheme";
-import { ANIMATIONS, NAVIGATION, THEME } from "@/app/constants";
+import { ANIMATIONS, THEME } from "@/app/constants";
+import config from "../../../../public/data/index.js";
 import { slideVariants } from "@/app/utils/animation-variants";
 import {
     StyledHeader,
@@ -123,11 +124,11 @@ const Header = () => {
         <StyledHeader style={headerStyles}>
             <NavContainer>
                 <Logo>
-                    <Link href="/">{NAVIGATION.BRAND_NAME}</Link>
+                    <Link href="/">{config.personal.contacts.name}</Link>
                 </Logo>
 
                 <NavLinks>
-                    {NAVIGATION.LINKS.map(link => (
+                    {config.navigation.footerLinks.map(link => (
                         <Link key={link.href} href={link.href}>
                             <NavLink className={pathname === link.href ? "active" : ""}>
                                 {link.label}
@@ -157,7 +158,7 @@ const Header = () => {
                             exit="closed"
                             variants={menuVariants}
                         >
-                            {NAVIGATION.LINKS.map((link, i) => (
+                            {config.navigation.footerLinks.map((link, i) => (
                                 <Link key={link.href} href={link.href}>
                                     <MobileNavLink
                                         custom={i}
