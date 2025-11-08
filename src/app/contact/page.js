@@ -1,9 +1,7 @@
-import ContactPageClient from "../components/ContactPageClient";
+import React from "react";
 
-/**
- * Contact page component (Server Component)
- * @returns {JSX.Element} Contact page component
- */
-export default function Contact() {
-    return <ContactPageClient />;
-}
+const page = () => {
+    return <div>page</div>;
+};
+
+export default page;

@@ -1,9 +1,8 @@
-import HomePageClient from "./components/HomePageClient";
+import React from "react";
+import Container from "./components/layout/Container";
 
-/**
- * Home page component (Server Component)
- * @returns {JSX.Element} Home page component
- */
-export default function Home() {
-    return <HomePageClient />;
-}
+const page = () => {
+    return <Container>page</Container>;
+};
+
+export default page;

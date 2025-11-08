@@ -1,9 +1,7 @@
-import AboutPageClient from "../components/AboutPageClient";
+import AboutStyle from "../styles/about";
 
-/**
- * About page component (Server Component)
- * @returns {JSX.Element} About page component
- */
-export default function About() {
-    return <AboutPageClient />;
-}
+const page = () => {
+    return <AboutStyle>page</AboutStyle>;
+};
+
+export default page;
