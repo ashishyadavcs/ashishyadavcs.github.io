@@ -14,3 +14,4 @@ export const media = {
     sm: `@media (max-width:${size.sm})`,
     xs: `@media (max-width:${size.xs})`,
 };
+export default media;

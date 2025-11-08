@@ -10,7 +10,7 @@ const projects = [
         codeUrl: "https://github.com/ashishyadavcs/ebook-store-frontend",
         slug: "ebook-store",
         content: `
-      <h1>📚 Ebook Store Frontend</h1>
+      <h2>📚 Ebook Store Frontend</h2>
 
       <p>A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.</p>
       
@@ -55,7 +55,7 @@ const projects = [
         demoUrl: "https://www.birdlenscreation.com/",
         slug: "wedding-photography-website",
         content: `
-      <h1>Wedding Photography Website</h1>
+      <h2>Wedding Photography Website</h2>
 
       <p>A beautifully designed wedding photography website that showcases elegant portfolios, client galleries, and photography packages. It emphasizes a luxurious and emotional user experience — helping couples explore, book, and connect with professional photographers seamlessly.</p>
 
@@ -90,7 +90,7 @@ const projects = [
         codeUrl: "https://github.com/ashishyadavcs/ebook-store-frontend",
         slug: "portfolio-website",
         content: `
-      <h1>Portfolio Website</h1>
+      <h2>Portfolio Website</h2>
 
       <p>A modern and responsive portfolio website with sleek animations.</p>
       

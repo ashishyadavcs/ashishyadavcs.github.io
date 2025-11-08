@@ -27,8 +27,16 @@ const StyledHeader = styled.header`
             justify-content: space-between;
         }
         ${media.sm} {
+            ul {
+                flex-direction: column;
+            }
             li {
                 width: 100%;
+                border-bottom: 1px solid #f1f1f1;
+                a {
+                    color: #fff;
+                    display: flex;
+                }
             }
             flex-direction: column-reverse;
             justify-content: flex-end;
@@ -73,9 +81,19 @@ const StyledHeader = styled.header`
         }
     }
     a {
-        padding: 10px;
+        padding: 15px;
+        ${media.minsm} {
+            &:hover {
+                background: #f1f1f1;
+            }
+        }
+    }
+    .logo {
+        padding: 15px 0;
+        transition: all 0.3s;
+        font-weight: 600;
         &:hover {
-            background: #f1f1f1;
+            background: transparent;
         }
     }
     &.active {
