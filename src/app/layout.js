@@ -1,22 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.js";
 import StyledComponentsRegistry from "./components/Registry";
 import Layout from "./components/layout";
-
-// Configure fonts
-const geistSans = Geist({
-    subsets: ["latin"],
-    variable: "--font-geist-sans",
-});
-
-const geistMono = Geist_Mono({
-    subsets: ["latin"],
-    variable: "--font-geist-mono",
-});
+import GlobalCSS from "./styles/globals.js";
 
 export default function RootLayout({ children }) {
-    const fontClasses = `${geistSans.variable} ${geistMono.variable}`;
-
     return (
         <html lang="en">
             <head>
@@ -25,8 +13,9 @@ export default function RootLayout({ children }) {
                     content="6g2dD6ZYcYfD3YBYpGU0O2cSRZlSrufZqXcL7D_shzk"
                 />
             </head>
-            <body className={fontClasses}>
+            <body>
                 <StyledComponentsRegistry>
+                    <GlobalCSS />
                     <Layout>{children}</Layout>
                 </StyledComponentsRegistry>
             </body>

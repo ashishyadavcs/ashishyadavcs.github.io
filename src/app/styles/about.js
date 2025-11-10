@@ -3,7 +3,6 @@ import styled from "styled-components";
 import media from "../config/media";
 
 const AboutStyle = styled.div`
-    background: #f8f9fa;
     min-height: 100vh;
     padding: 40px 20px;
     max-width: 1200px;

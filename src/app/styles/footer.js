@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
     margin: 50px 0 0;
     .container {
         display: grid;
-        gap: 20px;
+        gap: 20px 40px;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .title {
@@ -20,7 +20,9 @@ const StyledFooter = styled.footer`
         a {
             display: block;
             padding: 5px 0;
+            transition: all 0.3s;
             &:hover {
+                padding: 5px 10px;
                 background: #ddd;
             }
         }

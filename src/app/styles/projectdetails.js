@@ -19,6 +19,7 @@ const ProjectdetailsStyle = styled.footer`
             top: 60px;
             margin: 20px 0 0;
             height: max-content;
+            min-width: 30%;
         }
     }
     .container {

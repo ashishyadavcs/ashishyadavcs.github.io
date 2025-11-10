@@ -15,6 +15,7 @@ const education = [
         date: "2016 - 2020",
         degree: "Bachelor of Technology",
         institution: "Feroze Gandhi Institute of Engineering and Technology, Raebareli",
+        website: "https://fgiet.ac.in/",
         field: "Computer Science & Engineering",
         description: "Specialized in software development, web technologies.",
     },

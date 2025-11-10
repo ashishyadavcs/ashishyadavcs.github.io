@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const ProjectListStyle = styled.div`
     h2 {
-        text-align: center;
         margin: 30px 0 20px;
     }
     .projects {

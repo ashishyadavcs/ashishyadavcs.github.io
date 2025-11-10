@@ -1,0 +1,66 @@
+"use client";
+
+import { createGlobalStyle, css } from "styled-components";
+import { Inter } from "next/font/google";
+import media from "../config/media";
+const inter = Inter({
+    fallback: ["Roboto"],
+    display: "swap",
+    preload: false,
+    subsets: ["latin"],
+    family: "Roboto",
+});
+const GlobalCSS = createGlobalStyle`
+${css`
+    :root {
+        --background: #ffffff;
+        --foreground: #171717;
+    }
+
+    body {
+        color: var(--foreground);
+        background: var(--background);
+        font-family: ${inter.style.fontFamily};
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+        width: 100%;
+        padding: 0 6%;
+        margin: 0 auto;
+    }
+    img {
+        max-width: 100%;
+    }
+    .heading {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin: 20px 0;
+    }
+    .center {
+        justify-content: center;
+    }
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0;
+        .btn {
+            ${media.sm} {
+                width: 100%;
+            }
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+`}
+`;
+export default GlobalCSS;

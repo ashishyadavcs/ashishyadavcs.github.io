@@ -8,7 +8,11 @@ const page = () => {
     return (
         <ProjectStyle>
             <Container>
-                <h1 className="heading">Projects</h1>
+                <h1 className="heading">🚀 All Projects</h1>
+                <p>
+                    Complete collection of my development work across different domains and
+                    technologies
+                </p>
                 <ProjectList projects={projects} />
             </Container>
         </ProjectStyle>

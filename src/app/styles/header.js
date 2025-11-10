@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
     position: sticky;
     z-index: 10;
     top: 0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     .container {
         display: flex;
         align-items: center;

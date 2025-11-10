@@ -1,6 +1,84 @@
 const projects = [
     {
         id: 1,
+        title: "🌐 Frontend Zone - Learning Platform",
+        description:
+            "A comprehensive frontend development learning platform that helps developers master HTML, CSS, JavaScript, React.js, Next.js, and SEO through practical tutorials, real-world projects, and interview preparation resources.",
+        image: "/projects/frontedzone.png",
+        tags: [
+            "Next.js",
+            "React",
+            "Education Platform",
+            "Blog",
+            "AI Chat",
+            "SEO",
+            "Responsive Design",
+        ],
+        demoUrl: "https://www.frontendzone.com/",
+        slug: "frontend-zone",
+        content: `
+      <h2>Learning Platform</h2>
+
+      <p>Frontend Zone is a comprehensive education platform dedicated to frontend development. It provides structured learning paths, practical tutorials, and real-world projects to help developers master modern frontend technologies from beginner to advanced level.</p>
+      <br/>
+      <br/>
+      <p><strong>🔗 Live Platform:</strong> <a href="https://www.frontendzone.com/" target="_blank">www.frontendzone.com</a></p>
+      
+      <h2>🚀 Key Features</h2>
+      
+      <ul>
+        <li>📚 Comprehensive frontend development tutorials and guides</li>
+        <li>🛠️ Interactive tools (HTML editor, CSS button generator, JSON formatter)</li>
+        <li>📝 Regular blog posts on frontend topics and trends</li>
+        <li>🤖 AI-powered chat assistant for learning support</li>
+        <li>💼 Interview preparation resources and roadmaps</li>
+        <li>🎨 Free HTML/CSS templates and UI source codes</li>
+        <li>📱 Responsive design for all devices</li>
+        <li>🔍 SEO optimized content for better discoverability</li>
+        <li>📊 Learning calculators and utility tools</li>
+        <li>👥 Community features and social media integration</li>
+      </ul>
+      
+      <h2>📖 Learning Content</h2>
+      
+      <ul>
+        <li><strong>HTML:</strong> Semantic markup, accessibility, and best practices</li>
+        <li><strong>CSS:</strong> Modern styling, Flexbox, Grid, animations</li>
+        <li><strong>JavaScript:</strong> ES6+, DOM manipulation, async programming</li>
+        <li><strong>React.js:</strong> Components, hooks, state management</li>
+        <li><strong>Next.js:</strong> SSR, routing, performance optimization</li>
+        <li><strong>SEO:</strong> Technical SEO, content optimization</li>
+        <li><strong>Career Guidance:</strong> Interview prep, portfolio building</li>
+      </ul>
+      
+      <h2>🛠️ Platform Features</h2>
+      
+      <ul>
+        <li><strong>Blog System:</strong> Regular articles on frontend development</li>
+        <li><strong>Project Showcase:</strong> Real-world examples and case studies</li>
+        <li><strong>Developer Tools:</strong> Online editors, formatters, generators</li>
+        <li><strong>Training Programs:</strong> Structured learning paths</li>
+        <li><strong>Community Support:</strong> Social media presence and engagement</li>
+        <li><strong>Resource Library:</strong> Templates, code snippets, and utilities</li>
+      </ul>
+      
+      <h2>🎯 Target Audience</h2>
+      
+      <ul>
+        <li>Beginner developers starting their frontend journey</li>
+        <li>Intermediate developers looking to advance their skills</li>
+        <li>Job seekers preparing for frontend interviews</li>
+        <li>Students and professionals seeking practical resources</li>
+        <li>Anyone interested in modern web development practices</li>
+      </ul>
+      
+      <h2>💡 Impact & Reach</h2>
+      
+      <p>Frontend Zone serves as a comprehensive resource hub for the frontend development community, providing practical knowledge, tools, and guidance to help developers succeed in their careers. The platform combines educational content with practical tools to create a complete learning ecosystem.</p>
+    `,
+    },
+    {
+        id: 2,
         title: "📚 Ebook Store Frontend",
         description:
             "A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.",
@@ -46,7 +124,7 @@ const projects = [
     `,
     },
     {
-        id: 2,
+        id: 3,
         title: "Wedding Photography website",
         description:
             "a beautifully designed wedding photography website that showcases elegant portfolios, client galleries, and photography packages. It emphasizes a luxurious and emotional user experience — helping couples explore, book, and connect with professional photographers seamlessly",

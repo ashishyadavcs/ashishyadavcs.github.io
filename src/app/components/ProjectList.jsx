@@ -10,7 +10,7 @@ const ProjectList = ({ projects, title }) => {
             <ul className="projects">
                 {projects.map((project, index) => (
                     <li key={index}>
-                        <Link href={`/projects/${project.slug}`}>
+                        <Link href={`/projects/${project.slug}`} title={project.title}>
                             <Card {...project} />
                         </Link>
                     </li>
