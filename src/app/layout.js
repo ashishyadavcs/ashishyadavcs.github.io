@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./styles/globals.js";
 import StyledComponentsRegistry from "./components/Registry";
 import Layout from "./components/layout";
 import GlobalCSS from "./styles/globals.js";

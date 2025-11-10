@@ -1,5 +1,5 @@
 import { SITE_METADATA } from "@/app/constants";
-import { projects } from "@/app/utils/data";
+import projects from "public/config/projects";
 
 export default function sitemap() {
     const baseUrl = SITE_METADATA.metadataBase.origin;

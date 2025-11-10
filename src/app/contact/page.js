@@ -53,8 +53,8 @@ const Page = () => {
                 <Container>
                     <h1 className="heading">Get in Touch</h1>
                     <p>
-                        We'd love to hear from you. Contact us for any inquiries or assistance with
-                        your projects.
+                        We&apos;d love to hear from you. Contact us for any inquiries or assistance
+                        with your projects.
                     </p>
                 </Container>
             </div>
@@ -156,8 +156,8 @@ const Page = () => {
                                 </div>
                                 <h2>Thank you!</h2>
                                 <p>
-                                    Your message has been sent successfully. We'll get back to you
-                                    shortly.
+                                    Your message has been sent successfully. We&apos;ll get back to
+                                    you shortly.
                                 </p>
                                 <Button type="primary" onClick={() => setSuccess(false)}>
                                     Send Another Message

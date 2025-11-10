@@ -1,14 +1,6 @@
-/**
- * Dynamic sitemap generation utilities
- */
-
-import { projects } from "@/app/utils/data";
+import projects from "public/config/projects";
 import { SITE_METADATA } from "@/app/constants";
 
-/**
- * Generate XML sitemap content
- * @returns {string} XML sitemap content
- */
 export function generateSitemap() {
     const baseUrl = SITE_METADATA.siteUrl;
     const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD format
@@ -69,10 +61,6 @@ ${allPages
     return sitemapContent;
 }
 
-/**
- * Generate robots.txt content
- * @returns {string} Robots.txt content
- */
 export function generateRobotsTxt() {
     const baseUrl = SITE_METADATA.siteUrl;
 

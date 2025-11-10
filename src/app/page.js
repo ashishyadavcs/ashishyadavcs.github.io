@@ -21,7 +21,7 @@ const page = () => {
                     src={personal.image}
                     alt={personal.name}
                 />
-                <h1 className="heading">Hi I'm {personal.name}</h1>
+                <h1 className="heading">Hi I&apos;m {personal.name}</h1>
                 <p className="title">{personal.title}</p>
                 <p className="description">{personal.description}</p>
                 <div className="btn-group center">
