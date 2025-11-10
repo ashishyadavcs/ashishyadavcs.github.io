@@ -1,11 +1,11 @@
 "use client";
-import Button from "../components/Button";
-import Container from "../components/layout/Container";
+import Button from "@/components/Button";
+import Container from "@/components/layout/Container";
 import { useState } from "react";
 import { FiMail, FiPhone, FiMessageSquare, FiUser, FiSend } from "react-icons/fi";
 import { MdLocationOn } from "react-icons/md";
 import { IoMdCheckmarkCircle } from "react-icons/io";
-import ContactStyle from "../styles/contact";
+import ContactStyle from "@/styles/contact";
 import config from "public/config";
 const Page = () => {
     const [loading, setloading] = useState(false);

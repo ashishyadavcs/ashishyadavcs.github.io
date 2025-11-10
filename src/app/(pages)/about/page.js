@@ -1,7 +1,7 @@
 import React from "react";
-import AboutStyle from "../styles/about";
-import Timeline from "../components/Timeline";
-import config from "../../../public/config";
+import AboutStyle from "../../styles/about";
+import Timeline from "../../components/Timeline";
+import config from "../../../../public/config";
 
 const page = () => {
     const { experience, personal } = config;

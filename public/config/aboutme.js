@@ -28,6 +28,14 @@ const personal = {
     image: "/images/me/ashish.png",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
+    typingTexts: [
+        "Full-Stack Developer",
+        "React.js Expert",
+        "Next.js Developer",
+        "Node.js Developer",
+        "AI Integration Specialist",
+        "Problem Solver",
+    ],
     aboutme: `
     I'm a passionate full-stack developer with experience in building high-performance web applications with modern technologies like React, Next.js, Node.js, and more. <br/> With a strong focus on clean code and user-centered design, I strive to create engaging and accessible web experiences. I love solving complex problems and continuously learning new technologies.
     `,

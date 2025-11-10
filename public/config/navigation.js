@@ -17,6 +17,7 @@ const navigation = {
             links: [
                 { label: "Home", href: "/" },
                 { label: "About", href: "/about" },
+                // { label: "Services", href: "/services" },
                 { label: "Projects", href: "/projects" },
                 { label: "Contact", href: "/contact" },
             ],
@@ -26,10 +27,10 @@ const navigation = {
             type: "services",
             links: [
                 { label: "Web Development", href: "/services/web-development" },
-                { label: "Frontend Development", href: "/services/frontend" },
-                { label: "Backend Development", href: "/services/backend" },
-                { label: "API Development", href: "/services/api" },
-                { label: "AI Integration", href: "/services/ai" },
+                { label: "Frontend Development", href: "/services/frontend-development" },
+                { label: "Backend Development", href: "/services/backend-development" },
+                { label: "API Development", href: "/services/api-development" },
+                { label: "AI Integration", href: "/services/ai-integration" },
             ],
         },
         {
@@ -68,6 +69,10 @@ const navigation = {
             label: "About",
             href: "/about",
         },
+        // {
+        //     label: "Services",
+        //     href: "/services",
+        // },
         {
             label: "Projects",
             href: "/projects",

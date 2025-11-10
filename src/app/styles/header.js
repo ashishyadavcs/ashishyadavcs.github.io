@@ -11,6 +11,25 @@ const StyledHeader = styled.header`
     z-index: 10;
     top: 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    ${media.sm} {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transition: all 0.4s;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+        }
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
     .container {
         display: flex;
         align-items: center;
