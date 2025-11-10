@@ -3,9 +3,10 @@ import ProjectListStyle from "../styles/projectList";
 import Link from "next/link";
 import Card from "./Card";
 
-const ProjectList = ({ projects }) => {
+const ProjectList = ({ projects, title }) => {
     return (
         <ProjectListStyle>
+            <h2>{title}</h2>
             <ul className="projects">
                 {projects.map((project, index) => (
                     <li key={index}>

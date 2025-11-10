@@ -1,11 +1,27 @@
 import StyledFooter from "@/app/styles/footer";
-import config from "public/data";
+import config from "public/config";
 import React from "react";
 import Container from "./Container";
-
+import { FaGithub } from "react-icons/fa";
+import personal from "public/config/aboutme";
+import { FaLinkedinIn, FaTwitter } from "react-icons/fa6";
 const Footer = () => {
     const { navigation } = config;
     const footersections = navigation.footersections || [];
+    const socials = [
+        {
+            icon: <FaGithub />,
+            url: personal.socialMedia.github,
+        },
+        {
+            icon: <FaTwitter />,
+            url: personal.socialMedia.twitter,
+        },
+        {
+            icon: <FaLinkedinIn />,
+            url: personal.socialMedia.linkedin,
+        },
+    ];
     return (
         <StyledFooter>
             <Container>
@@ -14,16 +30,18 @@ const Footer = () => {
                         <h3 className="title">{section.heading}</h3>
                         {section.description && <p>{section.description}</p>}
                         {section.contact && (
-                            <div className="contact-info">
-                                {section.contact.email && (
-                                    <span>Email: {section.contact.email}</span>
-                                )}
-                                {section.contact.phone && (
-                                    <span>Phone: {section.contact.phone}</span>
-                                )}
-                                {section.contact.location && (
-                                    <span>Location: {section.contact.location}</span>
-                                )}
+                            <div className="socials">
+                                {socials.map((social, socialIndex) => (
+                                    <div className="social" key={socialIndex}>
+                                        <a
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    </div>
+                                ))}
                             </div>
                         )}
                         <ul>

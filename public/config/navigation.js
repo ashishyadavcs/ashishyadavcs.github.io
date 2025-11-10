@@ -29,6 +29,7 @@ const navigation = {
                 { label: "Frontend Development", href: "/services/frontend" },
                 { label: "Backend Development", href: "/services/backend" },
                 { label: "API Development", href: "/services/api" },
+                { label: "AI Integration", href: "/services/ai" },
             ],
         },
         {

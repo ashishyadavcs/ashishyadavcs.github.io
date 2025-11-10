@@ -21,9 +21,14 @@ const education = [
 ];
 
 const personal = {
-    contacts,
+    ...contacts,
+    title: "Full-Stack Developer",
+    description: `I build modern, responsive web applications with cutting-edge technologies. Passionate about creating seamless user experiences and robust backends.`,
     image: "/images/me/ashish.png",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
+    aboutme: `
+    I'm a passionate full-stack developer with experience in building high-performance web applications with modern technologies like React, Next.js, Node.js, and more. <br/> With a strong focus on clean code and user-centered design, I strive to create engaging and accessible web experiences. I love solving complex problems and continuously learning new technologies.
+    `,
 };
 export default personal;

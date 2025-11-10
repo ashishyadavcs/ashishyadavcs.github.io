@@ -3,7 +3,7 @@ import StyledHeader from "@/app/styles/header";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import Container from "./Container";
-import navigation from "public/data/navigation";
+import navigation from "public/config/navigation";
 
 const Header = () => {
     const navbar = navigation.navbar ?? [];

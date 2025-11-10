@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectStyle from "../styles/projects";
 import Container from "../components/layout/Container";
-import projects from "public/data/projects";
+import projects from "public/config/projects";
 import ProjectList from "../components/ProjectList";
 
 const page = () => {

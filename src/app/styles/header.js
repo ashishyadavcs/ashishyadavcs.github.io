@@ -82,6 +82,7 @@ const StyledHeader = styled.header`
     }
     a {
         padding: 15px;
+        font-weight: 600;
         ${media.minsm} {
             &:hover {
                 background: #f1f1f1;
