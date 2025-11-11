@@ -15,10 +15,13 @@ const HomeStyle = styled.div`
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         color: #333;
         padding: 60px 20px 80px;
+        ${media.sm} {
+            padding: 20px;
+        }
         text-align: center;
         position: relative;
         overflow: hidden;
-
+        margin: 0 0 50px;
         &::before {
             content: "";
             position: absolute;
@@ -151,7 +154,7 @@ const HomeStyle = styled.div`
     }
 
     .skills-section {
-        margin: 80px 0;
+        margin: 40px 0;
         padding: 60px 0;
 
         border-radius: 20px;

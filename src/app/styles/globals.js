@@ -44,7 +44,8 @@ ${css`
         flex-wrap: wrap;
         gap: 10px;
         margin: 20px 0;
-        .btn {
+        a,
+        button {
             ${media.sm} {
                 width: 100%;
             }

@@ -1,4 +1,5 @@
 import personal from "./aboutme";
+import certifications from "./certifications";
 import experience from "./experience";
 import navigation from "./navigation";
 import projects from "./projects";
@@ -12,5 +13,6 @@ const config = {
     personal,
     skills,
     testimonials,
+    certifications,
 };
 export default config;

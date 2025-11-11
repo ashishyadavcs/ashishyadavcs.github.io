@@ -11,9 +11,10 @@ import Timeline from "./components/Timeline";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
 import TypingEffect from "./components/TypingEffect";
+import Certifications from "./components/Certifications";
 
 const page = () => {
-    const { personal, experience, skills, testimonials } = config;
+    const { personal, experience, skills, testimonials, certifications } = config;
     return (
         <HomeStyle>
             <Container className="banner">
@@ -42,24 +43,20 @@ const page = () => {
                         <Button arrow={true} href="/projects">
                             View my work
                         </Button>
-                        <Button
-                            href={`tel:${personal.phone}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            type="secondary"
-                        >
-                            Call Me
-                            <GoDownload />
+                        <Button href={"/contact"} type="secondary">
+                            contact me
+                            {/* <GoDownload /> */}
                         </Button>
                     </div>
                 </div>
             </Container>
 
             <Container>
-                <Skills skills={skills} />
                 <section className="timeline-section">
                     <h2 className="section-heading">Work Experience</h2>
-                    <p className="section-subtitle">My professional journey</p>
+                    <p className="section-subtitle">
+                        My professional journey - {personal.totalExperience}
+                    </p>
                     <Timeline data={experience} />
                 </section>
 
@@ -68,7 +65,9 @@ const page = () => {
                     <p className="section-subtitle">Academic background</p>
                     <Timeline data={personal.education} />
                 </section>
+                <Skills skills={skills} />
 
+                <Certifications certifications={certifications} showStats={true} />
                 <section className="projects-section">
                     <ProjectList title="Featured Projects" projects={projects} />
                 </section>

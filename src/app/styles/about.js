@@ -7,7 +7,9 @@ const AboutStyle = styled.div`
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
-
+    strong {
+        color: #555;
+    }
     h1 {
         text-align: center;
         color: #333;

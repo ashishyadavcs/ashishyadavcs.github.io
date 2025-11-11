@@ -133,6 +133,10 @@ button:hover, .btn:hover {
     .btn-group {
         flex-direction: column;
         align-items: center;
+        .btn{
+            width:100%
+        }
+        
     }
     
     .section {

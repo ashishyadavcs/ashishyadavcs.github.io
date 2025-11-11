@@ -191,7 +191,6 @@ const projects = [
         <li><strong>Animations</strong>: Framer Motion</li>
         <li><strong>Deployment</strong>: Vercel</li>
         <li><strong>Forms</strong>: React Hook Form</li>
-        <li><strong>Validation</strong>: Yup</li>
       </ul>
     `,
     },

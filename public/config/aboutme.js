@@ -3,6 +3,15 @@ const contacts = {
     email: "ashishyadav.works@gmail.com",
     phone: "+917068513356",
     address: "Noida, India",
+    totalExperience: (() => {
+        const startDate = new Date("2021-03-01");
+        const currentDate = new Date();
+        const diffInMonths =
+            (currentDate.getFullYear() - startDate.getFullYear()) * 12 +
+            (currentDate.getMonth() - startDate.getMonth());
+        const years = (diffInMonths / 12).toFixed(1);
+        return `${years} Year${years !== "1.0" ? "s" : ""}`;
+    })(),
     socialMedia: {
         linkedin: "https://www.linkedin.com/in/ashishyadavcs",
         github: "https://github.com/ashishyadavcs",
@@ -37,7 +46,7 @@ const personal = {
         "Problem Solver",
     ],
     aboutme: `
-    I'm a passionate full-stack developer with experience in building high-performance web applications with modern technologies like React, Next.js, Node.js, and more. <br/> With a strong focus on clean code and user-centered design, I strive to create engaging and accessible web experiences. I love solving complex problems and continuously learning new technologies.
+    I'm a passionate <strong>full-stack developer</strong> with <strong>${contacts.totalExperience}</strong> of experience in building high-performance web applications with modern technologies like React, Next.js, Node.js, and more. <br/> With a strong focus on clean code and user-centered design, I strive to create engaging and accessible web experiences. I love solving complex problems and continuously learning new technologies.
     `,
 };
 export default personal;

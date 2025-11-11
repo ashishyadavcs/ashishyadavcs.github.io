@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
     --footer-padding: 40px;
-    background: #f1f1f1;
+    background: linear-gradient(#f1f1f1, #fff);
     color: #000;
     padding: var(--footer-padding) 0 0;
     margin: 50px 0 0;
