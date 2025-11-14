@@ -5,6 +5,7 @@ import navigation from "./navigation";
 import projects from "./projects";
 import skills from "./skills";
 import testimonials from "./testimonials";
+import seo from "./seo";
 
 const config = {
     projects,
@@ -14,5 +15,6 @@ const config = {
     skills,
     testimonials,
     certifications,
+    seo,
 };
 export default config;

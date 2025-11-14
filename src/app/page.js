@@ -13,6 +13,18 @@ import Testimonials from "@/components/Testimonials";
 import TypingEffect from "@/components/TypingEffect";
 import Certifications from "@/components/Certifications";
 
+export const metadata = {
+    title: config.seo.pages.home.title,
+    description: config.seo.pages.home.description,
+    keywords: config.seo.pages.home.keywords,
+    openGraph: {
+        title: config.seo.pages.home.title,
+        description: config.seo.pages.home.description,
+        url: config.seo.url,
+        type: "website",
+    },
+};
+
 const page = () => {
     const { personal, experience, skills, testimonials, certifications } = config;
     return (

@@ -3,16 +3,58 @@ import Container from "@/components/layout/Container";
 import MyImage from "@/components/MyImage";
 import ProjectdetailsStyle from "@/styles/projectdetails";
 import projects from "public/config/projects";
+import config from "public/config";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const project = projects.find(proj => proj.slug === slug);
 
+    if (!project) {
+        return {
+            title: "Project Not Found | Portfolio",
+            description: "The requested project could not be found.",
+        };
+    }
+
     return {
-        title: `${project?.title || "Project"} | Portfolio`,
-        description: project?.description || `View details for project ${slug}`,
-        keywords: ["project", "portfolio", "development", "web development"],
+        title: `${project.title} | ${config.seo.author.name} Portfolio`,
+        description:
+            project.description || `${project.title} - A project by ${config.seo.author.name}`,
+        keywords: [
+            project.title,
+            ...(project.tags || []),
+            "portfolio project",
+            "web development",
+            config.seo.author.name,
+        ],
+        openGraph: {
+            title: `${project.title} | Portfolio`,
+            description: project.description,
+            url: `${config.seo.url}/projects/${slug}`,
+            type: "article",
+            images: project.image
+                ? [
+                      {
+                          url: `${config.seo.url}${project.image}`,
+                          width: 1200,
+                          height: 630,
+                          alt: project.title,
+                      },
+                  ]
+                : undefined,
+            article: {
+                author: config.seo.author.name,
+                tags: project.tags || [],
+            },
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${project.title} | Portfolio`,
+            description: project.description,
+            creator: config.seo.author.twitter,
+            images: project.image ? [`${config.seo.url}${project.image}`] : undefined,
+        },
     };
 }
 export async function generateStaticParams() {

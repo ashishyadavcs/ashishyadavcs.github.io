@@ -1,8 +1,8 @@
-import { SITE_METADATA } from "@/app/constants";
+import config from "public/config";
 import projects from "public/config/projects";
 
 export default function sitemap() {
-    const baseUrl = SITE_METADATA.metadataBase.origin;
+    const baseUrl = config.seo.url;
     const currentDate = new Date();
 
     // Static pages

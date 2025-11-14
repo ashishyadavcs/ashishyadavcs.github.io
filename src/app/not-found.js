@@ -7,7 +7,9 @@ const Pagestyle = styled.section`
     padding: 40px 0 0;
     text-align: center;
     a {
+        display: block;
         margin: 20px auto;
+        width: fit-content;
     }
 `;
 const Page = () => {
