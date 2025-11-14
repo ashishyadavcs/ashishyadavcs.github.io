@@ -1,6 +1,6 @@
 import React from "react";
-import CardStyle from "../styles/card";
-import MyImage from "./MyImage";
+import CardStyle from "@/styles/card";
+import MyImage from "@/components/MyImage";
 
 const Card = ({ title, description, image, tags }) => {
     return (

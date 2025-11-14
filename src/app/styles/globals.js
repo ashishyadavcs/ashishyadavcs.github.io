@@ -2,7 +2,7 @@
 
 import { createGlobalStyle, css } from "styled-components";
 import { Inter } from "next/font/google";
-import media from "../config/media";
+import media from "@/app/config/media";
 const inter = Inter({
     fallback: ["Roboto"],
     display: "swap",
@@ -42,7 +42,7 @@ ${css`
     .btn-group {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 20px;
         margin: 20px 0;
         a,
         button {

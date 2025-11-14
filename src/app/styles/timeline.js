@@ -45,7 +45,7 @@ const TimelineStyle = styled.div`
             content: "";
             position: absolute;
             top: 8px;
-            left: -5px;
+            left: -19px;
             width: 12px;
             height: 12px;
             background: #8900f3;
@@ -55,7 +55,7 @@ const TimelineStyle = styled.div`
             z-index: 2;
 
             ${media.xs} {
-                left: -3px;
+                left: -9px;
                 width: 10px;
                 height: 10px;
                 border: 2px solid white;

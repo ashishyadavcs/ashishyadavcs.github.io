@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import ButtonStyle from "../styles/button";
+import ButtonStyle from "@/styles/button";
 import { FaArrowRight } from "react-icons/fa6";
 
 const ElementType = ({ href, className, children, ...props }) => {

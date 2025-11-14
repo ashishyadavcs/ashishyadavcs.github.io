@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import media from "../config/media";
+import media from "@/app/config/media";
 
 const TestimonialStyle = styled.div`
     .testimonials-section {

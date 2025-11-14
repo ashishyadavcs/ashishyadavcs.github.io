@@ -3,15 +3,14 @@
 import React from "react";
 import styled from "styled-components";
 import { FaCertificate, FaExternalLinkAlt, FaCalendarAlt, FaAward } from "react-icons/fa";
-import media from "../config/media";
+import media from "@/app/config/media";
 
 const CertificationsStyle = styled.section`
     .certifications-section {
         margin: 80px 0;
         padding: 60px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+
         border-radius: 20px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 
         ${media.sm} {
             margin: 60px 0;

@@ -1,7 +1,7 @@
-import Button from "@/app/components/Button";
-import Container from "@/app/components/layout/Container";
-import MyImage from "@/app/components/MyImage";
-import ProjectdetailsStyle from "@/app/styles/projectdetails";
+import Button from "@/components/Button";
+import Container from "@/components/layout/Container";
+import MyImage from "@/components/MyImage";
+import ProjectdetailsStyle from "@/styles/projectdetails";
 import projects from "public/config/projects";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
@@ -32,12 +32,24 @@ const page = async ({ params }) => {
                         ))}
                     </ul>
                     <div className="btn-group">
-                        <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                            <FaExternalLinkAlt size={15} /> demo
-                        </Button>
-                        <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                            <FaGithub /> source code
-                        </Button>
+                        {project.demoUrl && (
+                            <Button
+                                href={project.demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaExternalLinkAlt size={15} /> demo
+                            </Button>
+                        )}
+                        {project.codeUrl && (
+                            <Button
+                                href={project.codeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub /> source code
+                            </Button>
+                        )}
                     </div>
                 </div>
                 <div className="content">

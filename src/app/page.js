@@ -1,17 +1,17 @@
 import React from "react";
-import Container from "./components/layout/Container";
-import ProjectList from "./components/ProjectList";
+import Container from "@/components/layout/Container";
+import ProjectList from "@/components/ProjectList";
 import projects from "public/config/projects";
-import HomeStyle from "./styles/home";
+import HomeStyle from "@/styles/home";
 import config from "public/config";
-import MyImage from "./components/MyImage";
-import Button from "./components/Button";
+import MyImage from "@/components/MyImage";
+import Button from "@/components/Button";
 import { GoDownload } from "react-icons/go";
-import Timeline from "./components/Timeline";
-import Skills from "./components/Skills";
-import Testimonials from "./components/Testimonials";
-import TypingEffect from "./components/TypingEffect";
-import Certifications from "./components/Certifications";
+import Timeline from "@/components/Timeline";
+import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
+import TypingEffect from "@/components/TypingEffect";
+import Certifications from "@/components/Certifications";
 
 const page = () => {
     const { personal, experience, skills, testimonials, certifications } = config;
@@ -67,7 +67,7 @@ const page = () => {
                 </section>
                 <Skills skills={skills} />
 
-                <Certifications certifications={certifications} showStats={true} />
+                <Certifications certifications={certifications} showStats={false} />
                 <section className="projects-section">
                     <ProjectList title="Featured Projects" projects={projects} />
                 </section>

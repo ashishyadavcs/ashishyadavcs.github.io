@@ -33,8 +33,8 @@ const education = [
 const personal = {
     ...contacts,
     title: "Full-Stack Developer",
-    description: `I build modern, responsive web applications with cutting-edge technologies. Passionate about creating seamless user experiences and robust backends.`,
-    image: "/images/me/ashish.png",
+    description: `Full-stack developer passionate about transforming ideas into fast, elegant, and user-focused web solutions. I specialize in building modern React/Next.js applications backed by powerful Node.js APIs.`,
+    image: "/images/ashish.png",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
     typingTexts: [
@@ -46,7 +46,7 @@ const personal = {
         "Problem Solver",
     ],
     aboutme: `
-    I'm a passionate <strong>full-stack developer</strong> with <strong>${contacts.totalExperience}</strong> of experience in building high-performance web applications with modern technologies like React, Next.js, Node.js, and more. <br/> With a strong focus on clean code and user-centered design, I strive to create engaging and accessible web experiences. I love solving complex problems and continuously learning new technologies.
+    I craft high-performance, responsive web applications using modern technologies like React, Next.js, and Node.js. My focus is on building clean, scalable, and visually stunning interfaces that deliver real business results. Whether it’s improving performance, refining UX, or integrating complex backend systems — I turn ideas into smooth digital experiences.
     `,
 };
 export default personal;

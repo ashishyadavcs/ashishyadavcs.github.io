@@ -9,10 +9,12 @@ const HomeStyle = styled.div`
         margin-bottom: 20px;
         border: 4px solid #ff0080;
         box-shadow: 0 15px 30px rgba(255, 0, 128, 0.3);
+        z-index: 1;
+        position: relative;
     }
 
     .banner {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        background: url("/images/bg.jpg") no-repeat center center/cover;
         color: #333;
         padding: 60px 20px 80px;
         ${media.sm} {
@@ -25,12 +27,15 @@ const HomeStyle = styled.div`
         &::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(0,0,0,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.1;
+            inset: 0;
+            background: radial-gradient(circle at 10% 10%, transparent 3%, #000, #000);
+            background: linear-gradient(to bottom, transparent, #000);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 10%, transparent, #000);
         }
 
         .title {
@@ -42,7 +47,8 @@ const HomeStyle = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #333;
+            z-index: 1;
+            position: relative;
 
             ${media.md} {
                 font-size: 1.2rem;
@@ -61,7 +67,11 @@ const HomeStyle = styled.div`
             line-height: 1.6;
         }
     }
-
+    .content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+    }
     .timeline-section {
         .section-heading {
             color: #333;

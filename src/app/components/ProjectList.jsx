@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectListStyle from "../styles/projectList";
+import ProjectListStyle from "@/styles/projectList";
 import Link from "next/link";
 import Card from "./Card";
 

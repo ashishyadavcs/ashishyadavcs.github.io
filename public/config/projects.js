@@ -15,7 +15,7 @@ const projects = [
             "Responsive Design",
         ],
         demoUrl: "https://www.frontendzone.com/",
-        slug: "frontend-zone",
+        slug: "frontend-zone-tech-blog-in-nextjs",
         content: `
       <h2>Learning Platform</h2>
 
@@ -79,16 +79,26 @@ const projects = [
     },
     {
         id: 2,
-        title: "📚 Ebook Store Frontend",
+        title: "📚 Ebook Store",
         description:
             "A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.",
         image: "/projects/project1.jpg",
-        tags: ["Next.js", "React", "Redux Toolkit", "Styled Components", "React Icons", "Vercel"],
+        tags: [
+            "Next.js",
+            "React",
+            "Redux Toolkit",
+            "Styled Components",
+            "React Icons",
+            "Vercel",
+            "razorpay",
+            "stripe",
+            "payment gateway",
+        ],
         demoUrl: "https://ebook-store-navy.vercel.app",
         codeUrl: "https://github.com/ashishyadavcs/ebook-store-frontend",
-        slug: "ebook-store",
+        slug: "ebook-store-full-stack-mern-application",
         content: `
-      <h2>📚 Ebook Store Frontend</h2>
+      <h2>📚 Ebook Store</h2>
 
       <p>A modern, SEO-optimized frontend for an eBook store built using Next.js and React. This application enables users to browse, search, and preview eBooks with a clean and responsive interface.</p>
       

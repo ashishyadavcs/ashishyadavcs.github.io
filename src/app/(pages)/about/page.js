@@ -1,7 +1,7 @@
 import React from "react";
-import AboutStyle from "../../styles/about";
-import Timeline from "../../components/Timeline";
-import config from "../../../../public/config";
+import AboutStyle from "@/styles/about";
+import Timeline from "@/components/Timeline";
+import config from "public/config";
 
 const page = () => {
     const { experience, personal } = config;
@@ -17,7 +17,7 @@ const page = () => {
                 />
             )}
 
-            <h2 className="section-title">Professional Experience</h2>
+            <h2 className="section-title">Professional Experience({personal.totalExperience})</h2>
             <Timeline data={experience} />
 
             <h2 className="section-title">Education</h2>

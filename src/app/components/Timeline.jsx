@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import TimelineStyle from "../styles/timeline";
+import TimelineStyle from "@/styles/timeline";
 import Link from "next/link";
 
 const Timeline = ({ data }) => {
@@ -34,7 +34,10 @@ const Timeline = ({ data }) => {
                             </Link>
                         )}
                         {item.field && <div className="timeline-field">{item.field}</div>}
-                        <p className="timeline-description">{item.description}</p>
+                        <p
+                            className="timeline-description"
+                            dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
                     </div>
                 </div>
             ))}

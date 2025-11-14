@@ -1,10 +1,11 @@
 import StyledFooter from "@/app/styles/footer";
 import config from "public/config";
 import React from "react";
-import Container from "./Container";
+import Container from "@/components/layout/Container";
 import { FaGithub } from "react-icons/fa";
 import personal from "public/config/aboutme";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa6";
+import Link from "next/link";
 const Footer = () => {
     const { navigation } = config;
     const footersections = navigation.footersections || [];
@@ -33,13 +34,13 @@ const Footer = () => {
                             <div className="socials">
                                 {socials.map((social, socialIndex) => (
                                     <div className="social" key={socialIndex}>
-                                        <a
+                                        <Link
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
                                             {social.icon}
-                                        </a>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
@@ -47,14 +48,18 @@ const Footer = () => {
                         <ul>
                             {section.links?.map((link, linkIndex) => (
                                 <li key={linkIndex}>
-                                    <a href={link.href}>{link.label}</a>
+                                    <Link href={link.href}>{link.label}</Link>
                                 </li>
                             ))}
                             {section.socialLinks?.map((social, socialIndex) => (
                                 <li key={`social-${socialIndex}`}>
-                                    <a href={social.url} target="_blank" rel="noopener noreferrer">
+                                    <Link
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         {social.platform}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

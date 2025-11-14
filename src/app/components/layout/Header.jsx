@@ -2,7 +2,7 @@
 import StyledHeader from "@/app/styles/header";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import Container from "./Container";
+import Container from "@/components/layout/Container";
 import navigation from "public/config/navigation";
 
 const Header = () => {
