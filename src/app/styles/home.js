@@ -65,6 +65,12 @@ const HomeStyle = styled.div`
             max-width: 600px;
             margin: 0 auto 30px;
             line-height: 1.6;
+            ${media.sm} {
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* number of lines */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
         }
     }
     .content {
@@ -158,17 +164,16 @@ const HomeStyle = styled.div`
     }
 
     .projects-section {
-        margin: 80px 0 40px 0;
-        padding: 60px 0;
+        ${media.minsm} {
+            margin: 80px 0 40px 0;
+            padding: 60px 0;
+        }
         border-radius: 20px;
     }
 
     .skills-section {
         margin: 40px 0;
-        padding: 60px 0;
-
         border-radius: 20px;
-
         .section-heading {
             color: #333;
             font-size: 2.2rem;
@@ -179,14 +184,6 @@ const HomeStyle = styled.div`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-
-            ${media.sm} {
-                font-size: 1.8rem;
-            }
-
-            ${media.xs} {
-                font-size: 1.6rem;
-            }
         }
 
         .section-subtitle {

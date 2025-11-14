@@ -8,19 +8,7 @@ import media from "@/app/config/media";
 const CertificationsStyle = styled.section`
     .certifications-section {
         margin: 80px 0;
-        padding: 60px 0;
-
         border-radius: 20px;
-
-        ${media.sm} {
-            margin: 60px 0;
-            padding: 40px 20px;
-        }
-
-        ${media.xs} {
-            margin: 40px 0;
-            padding: 30px 15px;
-        }
     }
 
     .section-header {
