@@ -24,6 +24,7 @@ const HomeStyle = styled.div`
         position: relative;
         overflow: hidden;
         margin: 0 0 50px;
+        min-height: calc(100dvh - 50px);
         &::before {
             content: "";
             position: absolute;
