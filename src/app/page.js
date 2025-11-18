@@ -80,9 +80,9 @@ const page = () => {
                 <Skills skills={skills} />
 
                 <Certifications certifications={certifications} showStats={false} />
-                <section className="projects-section">
-                    <ProjectList title="Featured Projects" projects={projects} />
-                </section>
+            </Container>
+            <ProjectList title="Featured Projects" projects={projects} />
+            <Container>
                 <Testimonials testimonials={testimonials} showStats={true} />
             </Container>
         </HomeStyle>

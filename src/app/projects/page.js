@@ -26,8 +26,8 @@ const page = () => {
                     Complete collection of my development work across different domains and
                     technologies
                 </p>
-                <ProjectList projects={projects} />
             </Container>
+            <ProjectList projects={projects} />
         </ProjectStyle>
     );
 };

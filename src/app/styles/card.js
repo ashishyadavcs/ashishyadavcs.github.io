@@ -64,11 +64,6 @@ const CardStyle = styled.div`
             font-size: 0.85rem;
             font-weight: 500;
             transition: all 0.3s ease;
-
-            &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(255, 0, 128, 0.3);
-            }
         }
     }
 

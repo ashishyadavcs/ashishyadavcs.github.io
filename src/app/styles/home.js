@@ -11,6 +11,10 @@ const HomeStyle = styled.div`
         box-shadow: 0 15px 30px rgba(255, 0, 128, 0.3);
         z-index: 1;
         position: relative;
+        ${media.sm} {
+            width: 150px;
+            height: 150px;
+        }
     }
 
     .banner {
@@ -18,7 +22,7 @@ const HomeStyle = styled.div`
         color: #333;
         padding: 60px 20px 80px;
         ${media.sm} {
-            padding: 20px;
+            padding: 40px 20px 20px;
         }
         text-align: center;
         position: relative;
@@ -41,7 +45,7 @@ const HomeStyle = styled.div`
 
         .title {
             font-size: 1.3rem;
-            margin: 15px 0;
+            margin: 15px 0 0;
             font-weight: 500;
             opacity: 0.9;
             min-height: 1.5em;
@@ -78,6 +82,11 @@ const HomeStyle = styled.div`
         position: relative;
         z-index: 1;
         color: #fff;
+    }
+    .heading {
+        ${media.sm} {
+            margin: 0;
+        }
     }
     .timeline-section {
         .section-heading {

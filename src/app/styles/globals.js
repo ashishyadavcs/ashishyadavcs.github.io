@@ -15,6 +15,7 @@ ${css`
     :root {
         --background: #ffffff;
         --foreground: #171717;
+        --container-size: 6%;
     }
 
     body {
@@ -26,7 +27,7 @@ ${css`
     }
     .container {
         width: 100%;
-        padding: 0 6%;
+        padding-inline: var(--container-size);
         margin: 0 auto;
     }
     img {

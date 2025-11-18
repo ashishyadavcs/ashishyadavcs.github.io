@@ -4,7 +4,6 @@ import styled from "styled-components";
 import media from "../config/media";
 
 const ProjectStyle = styled.div`
-    padding: 40px 0 0;
     color: var(--foreground);
 
     .projects-header {

@@ -6,7 +6,6 @@ const StyledFooter = styled.footer`
     background: linear-gradient(#f1f1f1, #fff);
     color: #000;
     padding: var(--footer-padding) 0 0;
-    margin: 50px 0 0;
     .container {
         display: grid;
         gap: 20px 40px;
