@@ -1,5 +1,5 @@
 export const SITE_METADATA = {
-    metadataBase: new URL("https://ashishyadavcs.github.io"),
+    metadataBase: new URL("https://ashishyadavcs.vercel.app"),
     title: {
         default: "Ashish Yadav - Full Stack Developer & Software Engineer",
         template: "%s | Ashish Yadav",
@@ -26,16 +26,16 @@ export const SITE_METADATA = {
         "Database Design",
         "UI/UX Implementation",
     ],
-    authors: [{ name: "Ashish Yadav", url: "https://ashishyadavcs.github.io" }],
+    authors: [{ name: "Ashish Yadav", url: "https://ashishyadavcs.vercel.app" }],
     creator: "Ashish Yadav",
     publisher: "Ashish Yadav",
-    siteUrl: "https://ashishyadavcs.github.io",
+    siteUrl: "https://ashishyadavcs.vercel.app",
 
     // Open Graph metadata
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://ashishyadavcs.github.io",
+        url: "https://ashishyadavcs.vercel.app",
         title: "Ashish Yadav - Full Stack Developer Portfolio",
         description:
             "Experienced Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building high-performance web applications with clean code and exceptional user experiences.",
@@ -43,7 +43,7 @@ export const SITE_METADATA = {
         images: [
             {
                 url: "/images/og-image.jpg",
-                secureUrl: "https://ashishyadavcs.github.io/images/og-image.jpg",
+                secureUrl: "https://ashishyadavcs.vercel.app/images/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Ashish Yadav - Full Stack Developer Portfolio",
@@ -51,7 +51,7 @@ export const SITE_METADATA = {
             },
             {
                 url: "/images/og-square.jpg",
-                secureUrl: "https://ashishyadavcs.github.io/images/og-square.jpg",
+                secureUrl: "https://ashishyadavcs.vercel.app/images/og-square.jpg",
                 width: 800,
                 height: 800,
                 alt: "Ashish Yadav - Square Profile Image",
@@ -89,8 +89,8 @@ export const SITE_METADATA = {
                 googleplay: "ashish.portfolio.android",
             },
             url: {
-                iphone: "https://ashishyadavcs.github.io",
-                ipad: "https://ashishyadavcs.github.io",
+                iphone: "https://ashishyadavcs.vercel.app",
+                ipad: "https://ashishyadavcs.vercel.app",
             },
         },
     },
@@ -124,11 +124,12 @@ export const SITE_METADATA = {
 
     // Canonical and alternate URLs
     alternates: {
-        canonical: "https://ashishyadavcs.github.io",
+        canonical: "https://ashishyadavcs.vercel.app",
         languages: {
-            "en-US": "https://ashishyadavcs.github.io",
-            "x-default": "https://ashishyadavcs.github.io",
+            "en-US": "https://ashishyadavcs.vercel.app",
+            "x-default": "https://ashishyadavcs.vercel.app",
         },
+        w,
     },
 
     // App-specific metadata
