@@ -52,134 +52,136 @@ export const SITE_METADATA = {
             {
                 url: "/images/og-square.jpg",
                 secureUrl: "https://ashishyadavcs.vercel.app/images/og-square.jpg",
-                width: 800,
-                height: 800,
-                alt: "Ashish Yadav - Square Profile Image",
+                width: 1080,
+                height: 1080,
+                alt: "Ashish Yadav - Full Stack Developer",
                 type: "image/jpeg",
             },
         ],
-        videos: [],
-        audio: [],
-        determiner: "",
-        countryName: "India",
-        ttl: 604800,
     },
 
     // Twitter metadata
     twitter: {
         card: "summary_large_image",
+        site: "@ashishyadav_cs",
+        creator: "@ashishyadav_cs",
         title: "Ashish Yadav - Full Stack Developer Portfolio",
         description:
             "Experienced Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
-        creator: "@ashishyadav",
-        creatorId: "123456789",
-        site: "@ashishyadav",
-        siteId: "123456789",
         images: [
             {
                 url: "/images/og-image.jpg",
                 alt: "Ashish Yadav - Full Stack Developer Portfolio",
             },
         ],
-        app: {
-            name: "Ashish Yadav Portfolio",
-            id: {
-                iphone: "ashish-portfolio-ios",
-                ipad: "ashish-portfolio-ios",
-                googleplay: "ashish.portfolio.android",
-            },
-            url: {
-                iphone: "https://ashishyadavcs.vercel.app",
-                ipad: "https://ashishyadavcs.vercel.app",
-            },
-        },
     },
 
-    // Robots and indexing
+    // App specific metadata
+    applicationName: "Ashish Yadav Portfolio",
+    referrer: "origin-when-cross-origin",
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
+
+    // Apple specific
+    appleWebApp: {
+        capable: true,
+        title: "Ashish Yadav Portfolio",
+        statusBarStyle: "default",
+    },
+
+    // App Links
+    appLinks: {
+        web: {
+            url: "https://ashishyadavcs.vercel.app",
+            should_fallback: true,
+        },
+        ios: {
+            app_store_id: "123456789",
+            url: "https://ashishyadavcs.vercel.app",
+        },
+        android: {
+            package: "com.ashishyadavcs.portfolio",
+            url: "https://ashishyadavcs.vercel.app",
+        },
+        windows_phone: {
+            url: "https://ashishyadavcs.vercel.app",
+        },
+        windows: {
+            url: "https://ashishyadavcs.vercel.app",
+        },
+        windows_universal: {
+            url: "https://ashishyadavcs.vercel.app",
+        },
+        iphone: "https://ashishyadavcs.vercel.app",
+        ipad: "https://ashishyadavcs.vercel.app",
+    },
+
+    // Other metadata
+    generator: "Next.js",
+    category: "technology",
+    classification: "Portfolio",
     robots: {
         index: true,
         follow: true,
-        noarchive: false,
-        nosnippet: false,
-        noimageindex: false,
         nocache: false,
         googleBot: {
             index: true,
             follow: true,
+            noimageindex: false,
             "max-video-preview": -1,
             "max-image-preview": "large",
             "max-snippet": -1,
         },
     },
 
-    // Verification codes for search engines
+    // Verification
     verification: {
-        google: "your-google-site-verification",
-        yandex: "your-yandex-verification",
-        yahoo: "your-yahoo-verification",
-        other: {
-            me: ["https://github.com/ashishyadavcs", "mailto:ashishyadav.works@gmail.com"],
-        },
+        google: "google-site-verification-code",
+        yandex: "yandex-verification-code",
+        yahoo: "yahoo-site-verification",
     },
 
-    // Canonical and alternate URLs
+    // Alternate languages and canonical
     alternates: {
         canonical: "https://ashishyadavcs.vercel.app",
         languages: {
             "en-US": "https://ashishyadavcs.vercel.app",
             "x-default": "https://ashishyadavcs.vercel.app",
         },
-        w,
     },
 
-    // App-specific metadata
-    applicationName: "Ashish Yadav Portfolio",
-    referrer: "origin-when-cross-origin",
-    colorScheme: "dark light",
-    themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-        { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    ],
-
-    // Icons configuration
+    // Icons
     icons: {
-        icon: [
-            { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-            { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-        ],
+        icon: "/favicon.ico",
         shortcut: "/favicon.ico",
-        apple: [{ url: "/apple-icon-180x180.png", sizes: "180x180", type: "image/png" }],
-        other: [
-            {
-                rel: "apple-touch-icon-precomposed",
-                url: "/apple-touch-icon-precomposed.png",
-            },
-        ],
-    },
-
-    // App links and web app manifest
-    manifest: "/manifest.json",
-
-    // Viewport configuration
-    viewport: {
-        width: "device-width",
-        initialScale: 1,
-        maximumScale: 5,
-        userScalable: true,
-        themeColor: "#3b82f6",
-    },
-
-    // Archive and category information
-    category: "technology",
-
-    // Additional meta tags
-    other: {
-        "theme-color": "#3b82f6",
-        "msapplication-TileColor": "#3b82f6",
-        "apple-mobile-web-app-capable": "yes",
-        "apple-mobile-web-app-status-bar-style": "default",
-        "apple-mobile-web-app-title": "Ashish Yadav Portfolio",
-        "application-name": "Ashish Yadav Portfolio",
-        "mobile-web-app-capable": "yes",
+        apple: "/icons/icon-192x192.png",
+        other: {
+            rel: "apple-touch-icon-precomposed",
+            url: "/icons/icon-152x152.png",
+        },
     },
 };
+
+// Contact information
+export const CONTACT_INFO = {
+    email: "ashishyadav.works@gmail.com",
+    phone: "+917068513356",
+    location: "Noida, India",
+    linkedin: "https://www.linkedin.com/in/ashishyadavcs",
+    github: "https://github.com/ashishyadavcs",
+    twitter: "https://x.com/ashishyadav_cs",
+};
+
+// Navigation links
+export const NAV_LINKS = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Sitemap", href: "/sitemap" },
+];
+
+export default SITE_METADATA;
