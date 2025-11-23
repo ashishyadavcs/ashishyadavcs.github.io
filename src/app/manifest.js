@@ -1,5 +1,8 @@
 import { SITE_METADATA } from "@/app/constants";
 
+// Required for static export
+export const dynamic = "force-static";
+
 export default function manifest() {
     return {
         name: "Ashish Yadav - Full Stack Developer Portfolio",

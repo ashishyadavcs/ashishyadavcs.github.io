@@ -1,8 +1,11 @@
-import config from "public/config";
-import projects from "public/config/projects";
+import { SITE_METADATA } from "@/app/constants";
+import projects from "../../public/config/projects";
+
+// Required for static export
+export const dynamic = "force-static";
 
 export default function sitemap() {
-    const baseUrl = config.seo.url;
+    const baseUrl = SITE_METADATA.siteUrl;
     const currentDate = new Date();
 
     // Static pages

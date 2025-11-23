@@ -1,5 +1,8 @@
 import { SITE_METADATA } from "@/app/constants";
 
+// Required for static export
+export const dynamic = "force-static";
+
 export default function robots() {
     return {
         rules: {
@@ -7,7 +10,7 @@ export default function robots() {
             allow: "/",
             disallow: ["/private/", "/admin/"],
         },
-        sitemap: `${SITE_METADATA.metadataBase}/sitemap.xml`,
-        host: SITE_METADATA.metadataBase,
+        sitemap: `${SITE_METADATA.siteUrl}/sitemap.xml`,
+        host: SITE_METADATA.siteUrl,
     };
 }

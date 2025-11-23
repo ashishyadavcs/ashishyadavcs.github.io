@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
   compiler: {
     // Enable styled-components
     styledComponents: true,
@@ -10,6 +15,7 @@ const nextConfig = {
       "frontendzone.com",
       "www.frontendzone.com",
     ],
+    unoptimized: true,
   },
 };
 
