@@ -3,6 +3,7 @@ import StyledComponentsRegistry from "./components/Registry";
 import Layout from "./components/layout";
 import GlobalCSS from "./styles/globals.js";
 import config from "public/config";
+import SITE_METADATA from "./constants";
 
 const { seo } = config;
 
@@ -21,6 +22,14 @@ export const metadata = {
     twitter: seo.twitter,
     verification: seo.verification,
     metadataBase: new URL(seo.url),
+    icons: {
+        icon: [
+            { url: SITE_METADATA.logo, sizes: "32x32", type: "image/png" },
+            { url: SITE_METADATA.logo, sizes: "16x16", type: "image/png" },
+        ],
+        apple: [{ url: SITE_METADATA.logo, sizes: "180x180", type: "image/png" }],
+        shortcut: [SITE_METADATA.logo],
+    },
     alternates: {
         canonical: seo.url,
     },
