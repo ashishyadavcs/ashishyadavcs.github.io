@@ -12,6 +12,7 @@ import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
 import TypingEffect from "@/components/TypingEffect";
 import Certifications from "@/components/Certifications";
+import FAQ from "@/components/FAQ";
 
 export const metadata = {
     title: config.seo.pages.home.title,
@@ -85,6 +86,12 @@ const page = () => {
             <Container>
                 <Testimonials testimonials={testimonials} showStats={true} />
             </Container>
+            <FAQ
+                title="Frequently Asked Questions"
+                showSearch={true}
+                showFilters={true}
+                limit={6}
+            />
         </HomeStyle>
     );
 };

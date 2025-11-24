@@ -154,6 +154,23 @@ const seo = {
                 "web development services",
             ],
         },
+
+        faqs: {
+            title: "FAQs - Ashish Yadav Full Stack Developer",
+            description: `Frequently asked questions about Ashish Yadav's ${personal.totalExperience} experience in full stack development, technical skills, projects, and services. Get answers about React, Next.js, and web development expertise.`,
+            keywords: [
+                "faqs",
+                "frequently asked questions",
+                "full stack developer questions",
+                "react developer",
+                "web development services",
+                "technical skills",
+                "experience",
+                "portfolio questions",
+                "hiring developer",
+                "ashish yadav faq",
+            ],
+        },
     },
 
     // Additional SEO settings

@@ -1,10 +1,11 @@
+import personal from "./aboutme";
+
 const navigation = {
     footersections: [
         {
             heading: "About Me",
             type: "about",
-            description:
-                "Full-stack developer passionate about creating innovative web solutions. Specialized in React, Next.js, and modern web technologies.",
+            description: `Full-stack developer with ${personal.totalExperience} of experience, passionate about creating innovative web solutions. Specialized in React, Next.js, and modern web technologies.`,
             contact: {
                 email: "ashishyadav.works@gmail.com",
                 phone: "+917068513356",
@@ -20,7 +21,7 @@ const navigation = {
                 // { label: "Services", href: "/services" },
                 { label: "Projects", href: "/projects" },
                 { label: "Contact", href: "/contact" },
-                { label: "Sitemap", href: "/sitemap.xml" },
+                { label: "Faqs", href: "/faqs" },
             ],
         },
         {
