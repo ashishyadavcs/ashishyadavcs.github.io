@@ -54,7 +54,7 @@ const Skills = ({ skills }) => {
     );
 
     return (
-        <section className="skills-section">
+        <section className="skills-section" id="skills">
             <h2 className="section-heading">Skills & Expertise</h2>
             <p className="section-subtitle">
                 Technologies and tools I work with to bring ideas to life

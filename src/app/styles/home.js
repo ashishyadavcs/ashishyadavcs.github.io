@@ -183,6 +183,8 @@ const HomeStyle = styled.div`
 
     .skills-section {
         margin: 40px 0;
+        scroll-margin-top: 70px;
+        scroll-behavior: smooth;
         border-radius: 20px;
         .section-heading {
             color: #333;

@@ -17,7 +17,9 @@ ${css`
         --foreground: #171717;
         --container-size: 6%;
     }
-
+    html {
+        scroll-behavior: smooth;
+    }
     body {
         color: var(--foreground);
         background: var(--background);

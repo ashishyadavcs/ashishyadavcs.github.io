@@ -71,13 +71,17 @@ const navigation = {
             label: "About",
             href: "/about",
         },
-        // {
-        //     label: "Services",
-        //     href: "/services",
-        // },
+        {
+            label: "Skills",
+            href: "/#skills",
+        },
         {
             label: "Projects",
             href: "/projects",
+        },
+        {
+            label: "Faqs",
+            href: "/faqs",
         },
         {
             label: "Contact",
