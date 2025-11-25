@@ -1,7 +1,6 @@
 const contacts = {
     name: "Ashish Yadav",
     email: "ashishyadav.works@gmail.com",
-    phone: "+917068513356",
     address: "Noida, India",
     totalExperience: (() => {
         const startDate = new Date("2021-03-01");

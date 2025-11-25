@@ -8,7 +8,6 @@ const navigation = {
             description: `Full-stack developer with ${personal.totalExperience} of experience, passionate about creating innovative web solutions. Specialized in React, Next.js, and modern web technologies.`,
             contact: {
                 email: "ashishyadav.works@gmail.com",
-                phone: "+917068513356",
                 location: "Noida, India",
             },
         },

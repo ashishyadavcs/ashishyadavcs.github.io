@@ -61,7 +61,7 @@ const faq = [
         id: 8,
         category: "Contact",
         question: "How can I get in touch with you?",
-        answer: "You can reach me through multiple channels: email at ashishyadav.works@gmail.com, phone at +91 7068513356, or connect with me on LinkedIn (ashishyadavcs), GitHub (ashishyadavcs), or Twitter (@ashishyadav_cs). I'm always open to discussing new opportunities, collaborations, or answering any questions about web development.",
+        answer: "You can reach me through multiple channels: email at ashishyadav.works@gmail.com, or connect with me on LinkedIn (ashishyadavcs), GitHub (ashishyadavcs), or Twitter (@ashishyadav_cs). I'm always open to discussing new opportunities, collaborations, or answering any questions about web development.",
         tags: ["contact", "communication", "collaboration"],
         priority: 1,
     },

@@ -87,7 +87,6 @@ const seo = {
             addressCountry: "India",
         },
         email: "ashishyadav.works@gmail.com",
-        telephone: "+917068513356",
         knowsAbout: [
             "JavaScript",
             "React.js",
