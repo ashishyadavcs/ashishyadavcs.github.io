@@ -18,7 +18,7 @@ const Page = () => {
     });
 
     const { personal } = config;
-    const { email, socialMedia } = personal;
+    const { email, phone, showPhone, socialMedia } = personal;
     const { linkedin, github, twitter } = socialMedia;
 
     const handleSubmit = async e => {
@@ -66,6 +66,18 @@ const Page = () => {
                         <p>Fill out the form and our team will get back to you within 24 hours.</p>
 
                         <div className="contact-details">
+                            {showPhone && (
+                                <div className="contact-item">
+                                    <div className="icon">
+                                        <FiPhone />
+                                    </div>
+                                    <div className="text">
+                                        <h3>Phone</h3>
+                                        <p>{phone}</p>
+                                    </div>
+                                </div>
+                            )}
+
                             <div className="contact-item">
                                 <div className="icon">
                                     <FiMail />

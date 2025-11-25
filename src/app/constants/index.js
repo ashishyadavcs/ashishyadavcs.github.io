@@ -169,6 +169,8 @@ export const SITE_METADATA = {
 // Contact information
 export const CONTACT_INFO = {
     email: "ashishyadav.works@gmail.com",
+    phone: "+917068513356",
+    showPhone: false, // Set to true to display phone contact
     location: "Noida, India",
     linkedin: "https://www.linkedin.com/in/ashishyadavcs",
     github: "https://github.com/ashishyadavcs",

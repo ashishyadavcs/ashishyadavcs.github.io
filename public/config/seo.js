@@ -87,6 +87,7 @@ const seo = {
             addressCountry: "India",
         },
         email: "ashishyadav.works@gmail.com",
+        ...(personal.showPhone && { telephone: personal.phone }),
         knowsAbout: [
             "JavaScript",
             "React.js",
