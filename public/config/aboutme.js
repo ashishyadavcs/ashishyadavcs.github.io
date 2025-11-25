@@ -35,7 +35,7 @@ const personal = {
     ...contacts,
     title: "Full-Stack Developer",
     description: `Frontend Developer with 4.6+ years of experience specializing in React, Next.js, JavaScript, and modern UI engineering. I build fast, maintainable, and SEO-optimized applications with strong focus on performance, accessibility, and clean architecture. `,
-    image: "/images/ashish.png",
+    image: "/images/ashish-profile.jpeg",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
     typingTexts: [

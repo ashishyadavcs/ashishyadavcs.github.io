@@ -1,5 +1,5 @@
 export const SITE_METADATA = {
-    logo: "/images/logo.png",
+    logo: "/images/ashish-profile.jpeg",
     metadataBase: new URL("https://ashishyadavcs.vercel.app"),
     title: {
         default: "Ashish Yadav - Full Stack Developer & Software Engineer",

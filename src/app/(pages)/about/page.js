@@ -2,6 +2,7 @@ import React from "react";
 import AboutStyle from "@/styles/about";
 import Timeline from "@/components/Timeline";
 import config from "public/config";
+import MyImage from "@/app/components/MyImage";
 
 export const metadata = {
     title: config.seo.pages.about.title,
@@ -22,6 +23,14 @@ const page = () => {
     return (
         <AboutStyle>
             <h1>About Me</h1>
+            <MyImage
+                className="profile"
+                height={200}
+                width={200}
+                src={personal.image}
+                alt={personal.name || personal.title}
+                priority
+            />
             {personal.aboutme && (
                 <div
                     className="about-description"

@@ -10,6 +10,11 @@ const AboutStyle = styled.div`
     strong {
         color: #555;
     }
+    .profile {
+        object-fit: cover;
+        display: block;
+        margin: 20px auto;
+    }
     h1 {
         text-align: center;
         color: #333;

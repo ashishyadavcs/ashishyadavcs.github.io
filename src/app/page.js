@@ -36,7 +36,7 @@ const page = () => {
                     height={150}
                     width={150}
                     src={personal.image}
-                    alt={personal.name}
+                    alt={personal.name || personal.title}
                     priority
                 />
                 <div className="content">
