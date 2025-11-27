@@ -54,6 +54,7 @@ const personal = {
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
     typingTexts: [
+        "MERN Stack Developer",
         "Frontend Developer",
         "React.js Expert",
         "Next.js Specialist",
