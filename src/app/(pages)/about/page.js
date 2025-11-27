@@ -31,11 +31,12 @@ const page = () => {
                 alt={personal.name || personal.title}
                 priority
             />
+
             {personal.aboutme && (
-                <div
-                    className="about-description"
-                    dangerouslySetInnerHTML={{ __html: personal.aboutme }}
-                />
+                <div className="about-description">
+                    {personal.title && <h2 className="title">{personal.title}</h2>}
+                    <div dangerouslySetInnerHTML={{ __html: personal.aboutme }} />
+                </div>
             )}
 
             <h2 className="section-title">Professional Experience({personal.totalExperience})</h2>

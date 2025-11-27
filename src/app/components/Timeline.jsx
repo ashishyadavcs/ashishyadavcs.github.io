@@ -27,7 +27,7 @@ const Timeline = ({ data }) => {
                             <Link
                                 className="timeline-company"
                                 href={item.website}
-                                target="_blank"
+                                target={item.website.includes("http") ? "_blank" : "_self"}
                                 rel="noopener noreferrer"
                             >
                                 {item.company || item.institution}
@@ -38,6 +38,7 @@ const Timeline = ({ data }) => {
                             className="timeline-description"
                             dangerouslySetInnerHTML={{ __html: item.description }}
                         />
+                        {item.grade && <div className="timeline-grade">score : {item.grade}</div>}
                     </div>
                 </div>
             ))}

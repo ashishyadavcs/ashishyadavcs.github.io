@@ -14,20 +14,21 @@ const AboutStyle = styled.div`
         object-fit: cover;
         display: block;
         margin: 20px auto;
+        border-radius: 8px;
     }
     h1 {
         text-align: center;
         color: #333;
         font-size: 2.5rem;
         margin-bottom: 30px;
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
 
         ${media.md} {
             font-size: 2rem;
         }
+    }
+    .title {
+        text-align: center;
+        margin: 10px 0 20px;
     }
 
     .about-description {

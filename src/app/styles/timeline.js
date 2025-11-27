@@ -8,7 +8,9 @@ const TimelineStyle = styled.div`
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
-
+    .timeline-grade {
+        opacity: 0.5;
+    }
     ${media.sm} {
         padding: 30px 15px;
     }

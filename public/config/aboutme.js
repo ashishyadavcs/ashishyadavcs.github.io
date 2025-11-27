@@ -25,16 +25,31 @@ const education = [
         date: "2016 - 2020",
         degree: "Bachelor of Technology",
         institution: "Feroze Gandhi Institute of Engineering and Technology, Raebareli",
-        website: "https://fgiet.ac.in/",
+        website: "http://fgiet.ac.in/",
         field: "Computer Science & Engineering",
         description: "Specialized in software development, web technologies.",
+        grade: " 7.5 CGPA",
     },
+    // {
+    //     degree: "Intermediate",
+    //     institution: "Shaheed Naresh Inermediate College, Khamaria Bhadohi, UP",
+    //     field: "UP Board",
+    //     website: "#",
+    //     grade: "86%",
+    // },
+    // {
+    //     degree: "High School",
+    //     institution: "Shaheed Naresh Inermediate College, Khamaria Bhadohi, UP",
+    //     field: "UP Board",
+    //     website: "#",
+    //     grade: "87%",
+    // },
 ];
 
 const personal = {
     ...contacts,
     title: "Full-Stack Developer",
-    description: `Frontend Developer with 4.6+ years of experience specializing in React, Next.js, JavaScript, and modern UI engineering. I build fast, maintainable, and SEO-optimized applications with strong focus on performance, accessibility, and clean architecture. `,
+    description: `Frontend Developer with ${contacts.totalExperience} years of experience specializing in React, Next.js, JavaScript, and modern UI engineering. I build fast, maintainable, and SEO-optimized applications with strong focus on performance, accessibility, and clean architecture. `,
     image: "/images/ashish-profile.jpeg",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
@@ -43,7 +58,6 @@ const personal = {
         "React.js Expert",
         "Next.js Developer",
         "Node.js Developer",
-        "AI Integration Specialist",
         "Problem Solver",
     ],
     aboutme: `
