@@ -6,8 +6,17 @@ const ProjectdetailsStyle = styled.footer`
     h2 {
         margin: 20px 0 10px;
     }
+    .heading {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+    }
     .content ul {
         padding: 0 0 0 20px;
+        li {
+            margin: 0 0 7px;
+        }
+    }
+    h2 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
     }
     img {
         object-fit: cover;

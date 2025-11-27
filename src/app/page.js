@@ -83,9 +83,9 @@ const page = () => {
                 <Certifications certifications={certifications} showStats={false} />
             </Container>
             <ProjectList title="Featured Projects" projects={projects} />
-            <Container>
-                <Testimonials testimonials={testimonials} showStats={true} />
-            </Container>
+
+            <Testimonials testimonials={testimonials} showStats={true} />
+
             <FAQ
                 title="Frequently Asked Questions"
                 showSearch={true}
