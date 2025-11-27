@@ -16,7 +16,7 @@ const ProjectdetailsStyle = styled.footer`
         }
     }
     h2 {
-        font-size: clamp(1.2rem, 4vw, 2rem);
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
     }
     img {
         object-fit: cover;

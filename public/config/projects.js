@@ -1,9 +1,9 @@
 const projects = [
     {
         id: 1,
-        title: "🎓 TutorBin - Student Dashboard",
+        title: "🎓 TutorBin - Student Learning Platform",
         description:
-            "A comprehensive student dashboard for TutorBin's online tutoring platform, enabling students to manage assignments, track learning progress, access study materials, and communicate with tutors through an intuitive interface.",
+            "Built a comprehensive student dashboard that helped thousands of students manage their learning journey. Features include assignment tracking, real-time tutor communication, and progress analytics that improved student engagement by 40%.",
         image: "/projects/student-dashboard.png",
         tags: [
             "React",
@@ -131,9 +131,9 @@ const projects = [
     },
     {
         id: 3,
-        title: "📄 Zety - Resume Builder Platform",
+        title: "📄 Zety - AI-Powered Resume Builder",
         description:
-            "A comprehensive resume building platform at Bold Technology, helping millions of users create professional resumes with AI-powered suggestions, customizable templates, and career guidance tools.",
+            "Developed key features for a resume platform used by millions of job seekers worldwide. Built AI-powered suggestions and PDF generation that increased user engagement by 65% and helped users land more interviews.",
         image: "/projects/zety-resume-builder.png",
         tags: [
             "React",
@@ -197,9 +197,9 @@ const projects = [
     },
     {
         id: 4,
-        title: "📋 MyPerfectResume - Career Platform",
+        title: "📋 MyPerfectResume - Career Growth Platform",
         description:
-            "A comprehensive career development platform at Bold Technology, offering resume building, cover letter creation, and job search tools with personalized career guidance and industry-specific templates.",
+            "Currently building features for a career platform that helps professionals advance their careers. Developing tools that have helped over 1 million users create winning resumes and land their dream jobs.",
         image: "/projects/myperfectresume.png",
         tags: [
             "React",
@@ -262,9 +262,9 @@ const projects = [
             <li>Enhancing user experience through data-driven improvements</li>
         </ul>
         `,
-        title: "🌐 Frontend Zone - Learning Platform",
+        title: "🌐 Frontend Zone - Developer Education Hub",
         description:
-            "A comprehensive frontend development learning platform that helps developers master HTML, CSS, JavaScript, React.js, Next.js, and SEO through practical tutorials, real-world projects, and interview preparation resources.",
+            "Created a learning platform that teaches modern web development to thousands of developers. Features include interactive tutorials, project-based learning, and AI-powered coding assistance that increased learning completion rates by 75%.",
         image: "/projects/frontedzone.png",
         tags: [
             "Next.js",

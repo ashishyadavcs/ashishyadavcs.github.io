@@ -1,8 +1,8 @@
 import personal from "./aboutme";
 
-const description = `Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies. Creating digital solutions with ${personal.totalExperience} years of professional experience.`;
+const description = `Professional Frontend Developer specializing in React and Next.js. With ${personal.totalExperience} years of experience building fast, SEO-optimized websites that drive business growth and user engagement.`;
 const seo = {
-    title: "Ashish Yadav - Full Stack Developer & UI/UX Designer",
+    title: "Ashish Yadav - Frontend Developer | React & Next.js Expert",
     url: "https://ashishyadavcs.vercel.app",
     siteName: "Ashish Yadav Portfolio",
     description,
@@ -16,17 +16,17 @@ const seo = {
 
     keywords: [
         "Ashish Yadav",
-        "Full Stack Developer",
-        "React Developer",
-        "Node.js Developer",
-        "JavaScript Developer",
         "Frontend Developer",
-        "Backend Developer",
-        "UI/UX Designer",
+        "React Developer",
+        "Next.js Developer",
+        "JavaScript Developer",
+        "UI/UX Engineer",
         "Web Developer",
-        "Software Engineer",
-        "MERN Stack",
-        "Next.js",
+        "React Expert",
+        "Performance Optimization",
+        "SEO Optimization",
+        "Responsive Design",
+        "Modern Web Development",
         "MongoDB",
         "Express.js",
         "Portfolio",

@@ -48,20 +48,22 @@ const education = [
 
 const personal = {
     ...contacts,
-    title: "Full-Stack Developer",
-    description: `Frontend Developer with ${contacts.totalExperience} years of experience specializing in React, Next.js, JavaScript, and modern UI engineering. I build fast, maintainable, and SEO-optimized applications with strong focus on performance, accessibility, and clean architecture. `,
+    title: "Frontend Developer",
+    description: `I build fast, modern web applications with React and Next.js. With ${contacts.totalExperience} of experience, I turn complex ideas into clean, user-friendly interfaces that drive real business results.`,
     image: "/images/ashish-profile.jpeg",
     resume: "https://drive.google.com/file/d/1-CVbKT9I4BEX7tTLpp5RRdlToU7isTJq/view?usp=sharing",
     education,
     typingTexts: [
-        "Full-Stack Developer",
+        "Frontend Developer",
         "React.js Expert",
-        "Next.js Developer",
-        "Node.js Developer",
+        "Next.js Specialist",
+        "UI/UX Engineer",
         "Problem Solver",
     ],
     aboutme: `
-    I craft high-performance, responsive web applications using modern technologies like React, Next.js, and Node.js. My focus is on building clean, scalable, and visually stunning interfaces that deliver real business results. Whether it’s improving performance, refining UX, or integrating complex backend systems — I turn ideas into smooth digital experiences.
+    I specialize in building high-performance web applications that users love. My expertise in React, Next.js, and modern JavaScript helps businesses create digital experiences that convert visitors into customers.
+    
+    I focus on clean code, fast loading times, and responsive design. Every project I build is optimized for search engines, accessibility, and mobile devices.
     `,
 };
 export default personal;
