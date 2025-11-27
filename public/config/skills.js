@@ -22,18 +22,19 @@ const skills = {
                 // { name: "Django", level: 78, icon: "🎯" },
                 { name: "REST APIs", level: 90, icon: "🔗" },
                 // { name: "GraphQL", level: 75, icon: "📊" }
-            ],
-        },
-        {
-            category: "Database & Tools",
-            skills: [
                 { name: "MongoDB", level: 85, icon: "🍃" },
                 // { name: "PostgreSQL", level: 80, icon: "🐘" },
                 { name: "MySQL", level: 82, icon: "🗄️" },
+                { name: "WebSocket", level: 80, icon: "🔄" },
+            ],
+        },
+        {
+            category: "Tools",
+            skills: [
                 { name: "Redis", level: 75, icon: "⚡" },
                 { name: "Git", level: 92, icon: "📝" },
-                // { name: "Docker", level: 78, icon: "🐳" },
-                // { name: "AWS", level: 80, icon: "☁️" },
+                { name: "Docker", level: 78, icon: "🐳" },
+                { name: "AWS", level: 80, icon: "☁️" },
                 { name: "Vercel", level: 88, icon: "▲" },
             ],
         },
@@ -44,8 +45,19 @@ const skills = {
                 // { name: "Machine Learning", level: 75, icon: "🧠" },
                 { name: "Prompt Engineering", level: 90, icon: "💭" },
                 { name: "Automation", level: 82, icon: "⚙️" },
+                { name: "Vibe Coding", level: 88, icon: "🎵" },
                 // { name: "Data Analysis", level: 78, icon: "📈" },
                 // { name: "Computer Vision", level: 70, icon: "👁️" }
+            ],
+        },
+        {
+            category: "Payment Integration",
+            skills: [
+                { name: "Stripe", level: 85, icon: "💳" },
+                { name: "PayPal", level: 80, icon: "💰" },
+                { name: "Razorpay", level: 82, icon: "💸" },
+                { name: "Juspay", level: 78, icon: "💵" },
+                { name: "PayU", level: 75, icon: "💶" },
             ],
         },
     ],
