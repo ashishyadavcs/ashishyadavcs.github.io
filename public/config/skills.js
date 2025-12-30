@@ -9,6 +9,8 @@ const skills = {
                 { name: "JavaScript", level: 95, icon: "💛" },
                 { name: "HTML5", level: 98, icon: "🏗️" },
                 { name: "CSS3", level: 92, icon: "🎨" },
+                { name: "SCSS", level: 92, icon: "🎨" },
+                { name: "Bootstrap", level: 92, icon: "🎨" },
                 { name: "Tailwind CSS", level: 88, icon: "💨" },
                 { name: "Styled Components", level: 85, icon: "💅" },
             ],
