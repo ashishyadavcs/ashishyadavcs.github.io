@@ -1,3 +1,5 @@
+import { SITE_URL } from "./settings";
+
 const projects = [
     {
         id: 1,
@@ -436,7 +438,7 @@ const projects = [
             "A responsive portfolio website showcasing projects and skills with modern design and animations.",
         image: "/projects/portfolio.png",
         tags: ["Next.js", "Styled Components", "Framer Motion", "React"],
-        demoUrl: "https://ashishyadavcs.vercel.app",
+        demoUrl: SITE_URL,
         codeUrl: "https://github.com/ashishyadavcs/ashishyadavcs.github.io",
         slug: "portfolio-website",
         content: `

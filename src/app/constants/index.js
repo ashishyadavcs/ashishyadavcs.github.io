@@ -1,6 +1,9 @@
+import { SITE_URL } from "@/../public/config/settings";
+export { SITE_URL };
+
 export const SITE_METADATA = {
     logo: "/images/ashish-profile.jpeg",
-    metadataBase: new URL("https://ashishyadavcs.vercel.app"),
+    metadataBase: new URL(SITE_URL),
     title: {
         default: "Ashish Yadav - Full Stack Developer & Software Engineer",
         template: "%s | Ashish Yadav",
@@ -27,16 +30,16 @@ export const SITE_METADATA = {
         "Database Design",
         "UI/UX Implementation",
     ],
-    authors: [{ name: "Ashish Yadav", url: "https://ashishyadavcs.vercel.app" }],
+    authors: [{ name: "Ashish Yadav", url: SITE_URL }],
     creator: "Ashish Yadav",
     publisher: "Ashish Yadav",
-    siteUrl: "https://ashishyadavcs.vercel.app",
+    siteUrl: SITE_URL,
 
     // Open Graph metadata
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://ashishyadavcs.vercel.app",
+        url: SITE_URL,
         title: "Ashish Yadav - Full Stack Developer Portfolio",
         description:
             "Experienced Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building high-performance web applications with clean code and exceptional user experiences.",
@@ -44,7 +47,7 @@ export const SITE_METADATA = {
         images: [
             {
                 url: "/images/og-image.jpg",
-                secureUrl: "https://ashishyadavcs.vercel.app/images/og-image.jpg",
+                secureUrl: `${SITE_URL}/images/og-image.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Ashish Yadav - Full Stack Developer Portfolio",
@@ -52,7 +55,7 @@ export const SITE_METADATA = {
             },
             {
                 url: "/images/og-square.jpg",
-                secureUrl: "https://ashishyadavcs.vercel.app/images/og-square.jpg",
+                secureUrl: `${SITE_URL}/images/og-square.jpg`,
                 width: 1080,
                 height: 1080,
                 alt: "Ashish Yadav - Full Stack Developer",
@@ -96,28 +99,28 @@ export const SITE_METADATA = {
     // App Links
     appLinks: {
         web: {
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
             should_fallback: true,
         },
         ios: {
             app_store_id: "123456789",
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
         },
         android: {
             package: "com.ashishyadavcs.portfolio",
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
         },
         windows_phone: {
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
         },
         windows: {
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
         },
         windows_universal: {
-            url: "https://ashishyadavcs.vercel.app",
+            url: SITE_URL,
         },
-        iphone: "https://ashishyadavcs.vercel.app",
-        ipad: "https://ashishyadavcs.vercel.app",
+        iphone: SITE_URL,
+        ipad: SITE_URL,
     },
 
     // Other metadata
@@ -147,10 +150,10 @@ export const SITE_METADATA = {
 
     // Alternate languages and canonical
     alternates: {
-        canonical: "https://ashishyadavcs.vercel.app",
+        canonical: SITE_URL,
         languages: {
-            "en-US": "https://ashishyadavcs.vercel.app",
-            "x-default": "https://ashishyadavcs.vercel.app",
+            "en-US": SITE_URL,
+            "x-default": SITE_URL,
         },
     },
 

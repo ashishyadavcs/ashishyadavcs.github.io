@@ -1,9 +1,10 @@
 import personal from "./aboutme";
+import { SITE_URL } from "./settings";
 
 const description = `Professional Frontend Developer specializing in React and Next.js. With ${personal.totalExperience} years of experience building fast, SEO-optimized websites that drive business growth and user engagement.`;
 const seo = {
     title: "Ashish Yadav - Frontend Developer | React & Next.js Expert",
-    url: "https://ashishyadavcs.vercel.app",
+    url: SITE_URL,
     siteName: "Ashish Yadav Portfolio",
     description,
     author: {
@@ -44,13 +45,13 @@ const seo = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://ashishyadavcs.vercel.app",
+        url: SITE_URL,
         title: "Ashish Yadav - Full Stack Developer & UI/UX Designer",
         description: description,
         siteName: "Ashish Yadav Portfolio",
         images: [
             {
-                url: "https://ashishyadavcs.vercel.app/images/ashish.png",
+                url: `${SITE_URL}/images/ashish.png`,
                 width: 1200,
                 height: 630,
                 alt: "Ashish Yadav - Full Stack Developer",
@@ -65,7 +66,7 @@ const seo = {
         description: description,
         creator: "@ashishyadav_cs",
         site: "@ashishyadav_cs",
-        images: ["https://ashishyadavcs.vercel.app/images/ashish.png"],
+        images: [`${SITE_URL}/images/ashish.png`],
     },
 
     // JSON-LD Structured Data
@@ -75,7 +76,7 @@ const seo = {
         name: "Ashish Yadav",
         jobTitle: "Full Stack Developer",
         description: description,
-        url: "https://ashishyadavcs.vercel.app",
+        url: SITE_URL,
         sameAs: [
             "https://www.linkedin.com/in/ashishyadavcs",
             "https://github.com/ashishyadavcs",
