@@ -45,8 +45,6 @@ const ContactStyles = styled.section`
 
     .wrapper {
         display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
         border-radius: 10px;
         overflow: hidden;
         background: #fff;
@@ -54,7 +52,10 @@ const ContactStyles = styled.section`
         transform: translateY(-60px);
 
         ${media.sm} {
+            flex-direction: column;
             transform: translateY(-40px);
+            margin: 0 10px;
+            border-radius: 8px;
         }
     }
 
@@ -62,6 +63,14 @@ const ContactStyles = styled.section`
         background: linear-gradient(135deg, #2d0016 0%, #7928ca 100%);
         color: white;
         padding: 40px 30px;
+        flex: 0 0 38%;
+        min-width: 0;
+
+        ${media.sm} {
+            flex: none;
+            width: 100%;
+            padding: 30px 20px;
+        }
 
         h2 {
             margin: 0 0 20px;
@@ -150,8 +159,12 @@ const ContactStyles = styled.section`
 
     .contact-form {
         padding: clamp(20px, 5vw, 40px);
+        flex: 1;
+        min-width: 0;
+
         ${media.sm} {
             width: 100%;
+            padding: 24px 16px;
         }
         h2 {
             margin: 0 0 30px 0;

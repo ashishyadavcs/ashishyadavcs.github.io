@@ -88,13 +88,12 @@ const services = [
         icon: "🔗",
         features: [
             "RESTful API Design",
-            "GraphQL APIs",
             "API Documentation",
             "Rate Limiting & Security",
             "Third-party API Integration",
             "API Testing & Monitoring",
         ],
-        technologies: ["Node.js", "Express.js", "GraphQL", "Swagger", "Postman", "JWT", "OAuth"],
+        technologies: ["Node.js", "Express.js", "Swagger", "Postman", "JWT", "OAuth"],
         price: "Starting from $1,200",
         duration: "1-3 weeks",
         category: "api",
@@ -107,14 +106,7 @@ const services = [
         description:
             "Integrate cutting-edge AI and machine learning capabilities into your applications. From chatbots to recommendation systems, bringing intelligent features to your projects.",
         icon: "🤖",
-        features: [
-            "AI Chatbot Development",
-            "Machine Learning Models",
-            "Natural Language Processing",
-            "Computer Vision Solutions",
-            "Recommendation Systems",
-            "Predictive Analytics",
-        ],
+        features: ["AI Chatbot Development", "API Integration with OpenAI"],
         technologies: [
             "OpenAI API",
             "TensorFlow",
