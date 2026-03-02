@@ -34,7 +34,7 @@ export const metadata = {
         canonical: seo.url,
     },
     other: {
-        "google-site-verification": "6g2dD6ZYcYfD3YBYpGU0O2cSRZlSrufZqXcL7D_shzk",
+        "google-site-verification": "Do2LFMpDl6plWQ28iz1tDXeMC1VlPZBLyXBYhAYUVaM",
     },
 };
 
