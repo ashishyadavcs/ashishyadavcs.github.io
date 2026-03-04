@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Cal from "@calcom/embed-react";
 import { FiCalendar } from "react-icons/fi";
+import MeetingStyle from "../styles/meeting";
 const Meeting = () => {
     const calConfig = {
         layout: "month_view",
@@ -8,7 +10,7 @@ const Meeting = () => {
     };
 
     return (
-        <div className="scheduling-section">
+        <MeetingStyle className="scheduling-section">
             <div className="scheduling-header">
                 <FiCalendar className="scheduling-icon" />
                 <h2>Schedule a Project Discussion</h2>
@@ -27,7 +29,7 @@ const Meeting = () => {
                     }}
                 />
             </div>
-        </div>
+        </MeetingStyle>
     );
 };
 

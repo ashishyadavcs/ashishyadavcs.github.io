@@ -152,7 +152,7 @@ const Page = () => {
                     </div>
 
                     <div className="contact-form">
-                        <Meeting name={formData.name} email={formData.email} />
+                        <Meeting maxHeight="400px" name={formData.name} email={formData.email} />
                     </div>
                 </div>
             </Container>

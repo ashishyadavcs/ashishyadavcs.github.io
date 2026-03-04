@@ -177,7 +177,6 @@ const ChatBot = () => {
             // Wait for DOM to render the chat window, then snap instantly
             requestAnimationFrame(() => {
                 snapToBottom();
-                inputRef.current?.focus();
             });
             setUnread(0);
         }

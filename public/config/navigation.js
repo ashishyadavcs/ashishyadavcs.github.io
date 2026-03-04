@@ -16,6 +16,7 @@ const navigation = {
             heading: "Quick Links",
             type: "navigation",
             links: [
+                { label: "Schedule Meeting", href: "/schedule-meeting" },
                 { label: "Home", href: "/" },
                 { label: "About", href: "/about" },
                 { label: "Services", href: "/services" },
