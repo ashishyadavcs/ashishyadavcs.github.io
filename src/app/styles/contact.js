@@ -311,6 +311,12 @@ const ContactStyles = styled.section`
         color: #000;
         border: 2px solid #ddd;
         border-radius: 8px;
+        ${media.sm} {
+            &,
+            .container {
+                padding: 0;
+            }
+        }
 
         p {
             color: #000;
@@ -318,6 +324,7 @@ const ContactStyles = styled.section`
         }
         .scheduling-header {
             text-align: center;
+            padding: 10px;
             .scheduling-icon {
                 font-size: 2rem;
                 color: #6366f1;
