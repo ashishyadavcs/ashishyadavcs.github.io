@@ -54,7 +54,6 @@ const ContactStyles = styled.section`
         ${media.sm} {
             flex-direction: column;
             transform: translateY(-40px);
-            margin: 0 10px;
             border-radius: 8px;
         }
     }
@@ -301,6 +300,29 @@ const ContactStyles = styled.section`
         ${media.xs} {
             height: 300px;
             margin: 40px 0 0;
+        }
+    }
+
+    .scheduling-section {
+        padding: 20px;
+        max-height: 400px;
+        overflow: auto;
+        background: #f8fafc;
+        color: #000;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+
+        p {
+            color: #000;
+            margin: 0 0 20px;
+        }
+        .scheduling-header {
+            text-align: center;
+            .scheduling-icon {
+                font-size: 2rem;
+                color: #6366f1;
+                margin: 0 0 12px;
+            }
         }
     }
 `;

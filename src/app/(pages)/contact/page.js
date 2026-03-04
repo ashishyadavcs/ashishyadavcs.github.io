@@ -1,12 +1,13 @@
 "use client";
 import Button from "@/components/Button";
 import Container from "@/components/layout/Container";
-import { useState } from "react";
-import { FiMail, FiPhone, FiMessageSquare, FiUser, FiSend } from "react-icons/fi";
+import { Suspense, useState } from "react";
+import { FiMail, FiPhone, FiMessageSquare, FiUser, FiSend, FiCalendar } from "react-icons/fi";
 import { MdLocationOn } from "react-icons/md";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import ContactStyle from "@/styles/contact";
 import config from "public/config";
+import Meeting from "@/app/components/Meeting";
 const Page = () => {
     const [loading, setloading] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -151,91 +152,7 @@ const Page = () => {
                     </div>
 
                     <div className="contact-form">
-                        {success ? (
-                            <div className="success-message">
-                                <div className="success-icon">
-                                    <IoMdCheckmarkCircle size={60} />
-                                </div>
-                                <h2>Thank you!</h2>
-                                <p>
-                                    Your message has been sent successfully. We&apos;ll get back to
-                                    you shortly.
-                                </p>
-                                <Button type="primary" onClick={() => setSuccess(false)}>
-                                    Send Another Message
-                                </Button>
-                            </div>
-                        ) : (
-                            <form onSubmit={handleSubmit}>
-                                <h2>Send us a message</h2>
-
-                                <div className="form-row">
-                                    <label className="input-group">
-                                        <div className="input-label">
-                                            <FiUser className="input-icon" />
-                                            <span>Full Name</span>
-                                        </div>
-                                        <input
-                                            required
-                                            name="name"
-                                            type="text"
-                                            placeholder="John Doe"
-                                        />
-                                    </label>
-                                </div>
-
-                                <div className="form-row two-columns">
-                                    <label className="input-group">
-                                        <div className="input-label">
-                                            <FiPhone className="input-icon" />
-                                            <span>Phone</span>
-                                        </div>
-                                        <input
-                                            required
-                                            title="Enter a valid mobile number"
-                                            maxLength={12}
-                                            name="mobile"
-                                            type="tel"
-                                            placeholder="+91 9876543210"
-                                        />
-                                    </label>
-
-                                    <label className="input-group">
-                                        <div className="input-label">
-                                            <FiMail className="input-icon" />
-                                            <span>Email</span>
-                                        </div>
-                                        <input
-                                            title="Enter a valid email address"
-                                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                                            required
-                                            name="email"
-                                            type="email"
-                                            placeholder="john@example.com"
-                                        />
-                                    </label>
-                                </div>
-
-                                <div className="form-row">
-                                    <label className="input-group">
-                                        <div className="input-label">
-                                            <FiMessageSquare className="input-icon" />
-                                            <span>Your Message</span>
-                                        </div>
-                                        <textarea
-                                            required
-                                            name="body"
-                                            placeholder="How can we help you?"
-                                            rows="5"
-                                        />
-                                    </label>
-                                </div>
-
-                                <Button type="submit" disabled={loading}>
-                                    <FiSend /> {loading ? "Sending..." : "Send Message"}
-                                </Button>
-                            </form>
-                        )}
+                        <Meeting name={formData.name} email={formData.email} />
                     </div>
                 </div>
             </Container>
