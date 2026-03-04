@@ -4,6 +4,7 @@ import Header from "./Header";
 import dynamic from "next/dynamic";
 const ChatBot = dynamic(() => import("@/app/chatbot"));
 import config from "@/config";
+import WhatsApp from "@/app/components/WhatsApp";
 const Layout = ({ children }) => {
     const { settings } = config;
     return (
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
             <Header />
             {children}
             <Footer />
+            <WhatsApp />
             {settings.enableChatBot && <ChatBot />}
         </>
     );

@@ -44,7 +44,7 @@ const HomeStyle = styled.div`
         }
 
         .title {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 0.4vw, 1.3rem);
             margin: 15px 0 0;
             font-weight: 500;
             opacity: 0.9;
@@ -54,14 +54,6 @@ const HomeStyle = styled.div`
             justify-content: center;
             z-index: 1;
             position: relative;
-
-            ${media.md} {
-                font-size: 1.2rem;
-            }
-
-            ${media.sm} {
-                font-size: 1.1rem;
-            }
         }
 
         .description {
