@@ -7,6 +7,7 @@ import skills from "./skills";
 import testimonials from "./testimonials";
 import seo from "./seo";
 import settings from "./settings";
+import funnel from "./funnel";
 
 const config = {
     projects,
@@ -18,5 +19,6 @@ const config = {
     certifications,
     seo,
     settings,
+    funnel,
 };
 export default config;

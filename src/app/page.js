@@ -7,12 +7,14 @@ import config from "public/config";
 import MyImage from "@/components/MyImage";
 import Button from "@/components/Button";
 import { GoDownload } from "react-icons/go";
+import { IoBriefcaseOutline } from "react-icons/io5";
 import Timeline from "@/components/Timeline";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
 import TypingEffect from "@/components/TypingEffect";
 import Certifications from "@/components/Certifications";
 import FAQ from "@/components/FAQ";
+import FunnelCTABanner from "@/components/FunnelCTABanner";
 
 export const metadata = {
     title: config.seo.pages.home.title,
@@ -56,9 +58,9 @@ const page = () => {
                         <Button arrow={true} href="/projects">
                             View my work
                         </Button>
-                        <Button href={"/contact"} type="secondary">
-                            contact me
-                            {/* <GoDownload /> */}
+                        <Button href={"/hire"} type="secondary">
+                            Hire Me
+                            <IoBriefcaseOutline />
                         </Button>
                     </div>
                 </div>
@@ -85,6 +87,10 @@ const page = () => {
             <ProjectList title="Featured Projects" projects={projects} />
 
             <Testimonials testimonials={testimonials} showStats={true} />
+
+            <Container>
+                <FunnelCTABanner />
+            </Container>
 
             <FAQ
                 title="Frequently Asked Questions"

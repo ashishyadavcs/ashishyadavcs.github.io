@@ -1,4 +1,5 @@
 import projects from "public/config/projects";
+import services from "public/config/services";
 import { SITE_METADATA } from "@/app/constants";
 
 export function generateSitemap() {
@@ -25,6 +26,42 @@ export function generateSitemap() {
             priority: "0.9",
         },
         {
+            url: `${baseUrl}/services`,
+            lastmod: currentDate,
+            changefreq: "weekly",
+            priority: "0.9",
+        },
+        {
+            url: `${baseUrl}/hire`,
+            lastmod: currentDate,
+            changefreq: "monthly",
+            priority: "0.8",
+        },
+        {
+            url: `${baseUrl}/hire/employer`,
+            lastmod: currentDate,
+            changefreq: "monthly",
+            priority: "0.7",
+        },
+        {
+            url: `${baseUrl}/hire/freelance`,
+            lastmod: currentDate,
+            changefreq: "monthly",
+            priority: "0.7",
+        },
+        {
+            url: `${baseUrl}/faqs`,
+            lastmod: currentDate,
+            changefreq: "monthly",
+            priority: "0.6",
+        },
+        {
+            url: `${baseUrl}/schedule-meeting`,
+            lastmod: currentDate,
+            changefreq: "monthly",
+            priority: "0.7",
+        },
+        {
             url: `${baseUrl}/contact`,
             lastmod: currentDate,
             changefreq: "monthly",
@@ -39,7 +76,14 @@ export function generateSitemap() {
         priority: "0.6",
     }));
 
-    const allPages = [...staticPages, ...projectPages];
+    const servicePages = services.map(service => ({
+        url: `${baseUrl}/services/${service.slug}`,
+        lastmod: currentDate,
+        changefreq: "monthly",
+        priority: "0.7",
+    }));
+
+    const allPages = [...staticPages, ...projectPages, ...servicePages];
 
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

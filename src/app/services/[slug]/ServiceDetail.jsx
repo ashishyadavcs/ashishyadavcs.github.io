@@ -17,7 +17,22 @@ import {
     FiShield,
     FiRefreshCw,
     FiHeadphones,
+    FiCalendar,
+    FiStar,
+    FiGlobe,
+    FiLayout,
+    FiServer,
+    FiLink2,
 } from "react-icons/fi";
+
+/* Map service slugs to proper React icons */
+const SERVICE_ICON_MAP = {
+    "web-development": <FiGlobe />,
+    frontend: <FiLayout />,
+    backend: <FiServer />,
+    api: <FiLink2 />,
+    ai: <FiCpu />,
+};
 
 const PROCESS_STEPS = [
     {
@@ -51,6 +66,7 @@ const TRUST_SIGNALS = [
     { icon: <FiShield />, text: "100% Secure & Confidential" },
     { icon: <FiRefreshCw />, text: "Free Revisions Included" },
     { icon: <FiHeadphones />, text: "Post-Launch Support" },
+    { icon: <FiStar />, text: "5★ Average Rating" },
 ];
 
 const ServiceDetailContent = ({ slug }) => {
@@ -67,7 +83,7 @@ const ServiceDetailContent = ({ slug }) => {
                 <Container>
                     <div className="hero-inner">
                         <div className="hero-icon" aria-hidden="true">
-                            {service.icon}
+                            {SERVICE_ICON_MAP[service.slug] || service.icon}
                         </div>
                         <div className="hero-content">
                             <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -150,6 +166,25 @@ const ServiceDetailContent = ({ slug }) => {
                                 ))}
                             </ol>
                         </div>
+
+                        {/* Inline CTA Card */}
+                        <div className="detail-card inline-cta-card">
+                            <div className="inline-cta-content">
+                                <h3>Ready to get started?</h3>
+                                <p>
+                                    Let&apos;s discuss your {service.title.toLowerCase()} needs and
+                                    build something great together.
+                                </p>
+                                <div className="inline-cta-buttons">
+                                    <Button href="/contact" arrow>
+                                        Start Your Project
+                                    </Button>
+                                    <Button href="/schedule-meeting" type="secondary">
+                                        <FiCalendar /> Book a Free Call
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
                     </main>
 
                     {/* Right Sidebar */}
@@ -204,6 +239,25 @@ const ServiceDetailContent = ({ slug }) => {
                                     Start This Project
                                 </Button>
                             </div>
+
+                            <div className="sidebar-alt-cta">
+                                <span className="or-divider">or</span>
+                                <Link href="/schedule-meeting" className="alt-link">
+                                    <FiCalendar /> Schedule a free consultation
+                                </Link>
+                            </div>
+
+                            {/* Guarantee Badge */}
+                            <div className="guarantee-badge">
+                                <FiShield className="guarantee-icon" />
+                                <div>
+                                    <strong>Satisfaction Guaranteed</strong>
+                                    <p>
+                                        Not happy with the result? I&apos;ll revise until you are —
+                                        free of charge.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </aside>
                 </div>
@@ -226,7 +280,7 @@ const ServiceDetailContent = ({ slug }) => {
                                     aria-label={`View ${rs.title} service`}
                                 >
                                     <span className="related-icon" aria-hidden="true">
-                                        {rs.icon}
+                                        {SERVICE_ICON_MAP[rs.slug] || rs.icon}
                                     </span>
                                     <div className="related-info">
                                         <h3>{rs.title}</h3>

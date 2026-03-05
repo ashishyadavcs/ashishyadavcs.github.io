@@ -23,6 +23,7 @@ const navigation = {
                 { label: "Projects", href: "/projects" },
                 { label: "Contact", href: "/contact" },
                 { label: "Faqs", href: "/faqs" },
+                { label: "Hire Me", href: "/hire" },
             ],
         },
         {
@@ -83,6 +84,10 @@ const navigation = {
         {
             label: "Services",
             href: "/services",
+        },
+        {
+            label: "Hire Me",
+            href: "/hire",
         },
         {
             label: "Faqs",
