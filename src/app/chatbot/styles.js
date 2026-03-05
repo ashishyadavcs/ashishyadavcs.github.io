@@ -61,10 +61,8 @@ const bounce = keyframes`
 // ── Toggle Button ──────────────────────────────
 export const ChatToggle = styled.button`
     ${flexCenter};
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
     width: 58px;
+    position: relative;
     height: 58px;
     border-radius: ${radius.full};
     border: none;
@@ -73,7 +71,6 @@ export const ChatToggle = styled.button`
     font-size: 26px;
     cursor: pointer;
     box-shadow: ${shadow.glow};
-    z-index: 9998;
     transition:
         transform 0.25s,
         box-shadow 0.25s;
@@ -84,8 +81,6 @@ export const ChatToggle = styled.button`
     }
 
     ${media.sm} {
-        bottom: 18px;
-        right: 18px;
         width: 52px;
         height: 52px;
         font-size: 22px;

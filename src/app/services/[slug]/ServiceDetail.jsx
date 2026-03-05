@@ -13,6 +13,10 @@ import {
     FiCpu,
     FiTarget,
     FiChevronRight,
+    FiArrowRight,
+    FiShield,
+    FiRefreshCw,
+    FiHeadphones,
 } from "react-icons/fi";
 
 const PROCESS_STEPS = [
@@ -43,6 +47,12 @@ const PROCESS_STEPS = [
     },
 ];
 
+const TRUST_SIGNALS = [
+    { icon: <FiShield />, text: "100% Secure & Confidential" },
+    { icon: <FiRefreshCw />, text: "Free Revisions Included" },
+    { icon: <FiHeadphones />, text: "Post-Launch Support" },
+];
+
 const ServiceDetailContent = ({ slug }) => {
     const service = services.find(s => s.slug === slug);
 
@@ -56,23 +66,25 @@ const ServiceDetailContent = ({ slug }) => {
             <div className="hero">
                 <Container>
                     <div className="hero-inner">
-                        <div className="hero-icon">{service.icon}</div>
+                        <div className="hero-icon" aria-hidden="true">
+                            {service.icon}
+                        </div>
                         <div className="hero-content">
-                            <div className="breadcrumb">
+                            <nav className="breadcrumb" aria-label="Breadcrumb">
                                 <Link href="/services">Services</Link>
-                                <FiChevronRight />
-                                <span>{service.title}</span>
-                            </div>
+                                <FiChevronRight aria-hidden="true" />
+                                <span aria-current="page">{service.title}</span>
+                            </nav>
 
                             <h1>{service.title}</h1>
                             <p>{service.description}</p>
 
                             <div className="hero-meta">
                                 <span className="meta-pill">
-                                    <FiDollarSign /> {service.price}
+                                    <FiDollarSign aria-hidden="true" /> {service.price}
                                 </span>
                                 <span className="meta-pill">
-                                    <FiClock /> {service.duration}
+                                    <FiClock aria-hidden="true" /> {service.duration}
                                 </span>
                             </div>
                         </div>
@@ -84,16 +96,16 @@ const ServiceDetailContent = ({ slug }) => {
             <Container>
                 <div className="detail-body">
                     {/* Left Column */}
-                    <div className="detail-main">
+                    <main className="detail-main">
                         {/* Features */}
                         <div className="detail-card">
                             <h2 className="section-title">
-                                <FiTarget /> What&apos;s Included
+                                <FiTarget aria-hidden="true" /> What&apos;s Included
                             </h2>
                             <div className="features-grid">
                                 {service.features.map(feature => (
                                     <div className="feature-item" key={feature}>
-                                        <span className="check-icon">
+                                        <span className="check-icon" aria-hidden="true">
                                             <FiCheck />
                                         </span>
                                         <span className="feature-text">{feature}</span>
@@ -105,11 +117,11 @@ const ServiceDetailContent = ({ slug }) => {
                         {/* Tech Stack */}
                         <div className="detail-card">
                             <h2 className="section-title">
-                                <FiCpu /> Technology Stack
+                                <FiCpu aria-hidden="true" /> Technology Stack
                             </h2>
-                            <div className="tech-list">
+                            <div className="tech-list" role="list">
                                 {service.technologies.map(tech => (
-                                    <span className="tech-chip" key={tech}>
+                                    <span className="tech-chip" key={tech} role="listitem">
                                         {tech}
                                     </span>
                                 ))}
@@ -119,32 +131,34 @@ const ServiceDetailContent = ({ slug }) => {
                         {/* Process */}
                         <div className="detail-card">
                             <h2 className="section-title">
-                                <FiLayers /> How I Work
+                                <FiLayers aria-hidden="true" /> How I Work
                             </h2>
-                            <div className="process-steps">
+                            <ol className="process-steps">
                                 {PROCESS_STEPS.map((step, i) => (
-                                    <div className="step" key={i}>
-                                        <div className="step-marker">
+                                    <li className="step" key={i}>
+                                        <div className="step-marker" aria-hidden="true">
                                             <span className="step-number">{i + 1}</span>
-                                            <span className="step-line" />
+                                            {i < PROCESS_STEPS.length - 1 && (
+                                                <span className="step-line" />
+                                            )}
                                         </div>
                                         <div className="step-content">
                                             <h4>{step.title}</h4>
                                             <p>{step.description}</p>
                                         </div>
-                                    </div>
+                                    </li>
                                 ))}
-                            </div>
+                            </ol>
                         </div>
-                    </div>
+                    </main>
 
                     {/* Right Sidebar */}
-                    <div className="detail-sidebar">
+                    <aside className="detail-sidebar">
                         <div className="sidebar-card">
                             <h3 className="sidebar-title">Project Details</h3>
 
                             <div className="info-row">
-                                <span className="info-icon">
+                                <span className="info-icon" aria-hidden="true">
                                     <FiDollarSign />
                                 </span>
                                 <div className="info-text">
@@ -154,7 +168,7 @@ const ServiceDetailContent = ({ slug }) => {
                             </div>
 
                             <div className="info-row">
-                                <span className="info-icon">
+                                <span className="info-icon" aria-hidden="true">
                                     <FiClock />
                                 </span>
                                 <div className="info-text">
@@ -164,7 +178,7 @@ const ServiceDetailContent = ({ slug }) => {
                             </div>
 
                             <div className="info-row">
-                                <span className="info-icon">
+                                <span className="info-icon" aria-hidden="true">
                                     <FiLayers />
                                 </span>
                                 <div className="info-text">
@@ -175,38 +189,57 @@ const ServiceDetailContent = ({ slug }) => {
                                 </div>
                             </div>
 
+                            {/* Trust Signals */}
+                            <div className="trust-signals">
+                                {TRUST_SIGNALS.map((item, i) => (
+                                    <div className="trust-item" key={i}>
+                                        {item.icon}
+                                        <span>{item.text}</span>
+                                    </div>
+                                ))}
+                            </div>
+
                             <div className="sidebar-cta">
                                 <Button href="/contact" arrow>
                                     Start This Project
                                 </Button>
                             </div>
                         </div>
-                    </div>
+                    </aside>
                 </div>
             </Container>
 
             {/* ── Related Services ── */}
             {relatedServices.length > 0 && (
-                <div className="related-section">
+                <section className="related-section" aria-label="Related services">
                     <Container>
                         <h2>Explore Other Services</h2>
+                        <p className="related-subtitle">
+                            Looking for something different? Check out these related offerings.
+                        </p>
                         <div className="related-grid">
                             {relatedServices.map(rs => (
                                 <Link
                                     href={`/services/${rs.slug}`}
                                     key={rs.id}
                                     className="related-card"
+                                    aria-label={`View ${rs.title} service`}
                                 >
-                                    <span className="related-icon">{rs.icon}</span>
+                                    <span className="related-icon" aria-hidden="true">
+                                        {rs.icon}
+                                    </span>
                                     <div className="related-info">
                                         <h3>{rs.title}</h3>
                                         <p>{rs.shortDescription}</p>
+                                        <span className="related-arrow">
+                                            View details <FiArrowRight />
+                                        </span>
                                     </div>
                                 </Link>
                             ))}
                         </div>
                     </Container>
-                </div>
+                </section>
             )}
         </ServiceDetailStyle>
     );
