@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import StyledComponentsRegistry from "./components/Registry";
 import Layout from "./components/layout";
 import GlobalCSS from "./styles/globals.js";
@@ -42,6 +41,13 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
+                <link
+                    rel="preload"
+                    href="/images/bg.jpg"
+                    as="image"
+                    type="image/jpeg"
+                    fetchPriority="high"
+                />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

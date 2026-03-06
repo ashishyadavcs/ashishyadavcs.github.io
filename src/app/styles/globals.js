@@ -4,11 +4,10 @@ import { createGlobalStyle, css } from "styled-components";
 import { Inter } from "next/font/google";
 import media from "@/app/config/media";
 const inter = Inter({
-    fallback: ["Roboto"],
+    fallback: ["Roboto", "sans-serif"],
     display: "swap",
-    preload: false,
+    preload: true,
     subsets: ["latin"],
-    family: "Roboto",
 });
 const GlobalCSS = createGlobalStyle`
 ${css`

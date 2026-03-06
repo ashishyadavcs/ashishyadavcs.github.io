@@ -154,7 +154,10 @@ const ChatBot = () => {
     // Instant scroll to bottom (no animation, for chat open)
     const snapToBottom = useCallback(() => {
         const area = messagesAreaRef.current;
-        if (area) area.scrollTop = area.scrollHeight;
+        if (area)
+            requestAnimationFrame(() => {
+                area.scrollTop = area.scrollHeight;
+            });
     }, []);
 
     // Track whether we just opened chat (to skip smooth scroll)

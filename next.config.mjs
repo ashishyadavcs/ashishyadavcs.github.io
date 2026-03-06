@@ -2,20 +2,16 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   compiler: {
-    // Enable styled-components
     styledComponents: true,
   },
   images: {
+    unoptimized: true,
     domains: [
       "images.unsplash.com",
       "frontendzone.com",
       "www.frontendzone.com",
     ],
-    unoptimized: true,
   },
 };
 
