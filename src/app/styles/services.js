@@ -65,16 +65,6 @@ export const ServicesPageStyle = styled.section`
             pointer-events: none;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to top, #f8f9fc, transparent);
-        }
-
         ${media.sm} {
             padding: 56px 0 130px;
         }
@@ -128,16 +118,29 @@ export const ServicesPageStyle = styled.section`
             flex-wrap: wrap;
             animation: ${fadeInUp} 0.6s ease-out 0.28s both;
 
-            .btn.secondary {
-                background: rgba(255, 255, 255, 0.12);
-                color: #fff;
-                border: 1.5px solid rgba(255, 255, 255, 0.3);
-                box-shadow: none;
+            .btn.primary {
+                background: #fff !important;
+                color: #ff0080 !important;
+                font-weight: 700;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
 
                 &:hover {
-                    background: rgba(255, 255, 255, 0.2);
-                    border-color: rgba(255, 255, 255, 0.5);
-                    box-shadow: none;
+                    background: #f0f0f0 !important;
+                    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24) !important;
+                }
+            }
+
+            .btn.secondary {
+                background: transparent !important;
+                color: #fff !important;
+                border: 2px solid rgba(255, 255, 255, 0.7) !important;
+                box-shadow: none !important;
+                font-weight: 700;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.15) !important;
+                    border-color: #fff !important;
+                    box-shadow: none !important;
                 }
             }
         }

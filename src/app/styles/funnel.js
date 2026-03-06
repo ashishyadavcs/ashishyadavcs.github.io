@@ -65,16 +65,6 @@ export const HireLandingStyle = styled.section`
             pointer-events: none;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            background: linear-gradient(to top, #f8f9fc, transparent);
-        }
-
         ${media.sm} {
             padding: 56px 0 140px;
         }
@@ -370,16 +360,6 @@ export const EmployerTrackStyle = styled.section`
             left: -100px;
             animation: ${pulse} 5s ease-in-out infinite;
             pointer-events: none;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to top, #fff, transparent);
         }
 
         ${media.sm} {
@@ -810,16 +790,6 @@ export const FreelanceTrackStyle = styled.section`
             pointer-events: none;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to top, #fff, transparent);
-        }
-
         ${media.sm} {
             padding: 56px 0 90px;
         }
@@ -840,6 +810,12 @@ export const FreelanceTrackStyle = styled.section`
             margin-bottom: 28px;
             color: #c084fc;
             animation: ${fadeInUp} 0.6s ease-out both;
+
+            ${media.xs} {
+                font-size: 0.72rem;
+                padding: 8px 16px;
+                letter-spacing: 0.4px;
+            }
         }
 
         h1 {
@@ -870,6 +846,10 @@ export const FreelanceTrackStyle = styled.section`
     .value-props {
         padding: 80px 0;
 
+        ${media.sm} {
+            padding: 48px 0;
+        }
+
         h2 {
             text-align: center;
             font-size: 2rem;
@@ -879,6 +859,10 @@ export const FreelanceTrackStyle = styled.section`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+
+            ${media.sm} {
+                font-size: 1.6rem;
+            }
         }
 
         .section-subtitle {
@@ -886,6 +870,12 @@ export const FreelanceTrackStyle = styled.section`
             color: #666;
             font-size: 1.05rem;
             margin-bottom: 48px;
+
+            ${media.sm} {
+                font-size: 0.95rem;
+                margin-bottom: 32px;
+                padding: 0 12px;
+            }
         }
 
         .props-grid {
@@ -893,7 +883,7 @@ export const FreelanceTrackStyle = styled.section`
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
 
-            ${media.md} {
+            @media (max-width: 991px) {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -911,6 +901,10 @@ export const FreelanceTrackStyle = styled.section`
             &:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+            }
+
+            ${media.sm} {
+                padding: 24px 20px;
             }
 
             .prop-icon {
@@ -939,6 +933,10 @@ export const FreelanceTrackStyle = styled.section`
         background: #f8f9fc;
         padding: 80px 0;
 
+        ${media.sm} {
+            padding: 48px 0;
+        }
+
         h2 {
             text-align: center;
             font-size: 2rem;
@@ -948,6 +946,10 @@ export const FreelanceTrackStyle = styled.section`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+
+            ${media.sm} {
+                font-size: 1.6rem;
+            }
         }
 
         .section-subtitle {
@@ -955,6 +957,12 @@ export const FreelanceTrackStyle = styled.section`
             color: #666;
             font-size: 1.05rem;
             margin-bottom: 48px;
+
+            ${media.sm} {
+                font-size: 0.95rem;
+                margin-bottom: 32px;
+                padding: 0 12px;
+            }
         }
 
         .packages-grid {
@@ -963,7 +971,12 @@ export const FreelanceTrackStyle = styled.section`
             gap: 24px;
             align-items: start;
 
-            ${media.md} {
+            @media (max-width: 991px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            ${media.sm} {
                 grid-template-columns: 1fr;
                 max-width: 480px;
                 margin: 0 auto;
@@ -978,12 +991,16 @@ export const FreelanceTrackStyle = styled.section`
             position: relative;
             animation: ${fadeInUp} 0.5s ease-out both;
 
+            ${media.sm} {
+                padding: 28px 20px;
+            }
+
             &.highlighted {
                 border: 2px solid #ff0080;
                 box-shadow: 0 12px 40px rgba(255, 0, 128, 0.15);
                 transform: scale(1.03);
 
-                ${media.md} {
+                ${media.sm} {
                     transform: none;
                 }
             }
@@ -1010,6 +1027,10 @@ export const FreelanceTrackStyle = styled.section`
                 color: #1a1a2e;
                 margin-bottom: 8px;
                 margin-top: 8px;
+
+                ${media.sm} {
+                    font-size: 1.15rem;
+                }
             }
 
             .package-price {
@@ -1020,6 +1041,10 @@ export const FreelanceTrackStyle = styled.section`
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 margin-bottom: 6px;
+
+                ${media.sm} {
+                    font-size: 1.6rem;
+                }
             }
 
             .package-duration {
@@ -1066,6 +1091,10 @@ export const FreelanceTrackStyle = styled.section`
     .engagement-models {
         padding: 80px 0;
 
+        ${media.sm} {
+            padding: 48px 0;
+        }
+
         h2 {
             text-align: center;
             font-size: 2rem;
@@ -1075,6 +1104,11 @@ export const FreelanceTrackStyle = styled.section`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+
+            ${media.sm} {
+                font-size: 1.6rem;
+                margin-bottom: 32px;
+            }
         }
 
         .models-grid {
@@ -1082,10 +1116,15 @@ export const FreelanceTrackStyle = styled.section`
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
 
-            ${media.md} {
+            @media (max-width: 991px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            ${media.sm} {
                 grid-template-columns: 1fr;
                 max-width: 500px;
                 margin: 0 auto;
+                gap: 16px;
             }
         }
 
@@ -1098,6 +1137,10 @@ export const FreelanceTrackStyle = styled.section`
             &:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+            }
+
+            ${media.sm} {
+                padding: 24px 20px;
             }
 
             h3 {
@@ -1131,6 +1174,10 @@ export const FreelanceTrackStyle = styled.section`
         background: #f8f9fc;
         padding: 80px 0;
 
+        ${media.sm} {
+            padding: 48px 0;
+        }
+
         h2 {
             text-align: center;
             font-size: 2rem;
@@ -1140,6 +1187,11 @@ export const FreelanceTrackStyle = styled.section`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+
+            ${media.sm} {
+                font-size: 1.6rem;
+                margin-bottom: 32px;
+            }
         }
 
         .process-timeline {
@@ -1202,11 +1254,19 @@ export const FreelanceTrackStyle = styled.section`
                 padding: 24px 28px;
                 flex: 1;
 
+                ${media.sm} {
+                    padding: 18px 16px;
+                }
+
                 h3 {
                     font-size: 1.1rem;
                     font-weight: 700;
                     color: #1a1a2e;
                     margin-bottom: 8px;
+
+                    ${media.sm} {
+                        font-size: 1rem;
+                    }
                 }
 
                 p {
@@ -1214,6 +1274,10 @@ export const FreelanceTrackStyle = styled.section`
                     line-height: 1.6;
                     color: #555;
                     margin-bottom: 8px;
+
+                    ${media.sm} {
+                        font-size: 0.85rem;
+                    }
                 }
 
                 .duration {
@@ -1235,6 +1299,10 @@ export const FreelanceTrackStyle = styled.section`
         color: #fff;
         position: relative;
         overflow: hidden;
+
+        ${media.sm} {
+            padding: 48px 16px;
+        }
 
         &::before {
             content: "";
@@ -1264,6 +1332,12 @@ export const FreelanceTrackStyle = styled.section`
             line-height: 1.6;
             position: relative;
             z-index: 1;
+
+            ${media.sm} {
+                font-size: 0.95rem;
+                margin-bottom: 28px;
+                padding: 0 8px;
+            }
         }
 
         .cta-buttons {
@@ -1273,6 +1347,12 @@ export const FreelanceTrackStyle = styled.section`
             flex-wrap: wrap;
             position: relative;
             z-index: 1;
+
+            ${media.sm} {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
 
             .btn.primary {
                 background: ${gradient};

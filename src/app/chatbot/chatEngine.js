@@ -38,12 +38,13 @@ const knowledgeBase = {
     skills: {
         keywords: [
             "skills",
+            "your skills",
+            "what are your skills",
             "technologies",
             "tech stack",
             "what can you do",
             "expertise",
             "proficient",
-            "know",
             "languages",
             "frameworks",
             "tools",
@@ -141,7 +142,7 @@ const knowledgeBase = {
             "cost",
             "rate",
         ],
-        response: `Ashish offers these professional services:\n\n🌐 **Web Development** — Fast, modern websites (from $2,000)\n🎨 **Frontend Development** — Beautiful UIs (from $1,500)\n⚙️ **Backend Development** — Scalable APIs (from $1,800)\n🔗 **API Development** — Custom integrations (from $1,200)\n🤖 **AI Integration** — Intelligent features (from $2,500)\n\nInterested? Head to the [Contact Page](/contact)!`,
+        response: `Ashish offers these professional services:\n\n🌐 **Web Development** — Fast, modern websites (from $500)\n🎨 **Frontend Development** — Beautiful UIs (from $300)\n⚙️ **Backend Development** — Scalable APIs (from $400)\n🔗 **API Development** — Custom integrations (from $250)\n🤖 **AI Integration** — Intelligent features (from $500)\n\n👉 View all details on the [Services Page](/services)\n\nInterested? [Contact Ashish](/contact) to get started!`,
     },
     resume: {
         keywords: ["resume", "cv", "download", "pdf"],
@@ -198,20 +199,22 @@ const knowledgeBase = {
 
 // Score how well a user message matches a topic
 function scoreMatch(input, topic) {
-    const words = input.toLowerCase().split(/\s+/);
-    const inputLower = input.toLowerCase();
+    const inputLower = input.toLowerCase().replace(/[^a-z0-9\s]/g, "");
+    const words = inputLower.split(/\s+/).filter(Boolean);
     let score = 0;
 
     for (const keyword of topic.keywords) {
+        const kw = keyword.toLowerCase().replace(/[^a-z0-9\s]/g, "");
         // Exact phrase match (highest weight)
-        if (inputLower.includes(keyword)) {
-            score += keyword.split(/\s+/).length * 3;
+        if (inputLower.includes(kw)) {
+            score += kw.split(/\s+/).length * 3;
         }
         // Individual word match
         for (const word of words) {
-            if (word === keyword) {
+            if (word === kw) {
                 score += 2;
-            } else if (word.includes(keyword) || keyword.includes(word)) {
+            } else if (kw.length >= 4 && (word.includes(kw) || kw.includes(word))) {
+                // Only count partial matches for keywords 4+ chars to avoid false positives
                 score += 1;
             }
         }

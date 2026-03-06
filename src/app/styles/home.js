@@ -36,12 +36,6 @@ const HomeStyle = styled.div`
             background: radial-gradient(circle at 10% 10%, transparent 3%, #000, #000);
             background: linear-gradient(to bottom, transparent, #000);
         }
-        &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 10% 10%, transparent, #000);
-        }
 
         .title {
             font-size: clamp(1.1rem, 0.4vw, 1.3rem);
@@ -239,7 +233,7 @@ const HomeStyle = styled.div`
             &.active {
                 background: linear-gradient(135deg, #ff0080 0%, #7928ca 100%) !important;
                 color: white !important;
-                border-color: transparent !important;
+
                 transform: translateY(-2px);
                 box-shadow: 0 8px 20px rgba(255, 0, 128, 0.3);
             }
@@ -251,9 +245,10 @@ const HomeStyle = styled.div`
                 box-shadow: 0 4px 12px rgba(255, 0, 128, 0.15);
             }
 
-            &:focus {
-                outline: 2px solid rgba(255, 0, 128, 0.3);
-                outline-offset: 2px;
+            &:active {
+                transform: translateY(1px) scale(0.96);
+                box-shadow: 0 2px 6px rgba(255, 0, 128, 0.2);
+                transition: all 0.1s ease;
             }
 
             ${media.sm} {
