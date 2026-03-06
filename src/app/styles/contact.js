@@ -11,7 +11,7 @@ const ContactStyles = styled.section`
     }
 
     .hero-section {
-        background: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 80px 0 140px;
         ${media.sm} {
             padding: 40px 0 100px;

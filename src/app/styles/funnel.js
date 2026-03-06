@@ -45,7 +45,7 @@ const cardBase = css`
 export const HireLandingStyle = styled.section`
     /* ── Hero ── */
     .funnel-hero {
-        background: ${gradient};
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 96px 0 180px;
         color: #fff;
         text-align: center;
@@ -342,7 +342,7 @@ export const HireLandingStyle = styled.section`
 export const EmployerTrackStyle = styled.section`
     /* ── Hero ── */
     .track-hero {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 96px 0 120px;
         color: #fff;
         text-align: center;
@@ -770,7 +770,7 @@ export const EmployerTrackStyle = styled.section`
 export const FreelanceTrackStyle = styled.section`
     /* ── Hero ── */
     .track-hero {
-        background: linear-gradient(135deg, #0f0f23 0%, #1a0a2e 50%, #2d1b69 100%);
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 96px 0 120px;
         color: #fff;
         text-align: center;

@@ -4,6 +4,7 @@ import MyImage from "@/components/MyImage";
 import ProjectdetailsStyle from "@/styles/projectdetails";
 import projects from "public/config/projects";
 import config from "public/config";
+import Link from "next/link";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export async function generateMetadata({ params }) {
@@ -65,22 +66,26 @@ const page = async ({ params }) => {
     const project = projects.find(proj => proj.slug === slug);
     return (
         <ProjectdetailsStyle>
-            <Container>
-                <div className="info">
-                    <MyImage src={project.image} alt={project.title} />
-                    <ul className="tags">
-                        {[...project.tags].map((tech, index) => (
-                            <li key={index}>{tech}</li>
-                        ))}
-                    </ul>
-                    <div className="btn-group">
+            {/* Hero */}
+            <div className="project-hero">
+                <Container>
+                    <nav className="breadcrumb">
+                        <Link href="/">Home</Link>
+                        <span className="separator">/</span>
+                        <Link href="/projects">Projects</Link>
+                        <span className="separator">/</span>
+                        <span className="current">{project.title}</span>
+                    </nav>
+                    <h1>{project.title}</h1>
+                    <p className="project-meta-desc">{project.description}</p>
+                    <div className="hero-actions">
                         {project.demoUrl && (
                             <Button
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <FaExternalLinkAlt size={15} /> demo
+                                <FaExternalLinkAlt size={14} /> Live Demo
                             </Button>
                         )}
                         {project.codeUrl && (
@@ -88,16 +93,55 @@ const page = async ({ params }) => {
                                 href={project.codeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                type="secondary"
                             >
-                                <FaGithub /> source code
+                                <FaGithub size={16} /> Source Code
                             </Button>
                         )}
                     </div>
-                </div>
-                <div className="content">
-                    <h1 className="heading">{project.title}</h1>
-                    <p>{project.description}</p>
-                    <div dangerouslySetInnerHTML={{ __html: project.content }} />
+                </Container>
+            </div>
+
+            {/* Body */}
+            <Container>
+                <div className="project-body">
+                    {/* Content */}
+                    <div className="project-content">
+                        <div dangerouslySetInnerHTML={{ __html: project.content }} />
+                    </div>
+
+                    {/* Sidebar */}
+                    <aside className="project-sidebar">
+                        <div className="sidebar-card">
+                            {project.image && (
+                                <MyImage
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="sidebar-image"
+                                />
+                            )}
+                            <div className="sidebar-body">
+                                <p className="sidebar-label">Technologies Used</p>
+                                <ul className="tags">
+                                    {[...project.tags].map((tech, index) => (
+                                        <li key={index}>{tech}</li>
+                                    ))}
+                                </ul>
+                                <div className="sidebar-links">
+                                    {project.demoUrl && (
+                                        <Button
+                                            href={project.demoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            arrow
+                                        >
+                                            View Live
+                                        </Button>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </Container>
         </ProjectdetailsStyle>

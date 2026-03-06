@@ -45,7 +45,7 @@ const cardBase = css`
 export const ServicesPageStyle = styled.section`
     /* ── Hero ── */
     .hero {
-        background: ${gradient};
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 96px 0 170px;
         color: #fff;
         text-align: center;
@@ -761,7 +761,7 @@ export const ServicesPageStyle = styled.section`
 export const ServiceDetailStyle = styled.section`
     /* ── Hero ── */
     .hero {
-        background: ${gradient};
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 88px 0 140px;
         color: #fff;
         position: relative;

@@ -335,7 +335,17 @@ const Certifications = ({ certifications, showStats = true }) => {
 
     const getYearsOfCertifications = () => {
         if (!certifications || certifications.length === 0) return 0;
-        const dates = certifications.map(cert => new Date(cert.date));
+        const parseDate = str => {
+            if (!str) return null;
+            const parts = str.split("-");
+            if (parts.length === 3 && parts[0].length <= 2) {
+                // DD-MM-YYYY → YYYY-MM-DD
+                return new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+            }
+            return new Date(str);
+        };
+        const dates = certifications.map(cert => parseDate(cert.date)).filter(d => d && !isNaN(d));
+        if (dates.length === 0) return 0;
         const earliest = new Date(Math.min(...dates));
         const latest = new Date(Math.max(...dates));
         return Math.ceil((latest - earliest) / (1000 * 60 * 60 * 24 * 365)) + 1;
