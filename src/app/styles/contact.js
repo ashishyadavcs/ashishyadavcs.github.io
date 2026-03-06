@@ -6,6 +6,7 @@ const ContactStyles = styled.section`
     padding: 0 0 0 0;
     display: flex;
     flex-direction: column;
+    background: #f6f7fb;
     p {
         color: #fff;
     }
@@ -13,15 +14,45 @@ const ContactStyles = styled.section`
     .hero-section {
         background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         padding: 80px 0 140px;
+        position: relative;
+        overflow: hidden;
         ${media.sm} {
             padding: 40px 0 100px;
         }
         color: white;
         text-align: center;
 
+        &::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 128, 0.12) 0%, transparent 70%);
+            top: -120px;
+            right: -100px;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(121, 40, 202, 0.1) 0%, transparent 70%);
+            bottom: -60px;
+            left: -80px;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
         h1 {
             margin: 0 0 20px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         p {
@@ -29,11 +60,15 @@ const ContactStyles = styled.section`
             margin: 0 auto;
             opacity: 0.9;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
     }
 
     .main-content {
         margin: 0 auto 60px;
+        position: relative;
+        z-index: 2;
         ${media.md} {
             padding: 0 20px;
         }
@@ -45,25 +80,42 @@ const ContactStyles = styled.section`
 
     .wrapper {
         display: flex;
-        border-radius: 10px;
+        border-radius: 16px;
         overflow: hidden;
         background: #fff;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.1),
+            0 1px 3px rgba(0, 0, 0, 0.04);
         transform: translateY(-60px);
+        border: 1px solid rgba(0, 0, 0, 0.04);
 
         ${media.sm} {
             flex-direction: column;
             transform: translateY(-40px);
-            border-radius: 8px;
+            border-radius: 12px;
         }
     }
 
     .contact-info {
-        background: linear-gradient(135deg, #2d0016 0%, #7928ca 100%);
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 60%, #24243e 100%);
         color: white;
         padding: 40px 30px;
         flex: 0 0 38%;
         min-width: 0;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 128, 0.15) 0%, transparent 70%);
+            bottom: -60px;
+            right: -60px;
+            pointer-events: none;
+        }
 
         ${media.sm} {
             flex: none;
@@ -110,6 +162,10 @@ const ContactStyles = styled.section`
             }
 
             .text {
+                min-width: 0;
+                overflow-wrap: break-word;
+                word-break: break-word;
+
                 h3 {
                     margin: 0 0 5px 0;
                     font-weight: 500;
@@ -163,7 +219,7 @@ const ContactStyles = styled.section`
 
         ${media.sm} {
             width: 100%;
-            padding: 24px 16px;
+            padding: 0;
         }
         h2 {
             margin: 0 0 30px 0;
@@ -292,6 +348,9 @@ const ContactStyles = styled.section`
         height: 450px;
         width: 100%;
         margin: 60px 0 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 
         iframe {
             display: block;
@@ -300,6 +359,7 @@ const ContactStyles = styled.section`
         ${media.xs} {
             height: 300px;
             margin: 40px 0 0;
+            border-radius: 12px;
         }
     }
 `;

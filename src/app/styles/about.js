@@ -392,6 +392,7 @@ const AboutStyle = styled.div`
 
         .highlights-grid {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             max-width: 560px;
             margin: 0 auto;

@@ -116,7 +116,7 @@ const HomeStyle = styled.div`
     }
 
     .stats-section {
-        background: linear-gradient(135deg, #2d0016 0%, #7928ca 100%);
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         color: white;
         padding: 60px 0;
         margin: 60px 0;
