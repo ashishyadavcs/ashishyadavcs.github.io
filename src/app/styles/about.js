@@ -73,6 +73,13 @@ const AboutStyle = styled.div`
         pointer-events: none;
         filter: blur(80px);
         will-change: transform;
+        contain: layout paint;
+
+        ${media.sm} {
+            filter: blur(40px);
+            animation: none !important;
+            opacity: 0.7;
+        }
     }
 
     .orb-1 {
@@ -134,7 +141,14 @@ const AboutStyle = styled.div`
         gap: 10px;
         background: ${glass};
         backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         border: 1px solid ${glassBorder};
+
+        ${media.sm} {
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            background: rgba(255, 255, 255, 0.12);
+        }
         border-radius: 40px;
         padding: 8px 20px;
         font-size: 0.78rem;
@@ -190,7 +204,13 @@ const AboutStyle = styled.div`
         position: relative;
         background: ${glass};
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border: 1px solid ${glassBorder};
+
+        ${media.sm} {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
         border-radius: 24px;
         padding: 40px 36px 32px;
         text-align: center;
@@ -225,6 +245,10 @@ const AboutStyle = styled.div`
             z-index: -1;
             filter: blur(18px);
             transition: opacity 0.4s ease;
+
+            ${media.sm} {
+                display: none;
+            }
         }
 
         .profile-image-wrap {
@@ -331,6 +355,13 @@ const AboutStyle = styled.div`
             border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
             box-shadow: none !important;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            ${media.sm} {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: rgba(255, 255, 255, 0.12) !important;
+            }
 
             &:hover {
                 background: rgba(255, 255, 255, 0.14) !important;
@@ -1003,6 +1034,13 @@ const AboutStyle = styled.div`
             border-radius: 50%;
             pointer-events: none;
             filter: blur(60px);
+            contain: layout paint;
+
+            ${media.sm} {
+                filter: blur(30px);
+                animation: none !important;
+                opacity: 0.6;
+            }
         }
 
         .cta-orb-1 {

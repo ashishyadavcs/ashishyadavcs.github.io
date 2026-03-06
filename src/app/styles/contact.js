@@ -33,6 +33,7 @@ const ContactStyles = styled.section`
             right: -100px;
             pointer-events: none;
             filter: blur(60px);
+            contain: layout paint;
         }
 
         &::after {
@@ -46,6 +47,15 @@ const ContactStyles = styled.section`
             left: -80px;
             pointer-events: none;
             filter: blur(60px);
+            contain: layout paint;
+        }
+
+        ${media.sm} {
+            &::before,
+            &::after {
+                filter: blur(30px);
+                opacity: 0.6;
+            }
         }
 
         h1 {

@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import config from "@/config";
 import { FloatWrapper } from "@/styles/floatContainer";
 
-const ChatBot = dynamic(() => import("@/app/chatbot"));
-const WhatsApp = dynamic(() => import("@/app/components/WhatsApp"));
+const ChatBot = dynamic(() => import("@/app/chatbot"), { ssr: false });
+const WhatsApp = dynamic(() => import("@/app/components/WhatsApp"), { ssr: false });
 
 const SCROLL_THRESHOLD = 100;
 

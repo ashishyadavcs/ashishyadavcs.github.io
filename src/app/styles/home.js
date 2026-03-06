@@ -14,6 +14,7 @@ const HomeStyle = styled.div`
         ${media.sm} {
             width: 150px;
             height: 150px;
+            box-shadow: 0 8px 16px rgba(255, 0, 128, 0.25);
         }
     }
 

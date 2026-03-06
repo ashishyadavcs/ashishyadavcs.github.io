@@ -1,6 +1,6 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Container from "@/components/layout/Container";
-import ProjectList from "@/components/ProjectList";
 import projects from "public/config/projects";
 import HomeStyle from "@/styles/home";
 import config from "public/config";
@@ -9,12 +9,15 @@ import Button from "@/components/Button";
 import { GoDownload } from "react-icons/go";
 import { IoBriefcaseOutline } from "react-icons/io5";
 import Timeline from "@/components/Timeline";
-import Skills from "@/components/Skills";
-import Testimonials from "@/components/Testimonials";
 import TypingEffect from "@/components/TypingEffect";
-import Certifications from "@/components/Certifications";
-import FAQ from "@/components/FAQ";
-import FunnelCTABanner from "@/components/FunnelCTABanner";
+
+/* Lazy-load below-fold components to reduce initial JS parse cost on mobile */
+const Skills = dynamic(() => import("@/components/Skills"));
+const Certifications = dynamic(() => import("@/components/Certifications"));
+const ProjectList = dynamic(() => import("@/components/ProjectList"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
+const FunnelCTABanner = dynamic(() => import("@/components/FunnelCTABanner"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata = {
     title: config.seo.pages.home.title,
