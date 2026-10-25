@@ -13,8 +13,11 @@ export const metadata = {
     openGraph: {
         title: config.seo.pages.projects.title,
         description: config.seo.pages.projects.description,
-        url: `${config.seo.url}/projects`,
+        url: `${config.seo.url}/projects/`,
         type: "website",
+    },
+    alternates: {
+        canonical: `${config.seo.url}/projects/`,
     },
 };
 

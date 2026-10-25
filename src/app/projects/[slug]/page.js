@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title: `${project.title} | Portfolio`,
             description: project.description,
-            url: `${config.seo.url}/projects/${slug}`,
+            url: `${config.seo.url}/projects/${slug}/`,
             type: "article",
             images: project.image
                 ? [
@@ -48,6 +48,9 @@ export async function generateMetadata({ params }) {
                 author: config.seo.author.name,
                 tags: project.tags || [],
             },
+        },
+        alternates: {
+            canonical: `${config.seo.url}/projects/${slug}/`,
         },
         twitter: {
             card: "summary_large_image",

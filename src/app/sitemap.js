@@ -9,79 +9,73 @@ export default function sitemap() {
     const baseUrl = SITE_METADATA.siteUrl;
     const currentDate = new Date();
 
-    // Static pages
+    // Static pages with trailing slashes matching next.config.mjs trailingSlash: true
     const staticPages = [
         {
-            url: baseUrl,
+            url: `${baseUrl}/`,
             lastModified: currentDate,
             changeFrequency: "weekly",
             priority: 1.0,
         },
         {
-            url: `${baseUrl}/about`,
+            url: `${baseUrl}/about/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/projects`,
+            url: `${baseUrl}/projects/`,
             lastModified: currentDate,
             changeFrequency: "weekly",
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/services`,
+            url: `${baseUrl}/services/`,
             lastModified: currentDate,
             changeFrequency: "weekly",
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/hire`,
+            url: `${baseUrl}/hire/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/hire/employer`,
+            url: `${baseUrl}/hire/employer/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/hire/freelance`,
+            url: `${baseUrl}/hire/freelance/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/faqs`,
+            url: `${baseUrl}/faqs/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.6,
         },
         {
-            url: `${baseUrl}/schedule-meeting`,
+            url: `${baseUrl}/schedule-meeting/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/contact`,
+            url: `${baseUrl}/contact/`,
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/sitemap`,
-            lastModified: currentDate,
-            changeFrequency: "monthly",
-            priority: 0.5,
         },
     ];
 
     // Dynamic project pages
     const projectPages = projects.map(project => ({
-        url: `${baseUrl}/projects/${project.slug}`,
+        url: `${baseUrl}/projects/${project.slug}/`,
         lastModified: currentDate,
         changeFrequency: "monthly",
         priority: 0.6,
@@ -89,7 +83,7 @@ export default function sitemap() {
 
     // Dynamic service pages
     const servicePages = services.map(service => ({
-        url: `${baseUrl}/services/${service.slug}`,
+        url: `${baseUrl}/services/${service.slug}/`,
         lastModified: currentDate,
         changeFrequency: "monthly",
         priority: 0.7,

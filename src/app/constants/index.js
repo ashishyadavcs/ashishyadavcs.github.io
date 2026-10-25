@@ -5,11 +5,11 @@ export const SITE_METADATA = {
     logo: "/images/ashish-profile.jpeg",
     metadataBase: new URL(SITE_URL),
     title: {
-        default: "Ashish Yadav - Full Stack Developer & Software Engineer",
+        default: "Ashish Yadav - Software Engineer",
         template: "%s | Ashish Yadav",
     },
     description:
-        "Experienced Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building high-performance web applications with clean code and exceptional user experiences.",
+        "Experienced Software Engineer specializing in AI, Machine Learning, and modern web technologies. Building intelligent and efficient solutions with clean code and exceptional user experiences.",
     keywords: [
         "Ashish Yadav",
         "Full Stack Developer",
@@ -186,7 +186,6 @@ export const NAV_LINKS = [
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
-    { label: "Sitemap", href: "/sitemap" },
 ];
 
 export default SITE_METADATA;

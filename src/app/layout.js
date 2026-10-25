@@ -29,9 +29,6 @@ export const metadata = {
         apple: [{ url: SITE_METADATA.logo, sizes: "180x180", type: "image/png" }],
         shortcut: [SITE_METADATA.logo],
     },
-    alternates: {
-        canonical: seo.url,
-    },
     other: {
         "google-site-verification": "Do2LFMpDl6plWQ28iz1tDXeMC1VlPZBLyXBYhAYUVaM",
     },

@@ -7,7 +7,14 @@ export const metadata = {
     openGraph: {
         title: config.seo.pages.contact.title,
         description: config.seo.pages.contact.description,
-        url: `${config.seo.url}/contact`,
+        url: `${config.seo.url}/contact/`,
         type: "website",
     },
+    alternates: {
+        canonical: `${config.seo.url}/contact/`,
+    },
 };
+
+export default function ContactLayout({ children }) {
+    return <>{children}</>;
+}

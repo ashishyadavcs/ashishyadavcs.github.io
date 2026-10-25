@@ -9,7 +9,7 @@ export const metadata = {
     openGraph: {
         title: config.seo.pages.faqs.title,
         description: config.seo.pages.faqs.description,
-        url: `${config.seo.url}/faqs`,
+        url: `${config.seo.url}/faqs/`,
         type: "website",
         siteName: config.seo.siteName,
     },
@@ -31,7 +31,7 @@ export const metadata = {
         },
     },
     alternates: {
-        canonical: `${config.seo.url}/faqs`,
+        canonical: `${config.seo.url}/faqs/`,
     },
 };
 

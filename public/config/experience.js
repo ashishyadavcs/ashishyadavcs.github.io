@@ -1,5 +1,22 @@
 const experience = [
     {
+        date: "2026 - Present",
+        title: "Product Engineer",
+        company: "Self-Employed",
+        website: "/",
+        description: `
+            <ul>
+                <li>Build and launch AI-powered products that solve real-world problems.</li>
+                <li>Explore and experiment with new technologies and tools to stay ahead of the curve.</li>
+                <li>Collaborate with cross-functional teams to deliver high-quality products.</li>
+                <li>Mastering Product , Sales and marketing</li>
+                <li>Performance Marketer</li>
+                <li>Funnel Builder</li>
+                <li>Web Designer</li>
+            </ul>
+        `,
+    },
+    {
         date: "2022 - Present",
         title: "Software Engineer",
         company: "BOLD Technology Systems",
